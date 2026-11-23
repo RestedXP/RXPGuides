@@ -152,7 +152,7 @@ step
     .goto 1439/1,384.55,6431.65
 .target Sentinel Elissa Starbreeze
 >>Fale com a |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r
-    .accept 965 >>Aceite A Torre de Althalaxx
+    .accept 965 >>Aceite The Torre of Althalaxx
 step
     .goto 1439/1,445.46,6536.01
 .target Gorbold Steelhand
@@ -413,7 +413,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >>Entregue A Torre de Althalaxx
 .target Balthule Shadowstrike
-    .accept 966 >>Aceite A Torre de Althalaxx
+    .accept 966 >>Aceite The Torre of Althalaxx
 step
     >>Mate Fanáticos do Filo Escuro. Saqueie-os por Pergaminhos
     .goto 1439/1,-684.41,7161.32
@@ -423,7 +423,7 @@ step
 >>Fale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >>Entregue A Torre de Althalaxx
 .target Balthule Shadowstrike
-    .accept 967 >>Aceite A Torre de Althalaxx
+    .accept 967 >>Aceite The Torre of Althalaxx
 step
     #requires MoonstalkersF
     .goto 1439/1,-537.04,7540.35

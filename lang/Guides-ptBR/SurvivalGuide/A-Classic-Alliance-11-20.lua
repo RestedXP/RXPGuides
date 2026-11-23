@@ -1197,7 +1197,7 @@ step
     .goto Darkshore,39.26,43.04,5,0
     .goto Felwood,21.86,18.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r subindo as escadas
-    .accept 965 >> Aceite A Torre de Althalaxx
+    .accept 965 >> Aceite The Torre of Althalaxx
     .target Sentinel Elissa Starbreeze
 step
     #era/som
@@ -1308,7 +1308,7 @@ step
 	.target Balthule Shadowstrike
     .goto Winterspring,4.82,27.18
     .turnin 965 >> Entregue A Torre de Althalaxx
-    .accept 966 >> Aceite A Torre de Althalaxx
+    .accept 966 >> Aceite The Torre of Althalaxx
 step << !Paladin
     .goto Darkshore,55.27,27.74,40,0
     .goto Darkshore,56.92,27.27,40,0
@@ -1335,7 +1335,7 @@ step
 	.target Balthule Shadowstrike
     .goto Winterspring,4.82,27.18
     .turnin 966 >> Entregue A Torre de Althalaxx
-    .accept 967 >> Aceite A Torre de Althalaxx
+    .accept 967 >> Aceite The Torre of Althalaxx
 step
 .group 3
 #map Darkshore
@@ -1804,7 +1804,7 @@ step
 #map Darkshore
     #label OnuGrove
     .goto Felwood,27.00,55.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 952 >> Entregue no Bosque dos Anciões << NightElf
     .turnin 948 >> Entregue Onu
     .accept 944 >> Aceite A Alveola do Mestre
@@ -1966,14 +1966,14 @@ step
 #map Darkshore
     .goto Felwood,27.00,55.59
     .target Onu
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Entregue Relíquias de Mathystra
     .isQuestComplete 951
 step
 #map Darkshore
     .goto Felwood,27.00,55.59
     .target Onu
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
 step
 #map Darkshore
@@ -2015,7 +2015,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dinis, o Purificador|r
 	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
-    .accept 970 >> Aceite A Torre de Althalaxx
+    .accept 970 >> Aceite The Torre of Althalaxx
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orendil Folharga|r
 	.target Orendil Broadleaf
@@ -2045,7 +2045,7 @@ step
 	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Entregue A Torre de Althalaxx
-    .accept 973 >> Aceite A Torre de Althalaxx
+    .accept 973 >> Aceite The Torre of Althalaxx
 step
     .goto Ashenvale,31.89,22.53
     .xp 20 >> Mate inimigos até o nível 20
@@ -2074,7 +2074,7 @@ step
 	.target Delgren the Purifier
     .goto Ashenvale,26.19,38.69
     .turnin 970 >> Entregue A Torre de Althalaxx
-    .accept 973 >> Aceite A Torre de Althalaxx
+    .accept 973 >> Aceite The Torre of Althalaxx
 step
     #completewith next
     .goto Ashenvale,25.49,39.59,25,0

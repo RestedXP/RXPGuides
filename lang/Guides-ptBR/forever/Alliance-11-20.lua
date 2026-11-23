@@ -2199,7 +2199,7 @@ step
 step
     .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r acima
-    .accept 965 >> Aceite A Torre de Althalaxx
+    .accept 965 >> Aceite The Torre of Althalaxx
     .target Sentinel Elissa Starbreeze
 step
     #optional
@@ -2476,7 +2476,7 @@ step << Hunter/Druid
     .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >> Entregue A Torre de Althalaxx
-    .accept 966 >> Aceite A Torre de Althalaxx
+    .accept 966 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << Hunter/Druid
     #loop
@@ -2501,7 +2501,7 @@ step << Hunter/Druid
     .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >> Entregue A Torre de Althalaxx
-    .accept 967 >> Aceite A Torre de Althalaxx
+    .accept 967 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << Hunter/Druid
     #loop
@@ -2938,11 +2938,19 @@ step << Priest
     .trainer >> Treine suas magias de classe
     .target Brother Joshua
 step
+    #optional
+    .isOnQuest 97914
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baros Aleixo|r
-    .turnin -97914 >> Entregue Expanding Horizons
+    .turnin 97914 >> Entregue Expanding Horizons
     .accept 97926 >> Aceite Making Do
---    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step
+    #optional
+    .isQuestTurnedIn 97914
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Baros Aleixo|r
+    .accept 97926 >> Aceite Making Do
     .target Baros Alexston
 step << Rogue/Warrior/Hunter
     .goto 1453/0,613.12,-8795.96
@@ -3867,7 +3875,7 @@ step
 step
     #label OnuGrove
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 952 >> Entregue no Bosque dos Anciões << NightElf
     .turnin 948 >> Entregue Onu
     .accept 944 >> Aceite A Alveola do Mestre
@@ -4000,7 +4008,7 @@ step
     .isQuestComplete 1003
 step
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
     .timer 11.5,Return to Onu RP
 --  .timer 14,Return to Onu RP
@@ -4364,7 +4372,7 @@ step << !Hunter !Druid
     .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >> Entregue A Torre de Althalaxx
-    .accept 966 >> Aceite A Torre de Althalaxx
+    .accept 966 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << !Hunter !Druid
     #loop
@@ -4389,7 +4397,7 @@ step << !Hunter !Druid
     .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >> Entregue A Torre de Althalaxx
-    .accept 967 >> Aceite A Torre de Althalaxx
+    .accept 967 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step
     .goto 1439/1,-800.35,7370.92,55,0
@@ -6165,12 +6173,12 @@ RXPGuides.RegisterGuide([[
 #subgroup Guia Speedrun 1-20
 --#groupid RXP-SRGCE-A1
 #name 19-21 Costa Negra/Vale Gris
-#next Guia RestedXP Forever (A)\21-23 Vale Gris/Stonetalon
+#next Guia RestedXP Forever (A)\21-23 Vale Gris/Cordilheira das Torres de Pedra
 
 step
     #optional
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Entregue Relíquias de Mathystra
     .target Onu
     .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
@@ -6306,7 +6314,7 @@ step
     .isQuestTurnedIn 993
 step
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Entregue Relíquias de Mathystra
     .target Onu
     .isOnQuest 951
@@ -6355,7 +6363,7 @@ step
 	.target Delgren the Purifier
     .goto 1440/1,189.71,3185.77
     .turnin 967 >> Entregue A Torre de Althalaxx
-    .accept 970 >> Aceite A Torre de Althalaxx
+    .accept 970 >> Aceite The Torre of Althalaxx
 step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Orendil Folharga|r
 	.target Orendil Broadleaf
@@ -6417,7 +6425,7 @@ step
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dinis, o Purificador|r
     .goto 1440/1,189.71,3185.77
     .turnin 970 >> Entregue A Torre de Althalaxx
-    .accept 973 >> Aceite A Torre de Althalaxx
+    .accept 973 >> Aceite The Torre of Althalaxx
     .target Delgren the Purifier
 step
     #sticky
@@ -6871,7 +6879,7 @@ step
 step
     #label OnuGrove
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 952 >> Entregue no Bosque dos Anciões << NightElf
     .turnin 948 >> Entregue Onu
     .accept 944 >> Aceite A Alveola do Mestre
@@ -7065,13 +7073,13 @@ step
     .isOnQuest 1003
 step
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 951 >> Entregue Relíquias de Mathystra
     .target Onu
     .isQuestComplete 951
 step
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
     .target Onu
 step
@@ -7140,7 +7148,7 @@ step
     .goto 1440/1,189.71,3185.77
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dinis, o Purificador|r
     .turnin 967 >> Entregue A Torre de Althalaxx
-    .accept 970 >> Aceite A Torre de Althalaxx
+    .accept 970 >> Aceite The Torre of Althalaxx
     .target Delgren the Purifier
 step
     #optional
@@ -7203,7 +7211,7 @@ step
 	.target Delgren the Purifier
     .goto 1440/1,189.71,3185.77
     .turnin 970 >> Entregue A Torre de Althalaxx
-    .accept 973 >> Aceite A Torre de Althalaxx
+    .accept 973 >> Aceite The Torre of Althalaxx
 step
     .goto 1440/1,-138.99,3806.92
     .xp 20 >> Mate inimigos até o nível 20

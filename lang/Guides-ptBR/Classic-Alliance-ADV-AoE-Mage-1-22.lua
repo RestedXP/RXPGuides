@@ -5297,7 +5297,7 @@ step
     .accept 986 >> Aceite Um Mestre Perdido
     .target +Terenthis
     .goto Darkshore,39.37,43.49
-    .accept 965 >>Aceite A Torre de Althalaxx
+    .accept 965 >>Aceite The Torre of Althalaxx
     .goto Darkshore,39.27,43.13,8,0
     .goto Darkshore,39.04,43.55
     .target +Sentinel Elissa Starbreeze
@@ -5443,7 +5443,7 @@ step
     .goto Darkshore,54.97,24.89
     >>Fale com |cRXP_FRIENDLY_Balthule|r
     .turnin 965 >>Entregue A Torre de Althalaxx
-    .accept 966 >>Aceite A Torre de Althalaxx
+    .accept 966 >>Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step
     .goto Darkshore,55.36,26.49,50,0
@@ -5458,7 +5458,7 @@ step
     .goto Darkshore,54.97,24.89
     >>Fale com |cRXP_FRIENDLY_Balthule|r
     .turnin 966 >>Entregue A Torre de Althalaxx
-    .accept 967 >>Aceite A Torre de Althalaxx
+    .accept 967 >>Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step
     #label CapCave

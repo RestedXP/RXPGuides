@@ -1973,7 +1973,7 @@ step << !sod/Warrior/Rogue/Priest
 step << !sod/Warrior/Rogue/Priest
     .goto 1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r acima
-    .accept 965 >> Aceite A Torre de Althalaxx
+    .accept 965 >> Aceite The Torre of Althalaxx
     .target Sentinel Elissa Starbreeze
 
 
@@ -2061,7 +2061,7 @@ step << Priest
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >> Entregue A Torre de Althalaxx
-    .accept 966 >> Aceite A Torre de Althalaxx
+    .accept 966 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << Priest
     #season 2
@@ -2088,7 +2088,7 @@ step << Priest
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >> Entregue A Torre de Althalaxx
-    .accept 967 >> Aceite A Torre de Althalaxx
+    .accept 967 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << skip --logout skip Priest
     #season 2
@@ -2344,7 +2344,7 @@ step << Hunter/Druid/Warrior/Rogue
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >> Entregue A Torre de Althalaxx
-    .accept 966 >> Aceite A Torre de Althalaxx
+    .accept 966 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << Hunter/Druid/Warrior/Rogue
 #xprate <1.5 << Hunter/Druid
@@ -2373,7 +2373,7 @@ step << Hunter/Druid/Warrior/Rogue
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >> Entregue A Torre de Althalaxx
-    .accept 967 >> Aceite A Torre de Althalaxx
+    .accept 967 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << Hunter/Druid/Warrior/Rogue
 #xprate <1.5 << Hunter/Druid
@@ -2764,7 +2764,7 @@ step
     #season 2
     #label OnuSoD
     .goto 1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 952 >> Entregue no Bosque dos Anciões << Warrior/Rogue
     .turnin 948 >> Entregue Onu
     .accept 944 >> Aceite A Alveola do Mestre
@@ -2822,7 +2822,7 @@ step
 step << !Warrior !Druid !Priest
     .goto 1439,43.555,76.293
     #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
     .timer 11.5,Return to Onu RP
 --  .timer 14,Return to Onu RP
@@ -2948,7 +2948,7 @@ step << skip -- Hunter
 step << Priest
     .goto 1439,43.555,76.293
     #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
     .target Onu
 step << Priest
@@ -3125,7 +3125,7 @@ step << !Warrior !Rogue !Priest
     #season 2
     .goto 1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r acima
-    .accept 965 >> Aceite A Torre de Althalaxx
+    .accept 965 >> Aceite The Torre of Althalaxx
     .target Sentinel Elissa Starbreeze
 step
     .goto 1439,37.439,41.839
@@ -3675,7 +3675,7 @@ step
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >> Entregue A Torre de Althalaxx
-    .accept 966 >> Aceite A Torre de Althalaxx
+    .accept 966 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step << Paladin
     #season 2
@@ -3782,7 +3782,7 @@ step
     .goto 1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >> Entregue A Torre de Althalaxx
-    .accept 967 >> Aceite A Torre de Althalaxx << !Hunter
+    .accept 967 >> Aceite The Torre of Althalaxx << !Hunter
     .target Balthule Shadowstrike
 step << Priest
     #season 1 -- Skipping this rune cus its useless
@@ -4104,7 +4104,7 @@ step
 step << Warrior
     .goto 1439,43.555,76.293
     #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
     .target Onu
 step << Warrior
@@ -4220,7 +4220,7 @@ step << Druid
 step << Druid
     .goto 1439,43.555,76.293
     #season 2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
     .target Onu
 step << Druid

@@ -2129,7 +2129,7 @@ step
 step
     .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r acima
-    .accept 965 >> Aceite A Torre de Althalaxx
+    .accept 965 >> Aceite The Torre of Althalaxx
     .target Sentinel Elissa Starbreeze
 step
     .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
@@ -3619,13 +3619,7 @@ step
 step
     #label Level20Check
 
-step << !Druid !Rogue
-    .hs >> Use a Pedra de Regresso para Ventobravo
-    .cooldown item,6948,>2,1
-    .zoneskip Stormwind City
-    .zoneskip Darkshore
 step
-    #optional
     #completewith DarkshoreBoat
     .goto 1433/0,-2234.900,-9435.300,-1
     .goto 1436/0,1037.42,-10628.27,-1
@@ -3740,12 +3734,6 @@ step << Dwarf Rogue
     .cast 20594 >>Conjure [Forma de Pedra] para remover o debuff [Toque de Zanzil]
     .aura -9991
 step << Rogue
-    .hs >> Use a Pedra de Regresso para Ventobravo
-    .cooldown item,6948,>2,1
-    .zoneskip Stormwind City
-    .zoneskip Darkshore
-step << Rogue
-    #optional
     #completewith KlavenEnd
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Thor|r
@@ -4088,10 +4076,17 @@ step << Druid
     .target Vesprystus
     .zoneskip Darkshore
 step
+    .goto 1439/1,515.55,6406.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Shaussiy|r no andar de baixo
+    .home >> Defina sua Pedra de Regresso para Auberdine
+    .target Innkeeper Shaussiy
+    .bindlocation 442
+step
     .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Barithras Sombraluna|r
     .accept 947 >> Aceite Cave Mushrooms
     .target Barithras Moonshade
+    .maxlevel 21
 step
     #optional
     .isOnQuest 4763
@@ -4099,6 +4094,7 @@ step
     >>|cRXP_WARN_Use a|r |T133748:0|t[Tigela de Purificação Vazia] |cRXP_WARN_no poço lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
+    .maxlevel 21
 step
     .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Arqueóloga Hollee|r
@@ -4110,6 +4106,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Trovejius Tecevento|r
     .accept 4763 >> Aceite O Blackwood Corrompido
     .target Thundris Windweaver
+    .maxlevel 21
 step
     .isOnQuest 3765
     .goto 1439/1,431.300,6454.000
@@ -4131,7 +4128,7 @@ step
 step
     .goto 1439/1,384.35,6431.43--c:1439,39.043,43.555
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sentinela Elissa Brisastral|r acima
-    .accept 965 >> Aceite A Torre de Althalaxx
+    .accept 965 >> Aceite The Torre of Althalaxx
     .target Sentinel Elissa Starbreeze
 step
     .isOnQuest 4763
@@ -4139,6 +4136,7 @@ step
     >>|cRXP_WARN_Use a|r |T133748:0|t[Tigela de Purificação Vazia] |cRXP_WARN_no poço lunar de Auberdine|r
     .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
     .use 12346
+    .maxlevel 21
 step
     #optional
     .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
@@ -4160,6 +4158,7 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
     .itemcount 12355,<1 --Talisman of Corruption (<1)
+    .maxlevel 21
 step
     .isOnQuest 2139
     .goto 1439/1,-503.63,6732.95,45,0
@@ -4183,6 +4182,7 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
     .itemcount 12355,<1 --Talisman of Corruption (<1)
+    .maxlevel 21
 step
     .isOnQuest 4763
     #sticky
@@ -4198,6 +4198,7 @@ step
     .complete 4763,1 --Talisman of Corruption (1)
     .disablecheckbox
     .itemcount 12355,<1 --Talisman of Corruption (<1)
+    .maxlevel 21
 step
     .isOnQuest 4763
     #optional
@@ -4207,6 +4208,7 @@ step
     .cast 16072 >> |cRXP_WARN_Use a|r |T134712:0|t[Tigela de Purificação Cheia] |cRXP_WARN_na |cRXP_PICK_Fogueira|r para invocar|r |cRXP_ENEMY_Zabraxxis|r
     .timer 17,O RP Corrompido Bosquenero
     .use 12347
+    .maxlevel 21
 step
     .isOnQuest 4763
     #requires Blackwood3
@@ -4216,6 +4218,7 @@ step
     .use 12347
     .complete 4763,1 -- Talisman of Corruption (1)
     .mob Xabraxxis
+    .maxlevel 21
 step
     .goto 1439/1,-690.31,6751.29,12,0
     .goto 1439/1,-706.68,6748.23,12,0
@@ -4235,11 +4238,12 @@ step
     .goto 1439/1,-663.45,6877.49
     .complete 947,2 --Death Cap (1)
     .goto 1439/1,-685.72,6746.49
+    .maxlevel 21
 step
     .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 965 >> Entregue A Torre de Althalaxx
-    .accept 966 >> Aceite A Torre de Althalaxx
+    .accept 966 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step
     #loop
@@ -4264,7 +4268,7 @@ step
     .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Balthule Umbrataque|r
     .turnin 966 >> Entregue A Torre de Althalaxx
-    .accept 967 >> Aceite A Torre de Althalaxx
+    .accept 967 >> Aceite The Torre of Althalaxx
     .target Balthule Shadowstrike
 step
     .goto 1439/1,-769.17,7744.53--c:1439,56.654,13.484
@@ -4364,6 +4368,7 @@ step
     .goto 1439/1,-537.23,7543.01--c:1439,53.113,18.099
     >>Clique na |cRXP_PICK_Tartaruga Marinha Encalhada|r
     .accept 4727 >> Aceite Tartaruga Marinha Encalhada
+    .maxlevel 21
 step << Druid
     .goto 1439/1,-259.32,7839.03
     >>Nade para fora na água
@@ -4391,20 +4396,26 @@ step << Druid
     .turnin 272 >> Entregue a Provação do Leão-marinho
     .accept 5061 >> Aceite Forma aquática
     .target Dendrite Starblaze
-step << Druid
-    .isOnQuest 5061
-    .goto 1450/1,-2489.25,7457.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Sindray|r
-    .target Sindrayl
-    .fly Darkshore >> Voe para Costa Negra
-    .zoneskip Darkshore
+--step << Druid
+--    .isOnQuest 5061
+--    .goto 1450/1,-2489.25,7457.07
+--    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sindrayl|r
+--    .target Sindrayl
+--    .fly Darkshore >> Fly to Darkshore
+--    .zoneskip Darkshore
 step
     #sticky
     #optional
     .destroy 7442 >> Remova |T134459:0|t[Gyromast's Chave] da mochila, pois não é mais necessária
 step
+    .hs >> Use a Pedra de Regresso para Auberdine
+    .bindlocation 442
+    .cooldown item,6948,>2,1
+step
+    #optional
     #completewith ReturnAuberdine
     .subzone 442 >> Vá para Auberdine
+
 step
     .isQuestComplete 2139
     .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
@@ -4427,6 +4438,7 @@ step
     .goto 1439/1,504.41,6402.39
     >>Clique no |cRXP_PICK_Cartaz de Procurado|r
     .accept 4740 >> Aceite PROCURADO: Lodofundo!
+    .maxlevel 21
 step
     #label ReturnAuberdine
     .isOnQuest 4727
@@ -4441,6 +4453,10 @@ step
     .accept 4728 >> Aceite Criatura Marinha Encalhada
     .isQuestTurnedIn 4681
 step
+    #optional
+    #sticky
+    .abandon 4763 >> Abandone The Blackwood Corrompido
+step
     .goto 1439/1,621.07,4989.95,0--c:1439,35.429,76.566
     .goto 1439/1,621.07,4989.95,60,0--c:1439,35.429,76.566
     .goto 1439/1,541.75,4991.52
@@ -4453,18 +4469,28 @@ step
     .mob Greymist Warrior
     .mob Greymist Hunter
     .mob Greymist Coastrunner
+    .maxlevel 21
 step
+    .isOnQuest 948
+    .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
+    .turnin 948 >> Entregue Onu
+    .target Onu
+step
+    #optional
     #label Onu
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 948 >> Entregue Onu
     .accept 944 >> Aceite A Alveola do Mestre
     .target Onu
+    .maxlevel 21
 step
     #label MasterG
     .goto 1439/1,417.30,4575.82,100 >> Vá para A Alveola do Mestre
     .subzoneskip 449
     .isOnQuest 944
+    .maxlevel 21
 step
     #optional
     #completewith FunandGames
@@ -4474,22 +4500,26 @@ step
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .mob Twilight Disciple
     .mob Twilight Thug
+    .maxlevel 21
 step
     #optional
     .goto 1439/1,390.700,4542.700
     >>Descubra a Clareira do Mestre
     .complete 944,1 --Enter the Master's Glaive (1)
+    .maxlevel 21
 step
     #optional
     #completewith next
     .cast 5809 >> Use o [Frasco de Vidência] e coloque-o no chão
     .use 5251
+    .maxlevel 21
 step
     .goto 1439/1,417.30,4575.82
     >>|cRXP_WARN_Clique na|cRXP_PICK_ Tigela de Vidência|r no chão|r
     .turnin 944 >> Entregue A Alveola do Mestre
     .accept 949 >> Aceite O Acampamento do Crepúsculo
     .use 5251
+    .maxlevel 21
 step
     #label FunandGames
     .goto 1439/1,417.49,4575.82--c:1439,38.537,86.050
@@ -4497,6 +4527,7 @@ step
     .turnin 949 >> Entregue O Acampamento do Crepúsculo
     .accept 950 >> Aceite Retornar a Onu
     .accept 98042 >>Aceite Só É Divertido Até...
+    .maxlevel 21
 step
     #completewith TheryluneEnd
     >>Mate os |cRXP_ENEMY_Discípulos do Crepúsculo|r e os |cRXP_ENEMY_Capangas do Crepúsculo|r. Saque-os para obter o |cRXP_LOOT_Olho Sem Igual|r e o |T133743:0|t[|cRXP_LOOT_Book: The Powers Below|r]
@@ -4507,18 +4538,21 @@ step
     .mob +Twilight Thug
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .disablecheckbox
+    .maxlevel 21
 step
     .goto 1439/1,409.44,4521.01--c:1439,38.660,87.305
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com a|cRXP_FRIENDLY_ Therylune|r. Isso iniciará uma escolta
     >>|cRXP_WARN_Pule este passo se ela não estiver lá|r
     .accept 945 >> Aceite A Fuga de Therylune
     .target Therylune
+    .maxlevel 21
 step
     #label TheryluneEnd
     .goto 1439/1,288.26,4530.40
     >>|cRXP_WARN_Escolte a|cRXP_FRIENDLY_ Therylune|r para fora da Clareira do Mestre|r
     .complete 945,1 --Escort Therylune away from the Master's Glaive (1)
     .isOnQuest 945
+    .maxlevel 21
 step
     #loop
     .goto 1439/1,376.800,4608.600,40,0
@@ -4532,6 +4566,7 @@ step
     .mob +Twilight Thug
     .collect 5352,1,968,1 --Book: The Powers Below (1)
     .disablecheckbox
+    .maxlevel 21
 step
     #optional
     #sticky
@@ -4560,27 +4595,33 @@ step
     .goto 1439/1,803.48,4808.95--c:1439,32.644,80.711
     >>Clique na |cRXP_PICK_Criatura Marinha Encalhada|r
     .accept 4730 >> Aceite Criatura Marinha Encalhada
+    .maxlevel 21
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,865.97,4678.43--c:1439,31.690,83.700
     >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Raio] |cRXP_WARN_dano, eles também podem curar com|r |T136052:0|t[Onda Curativa]|r
     >>Clique na |cRXP_PICK_Tartaruga Marinha Encalhada|r
     .accept 4731 >> Aceite Tartaruga Marinha Encalhada
+    .maxlevel 21
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,896.17,4597.04--c:1439,31.229,85.564
     >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Raio] |cRXP_WARN_dano, eles também podem curar com|r |T136052:0|t[Onda Curativa]|r
     >>Clique na |cRXP_PICK_Tartaruga Marinha Encalhada|r
     .accept 4732 >> Aceite Tartaruga Marinha Encalhada
+    .maxlevel 21
 step
     .isQuestTurnedIn 4681
     .goto 1439/1,894.73,4516.04--c:1439,31.251,87.419
     >>Clique na |cRXP_PICK_Criatura Marinha Encalhada|r
     .accept 4733 >> Aceite Criatura Marinha Encalhada
     >>|cRXP_WARN_Cuidado com |cRXP_ENEMY_Greymist Oracles|r'|r |T136048:0|t[Raio] |cRXP_WARN_dano, eles também podem curar com|r |T136052:0|t[Onda Curativa]|r
+    .maxlevel 21
 step
+    #optional
+    .isOnQuest 950
     .goto 1439/1,88.81,5001.87--c:1439,43.555,76.293
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Onu|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tConverse com |cRXP_FRIENDLY_Onu|r
     .turnin 950 >> Entregue Retornar a Onu
     .timer 11,Volte para Onu (RP)
     .target Onu
@@ -4590,36 +4631,19 @@ step
     .accept 968 >> Aceite Os Poderes de Baixo
     .use 5352
     .itemcount 5352,1
-step
-    #optional
-    .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kerlonian Perenumbra|r para iniciar a escolta
-    >>|cRXP_WARN_Pule este passo se ele não estiver lá. Pode levar até 25 minutos para ele reaparecer|r
-    >>|cRXP_WARN_Esta é uma missão com tempo limite, você deve escoltá-lo ao seu destino em 20 minutos|r
-    .accept 5321 >> Aceite A Adormecida Despertou
-    .target Kerlonian Evershade
-    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
-step
-    #optional
-    .isOnQuest 5321
-    .goto 1439/1,34.78,5001.570
-    >>Abra |cRXP_PICK_Baú de Kerlonian|r. Pegue-o para o |T134229:0|t[|cRXP_LOOT_Corneta do Despertar|r]
-    .complete 5321,1 -- Horn of Awakening (1)
-    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
-step
+step -- only want to do this if turned in 950 and already next to onu
+    .isQuestTurnedIn 950
     .goto 1439/1,33.40,4996.11--c:1439,44.401,76.425
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Kerlonian Perenumbra|r para iniciar a escolta
     >>|cRXP_WARN_Pule este passo se ele não estiver lá. Pode levar até 25 minutos para ele ressurgir|r
     >>|cRXP_WARN_Esta é uma missão cronometrada, você tem que escoltá-lo até a mochila dele em 20 minutos|r
     .accept 5321 >> Aceite A Adormecida Despertou
     .target Kerlonian Evershade
-    .itemcount 13536,<1 --Horn of Awakening
 step
     .isOnQuest 5321
     .goto 1439/1,34.78,5001.570
     >>Abra |cRXP_PICK_Baú de Kerlonian|r. Pegue-o para o |T134229:0|t[|cRXP_LOOT_Corneta do Despertar|r]
     .complete 5321,1 -- Horn of Awakening (1)
-    .itemcount 13536,<1 --Horn of Awakening
 step
     #label Kerlonian
     .goto 1439/1,206.400,4402.500
@@ -4630,6 +4654,7 @@ step
     .isOnQuest 5321
 step
     #optional
+    #sticky
     .abandon 2138 >> Abandone Purificação dos Infectados
     .abandon 1002 >> Abandone NO TRANSLATION FOUND TO THIS ELEMENT
 step
@@ -4647,7 +4672,7 @@ step
     .goto 1440/1,189.71,3185.77
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dinis, o Purificador|r
     .turnin 967 >> Entregue A Torre de Althalaxx
-    .accept 970 >> Aceite A Torre de Althalaxx
+    .accept 970 >> Aceite The Torre of Althalaxx
     .target Delgren the Purifier
 step
     #optional
@@ -4662,6 +4687,7 @@ step
     .complete 970,1
     .mob Dark Strand Cultist
     .mob Dark Strand Adept
+    .maxlevel 21
 step
     .goto 1440/1,-102.08,3492.890
     .xp 20-1650 >>Continue matando |cRXP_ENEMY_inimigos da Escuridão Strand|r até você ter XP suficiente para atingir o nível 20
@@ -4706,11 +4732,18 @@ step
     .target Orendil Broadleaf
     .isQuestTurnedIn 1010
 step
+    .isQuestComplete 970
 	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dinis, o Purificador|r
 	.target Delgren the Purifier
     .goto 1440/1,189.71,3185.77
     .turnin 970 >> Entregue A Torre de Althalaxx
-    .accept 973 >> Aceite A Torre de Althalaxx
+    .accept 973 >> Aceite The Torre of Althalaxx
+step
+    .isQuestTurnedIn 970
+	>>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFale com |cRXP_FRIENDLY_Dinis, o Purificador|r
+	.target Delgren the Purifier
+    .goto 1440/1,189.71,3185.77
+    .accept 973 >> Aceite The Torre of Althalaxx
 step
     #optional
     .goto 1440/1,-138.99,3806.92
@@ -4744,6 +4777,10 @@ step
     .turnin 1010 >> Entregue Cabelo-de-bathran
     .accept 1020 >> Aceite A Cura de Orendil
     .target Orendil Broadleaf
+step
+    #optional
+    #sticky
+    .abandon 970 >> Abandone The Torre of Althalaxx
 step
     #optional
     #completewith TZS
