@@ -829,6 +829,8 @@ function addon.targeting:CreateTargetFrame()
 
     local window = AceGUI:Create("RXPV2MiniFrame")
     window.hideBackgroundSetting = "hideActiveTargetsBackground"
+    window:SetAutoAdjustHeight(false)
+    window.frame.saveSize = false
     self.activeTargetWindow = window
     _G.RXPTargetFrame = window.frame
 
@@ -847,20 +849,6 @@ function addon.targeting:CreateTargetFrame()
         return shouldTargetCheck(), true
     end
 
-    local function onMouseDown()
-        if InCombatLockdown() then return end
-        if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-        window:StartMoving()
-    end
-
-    local function onMouseUp()
-        if InCombatLockdown() then return end
-        window:StopMovingOrSizing()
-        addon.settings:SaveFramePositions()
-    end
-
-    window.frame:SetScript("OnMouseDown", onMouseDown)
-    window.frame:SetScript("OnMouseUp", onMouseUp)
     window.friendlyTargetButtons = {}
     window.enemyTargetButtons = {}
 
@@ -868,11 +856,13 @@ function addon.targeting:CreateTargetFrame()
 
     window:UpdateTheme()
     window:SetTitle(L("Active Targets"))
-    window.title:SetScript("OnMouseDown", onMouseDown)
-    window.title:SetScript("OnMouseUp", onMouseUp)
 
     window:SetScale(addon.settings.profile.activeTargetScale or 1)
     window:SetHeight(40)
+end
+
+function addon.targeting:UpdateTheme()
+    if self.activeTargetWindow then self.activeTargetWindow:UpdateTheme() end
 end
 
 function addon.targeting:SetScale(scale)

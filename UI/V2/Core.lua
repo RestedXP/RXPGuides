@@ -274,10 +274,12 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
         ["GetAlpha"] = function(this) return this.frame:GetAlpha() end,
         ["SetAlpha"] = function(this, alpha) this.frame:SetAlpha(alpha) end,
         ["StartMoving"] = function(this)
+            if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
             if InCombatLockdown() and this.frame:IsProtected() then return end
             this.frame:StartMoving()
         end,
         ["StartSizing"] = function(this, point)
+            if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
             if InCombatLockdown() and this.frame:IsProtected() then return end
             this.frame:StartSizing(point)
             return true
@@ -285,7 +287,7 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
         ["StopMovingOrSizing"] = function(this)
             if InCombatLockdown() and this.frame:IsProtected() then return end
             this.frame:StopMovingOrSizing()
-            return true
+            addon.settings:SaveFramePositions()
         end,
         ["SetResizeBounds"] = function(this, width, height) addon.SetResizeBounds(this.frame, width, height) end,
         ["Hide"] = function(this) this.frame:Hide() end,
@@ -303,7 +305,8 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
             local theme = addon.v2:GetTheme()
             local legacyTheme = not addon.v2:IsEnabled() and addon.activeTheme
             local backgroundColor = legacyTheme and legacyTheme.background or theme.backgroundColors.common
-            local borderColor = legacyTheme and legacyTheme.bottomFrameHighlight or theme.borderColors.commonEdge
+            local borderColor = legacyTheme and (legacyTheme.borderColor or legacyTheme.bottomFrameHighlight) or
+                                theme.borderColors.commonEdge
             addon.ui.v2:ApplyFrameBackdrop(this.frame, theme.edge, backgroundColor, borderColor)
             addon.ui.v2:AddFrameShadow(this.frame)
             addon.ui.v2:SetFrameBackdropShown(this.frame, not addon.settings.profile[this.hideBackgroundSetting])
@@ -338,6 +341,18 @@ function addon.ui.v2:RegisterRXPV2MiniFrame()
 
         local widget = {frame = frame, content = content, title = title, type = Type}
         for method, func in pairs(methods) do widget[method] = func end
+
+        local function onMouseDown(_, button)
+            if button == "LeftButton" then widget:StartMoving() end
+        end
+        local function onMouseUp(_, button)
+            if button == "LeftButton" then widget:StopMovingOrSizing() end
+        end
+        frame:SetScript("OnMouseDown", onMouseDown)
+        frame:SetScript("OnMouseUp", onMouseUp)
+        title:SetScript("OnMouseDown", onMouseDown)
+        title:SetScript("OnMouseUp", onMouseUp)
+
         return AceGUI:RegisterAsContainer(widget)
     end
 

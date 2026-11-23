@@ -419,6 +419,8 @@ local function createReportCard(title, iconName)
 end
 
 function addon.tracker:UpdateTheme()
+    self.splits:UpdateTheme()
+
     local theme = addon.v2:GetTheme()
     local guideGroupColor = {addon.settings:HexToRGB(addon.guideTextColors["RXP_WARN_"])}
     if self.reportFrame then
@@ -985,16 +987,6 @@ function addon.tracker.splits:ResizeHistory()
     self.resizingHistory = nil
 end
 
-function addon.tracker.splits:StartMoving()
-    if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-
-    self.window:StartMoving()
-end
-
-function addon.tracker.splits:StopMoving()
-    if self.window:StopMovingOrSizing() then addon.settings:SaveFramePositions() end
-end
-
 function addon.tracker.splits:Create()
     if self.window then
         self:Update("full")
@@ -1032,36 +1024,29 @@ function addon.tracker.splits:Create()
     layout.frame.IsFeatureEnabled = function() return addon.settings.profile.enablelevelSplits, false end
     layout.frame:SetResizable(true)
     layout:SetResizeBounds(160, 50)
-    layout.frame:SetScript("OnMouseDown", function() self:StartMoving() end)
-    layout.frame:SetScript("OnMouseUp", function() self:StopMoving() end)
 
     local sizer = CreateFrame("Button", nil, layout.frame)
     sizer:SetSize(12, 12)
     sizer:SetPoint("BOTTOMRIGHT", layout.frame, "BOTTOMRIGHT", -2, 2)
     sizer:SetNormalTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Up")
     sizer:SetHighlightTexture("Interface/CHATFRAME/UI-ChatIM-SizeGrabber-Highlight", "ADD")
-    sizer:SetScript("OnMouseDown", function()
-        if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
+    sizer:SetScript("OnMouseDown", function(_, button)
+        if button ~= "LeftButton" then return end
         if not layout:StartSizing("BOTTOMRIGHT") then return end
         self.userResizing = true
         layout:SetAutoAdjustHeight(false)
         self:ResizeHistory()
     end)
-    sizer:SetScript("OnMouseUp", function() self:StopMoving() end)
+    sizer:SetScript("OnMouseUp", function(_, button)
+        if button == "LeftButton" then layout:StopMovingOrSizing() end
+    end)
 
     layout:SetScale(addon.settings.profile.levelSplitsScale)
     layout:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
     layout:SetTitle(L("Level Splits"))
     local menuFrame = CreateFrame("Frame", "RXPG_SplitsMenuFrame", layout.title, "UIDropDownMenuTemplate")
-    layout.title:SetScript("OnMouseDown", function(_, button)
-        if button == "LeftButton" then self:StartMoving() end
-    end)
-    layout.title:SetScript("OnMouseUp", function(this, button)
-        if button == "LeftButton" then
-            self:StopMoving()
-        elseif button == "RightButton" then
-            self:ShowMenu(menuFrame, this)
-        end
+    layout.title:HookScript("OnMouseUp", function(this, button)
+        if button == "RightButton" then self:ShowMenu(menuFrame, this) end
     end)
 
     self.history = AceGUI:Create("RXPV2ScrollFrame")

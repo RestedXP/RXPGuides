@@ -206,6 +206,8 @@ function addon:CreateActiveItemFrame()
 
     local window = AceGUI:Create("RXPV2MiniFrame")
     window.hideBackgroundSetting = "activeItemHideBG"
+    window:SetAutoAdjustHeight(false)
+    window.frame.saveSize = false
     self.activeItemWindow = window
 
     _G.RXPItemFrame = window.frame
@@ -215,15 +217,6 @@ function addon:CreateActiveItemFrame()
         return shown,true
     end
 
-    local function onMouseDown()
-        if addon.settings.profile.lockFrames and not IsAltKeyDown() then return end
-        window:StartMoving()
-    end
-    local function onMouseUp()
-        if window:StopMovingOrSizing() then addon.settings:SaveFramePositions() end
-    end
-    window.frame:SetScript("OnMouseDown", onMouseDown)
-    window.frame:SetScript("OnMouseUp", onMouseUp)
     window.buttonList = {}
     window:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 
@@ -234,8 +227,6 @@ function addon:CreateActiveItemFrame()
     window:SetScale(addon.settings.profile.activeItemsScale)
     window:UpdateTheme()
     window:SetTitle(L("Active Items"))
-    window.title:SetScript("OnMouseDown", onMouseDown)
-    window.title:SetScript("OnMouseUp", onMouseUp)
 
     window:SetHeight(43)
     window:Hide()
@@ -315,7 +306,7 @@ function addon.UpdateItemFrame()
             addon.activeItemWindow.buttonList[i] = btn
 
             if i == 1 then
-                btn:SetPoint("BOTTOMLEFT", addon.activeItemWindow.frame, "BOTTOMLEFT", 4, 2)
+                btn:SetPoint("TOPLEFT", addon.activeItemWindow.frame, "TOPLEFT", 6, -15)
             else
                 btn:SetPoint("CENTER", addon.activeItemWindow.buttonList[i - 1], "CENTER", 27, 0)
             end

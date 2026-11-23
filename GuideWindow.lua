@@ -91,8 +91,8 @@ function addon:UpdateTheme(skipMenu, skipGuideReload)
     self.arrowFrame:UpdateTheme()
     if self.activeItemWindow then self.activeItemWindow:UpdateTheme() end
     self.UpdateItemFrame()
-    if self.targeting.activeTargetWindow then self.targeting.activeTargetWindow:UpdateTheme() end
-    if addon.tracker then addon.tracker.splits:UpdateTheme() end
+    self.targeting:UpdateTheme()
+    if self.tracker then self.tracker:UpdateTheme() end
 
     if not skipMenu then
         RXPFrame.GenerateMenuTable()
@@ -941,21 +941,6 @@ function addon.SetStep(n, n2, loopback)
 
         for _, step in ipairs(activeSteps) do
             if step.tip then addon.currentTip = step end
-            if step.activeItems then
-                for k, v in pairs(step.activeItems) do
-                    addon.activeItems[k] = v
-                end
-            end
-            if step.activeSpells then
-                for k, v in pairs(step.activeSpells) do
-                    addon.activeSpells[k] = v
-                end
-            end
-            if step.activeMacros then
-                for k, v in pairs(step.activeMacros) do
-                    addon.activeMacros[k] = v
-                end
-            end
             for _, element in ipairs(step.elements or {}) do
                 AddTargets(element.unitscan, stepUnitscan)
                 AddTargets(element.mobs, stepMobs)
@@ -978,6 +963,24 @@ function addon.SetStep(n, n2, loopback)
         end
 
         addon.v2.events:Trigger("UpdateActiveSteps", activeSteps, addon.player.name)
+        -- UpdateActiveSteps binds the directives that populate these tables.
+        for _, step in ipairs(activeSteps) do
+            if step.activeItems then
+                for k, v in pairs(step.activeItems) do
+                    addon.activeItems[k] = v
+                end
+            end
+            if step.activeSpells then
+                for k, v in pairs(step.activeSpells) do
+                    addon.activeSpells[k] = v
+                end
+            end
+            if step.activeMacros then
+                for k, v in pairs(step.activeMacros) do
+                    addon.activeMacros[k] = v
+                end
+            end
+        end
         addon.v2.events:Trigger("GuideStepsChanged")
         addon.UpdateItemFrame()
         addon.updateSteps = true

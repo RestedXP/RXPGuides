@@ -72,6 +72,7 @@ local classColor = _G.RAID_CLASS_COLORS[select(2, UnitClass("player"))]
 themes['DarkMode'] = {
     name = 'DarkMode',
     background = {14 / 255, 14 / 255, 14 / 255, 255 / 255},
+    borderColor = {32 / 255, 32 / 255, 32 / 255, 1},
     bottomFrameBG = {19 / 255, 19 / 255, 19 / 255, 255 / 255},
     bottomFrameHighlight = {classColor.r, classColor.g, classColor.b, 128 / 255},
     displayName = L("DarkMode"),
@@ -252,7 +253,6 @@ function addon:ReloadTheme()
     end
 
     if self.guideImporter then self.guideImporter:UpdateTheme() end
-    if self.tracker then self.tracker:UpdateTheme() end
     self.ui.v2.configurator:UpdateTheme()
 end
 
@@ -389,7 +389,7 @@ addon.v2.themes['RXP Blue V2'] = {
 }
 
 function addon.v2:ConvertThemes()
-    local convertedBorderColors = {"common", "commonEdge", "inactivePartyTab", "activeStepCheckboxChecked"}
+    local convertedBorderColors = {"common", "inactivePartyTab", "activeStepCheckboxChecked"}
     local convertedTextColors = {"common", "title", "inactivePartyTab"}
 
     local baseTheme = self.themes['RXP Blue V2']
@@ -434,6 +434,7 @@ function addon.v2:ConvertThemes()
                 backgroundColors.activeStepCheckbox = CopyTable(source.background)
                 backgroundColors.activeStepCheckboxChecked = CopyTable(source.mapPins)
                 for _, key in ipairs(convertedBorderColors) do borderColors[key] = edgeColor end
+                borderColors.commonEdge = source.borderColor and CopyTable(source.borderColor) or edgeColor
                 for _, key in ipairs(convertedTextColors) do textColor[key] = CopyTable(source.textColor) end
                 converted.mapPins = CopyTable(backgroundColors.common)
 

@@ -1837,7 +1837,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 3.3,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            if addon.targeting.activeTargetWindow then addon.targeting.activeTargetWindow:UpdateTheme() end
+                            addon.targeting:UpdateTheme()
                         end,
                         disabled = function()
                             return not self.profile.enableTargetFrame
@@ -2048,7 +2048,7 @@ function addon.settings:CreateAceOptionsPanel()
                         order = 2.4,
                         set = function(info, value)
                             SetProfileOption(info, value)
-                            addon.tracker.splits:UpdateTheme()
+                            addon.tracker:UpdateTheme()
                         end,
                         disabled = function()
                             return not self.profile.enableTracker or
@@ -4182,10 +4182,7 @@ function addon.settings:RefreshTextColors()
         end
     end
 
-    if addon.tracker then
-        addon.tracker:UpdateTheme()
-        addon.tracker.splits:UpdateTheme()
-    end
+    if addon.tracker then addon.tracker:UpdateTheme() end
 end
 
 function addon.settings:ResetTextColors()
