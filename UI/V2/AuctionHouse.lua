@@ -1,6 +1,7 @@
 local _, addon = ...
 
 local CreateFrame, UIParent = CreateFrame, UIParent
+local C_AuctionHouse = _G.C_AuctionHouse
 -- Core.lua creates addon.ui.v2 before this module is loaded.
 local AceGUI = LibStub("AceGUI-3.0")
 local kindHeaderHeight, itemRowHeight, itemRowSpacing = 19, 37, 4
@@ -13,6 +14,13 @@ local itemIconHighlightTexture = "Interface\\Buttons\\ButtonHilight-Square"
 local buttonDividerTexture = "Interface\\FrameGeneral\\UI-Frame"
 
 local function createAuctionHouseColumnButton(parent, text, width)
+    if C_AuctionHouse then
+        local button = CreateFrame("Button", nil, parent, "ColumnDisplayButtonShortTemplate")
+        button:SetSize(width, 19)
+        button:SetText(text)
+        return button
+    end
+
     local button = CreateFrame("Button", nil, parent)
     local theme = addon.v2:GetTheme()
     button:SetSize(width, 19)
@@ -191,11 +199,13 @@ local function createAuctionHousePanelButton(parent, text)
     button:SetText(text)
     button:GetFontString():SetFont(addon.v2:GetTheme().font, 12, "")
 
-    local divider = button:CreateTexture(nil, "BORDER")
-    divider:SetSize(13, 25)
-    divider:SetPoint("TOPRIGHT", button, "TOPLEFT", 5, 1)
-    divider:SetTexture(buttonDividerTexture)
-    divider:SetTexCoord(0.0078125, 0.109375, 0.7578125, 0.953125)
+    if not C_AuctionHouse then
+        local divider = button:CreateTexture(nil, "BORDER")
+        divider:SetSize(13, 25)
+        divider:SetPoint("TOPRIGHT", button, "TOPLEFT", 5, 1)
+        divider:SetTexture(buttonDividerTexture)
+        divider:SetTexCoord(0.0078125, 0.109375, 0.7578125, 0.953125)
+    end
 
     return button
 end
@@ -291,9 +301,15 @@ function addon.ui.v2:RegisterRXPV2AuctionHouseItemBlock()
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
-local function registerAuctionHouse(Type, titleOffset)
-    local Version = 1
-    if not AceGUI or (AceGUI:GetWidgetVersion(Type) or 0) >= Version then return end
+function addon.ui.v2:CreateAuctionHouse(handlers)
+    if self.auctionHouse then
+        self.auctionHouse:SetHandlers(handlers)
+
+        return self.auctionHouse
+    end
+
+    self:RegisterRXPV2AuctionHouseItemBlock()
+    local Type, Version = C_AuctionHouse and "RXPV2ForeverAH" or "RXPV2AuctionHouse", 1
 
     local methods = {
         ["OnAcquire"] = function(this)
@@ -301,8 +317,17 @@ local function registerAuctionHouse(Type, titleOffset)
             this.Results:SetLayout("Flow")
 
             this.Results.frame:SetParent(this.frame)
-            this.Results.frame:SetPoint("TOPLEFT", 21, -74)
-            this.Results.frame:SetPoint("BOTTOMRIGHT", -9, 37)
+            this.Results.frame:SetPoint("TOPLEFT", 21, C_AuctionHouse and -77 or -74)
+            this.Results.frame:SetPoint("BOTTOMRIGHT", -9, C_AuctionHouse and 29 or 37)
+            if C_AuctionHouse then
+                this.frame.ResultsInset:SetPoint("TOPLEFT", this.Results.scrollframe, "TOPLEFT", -6, 4)
+                this.frame.ResultsInset:SetPoint("BOTTOMRIGHT", this.Results.scrollframe, "BOTTOMRIGHT", 6, -2)
+                this.Results.scrollbar:SetPoint("TOPLEFT", this.Results.scrollframe, "TOPRIGHT", 8, -16)
+                this.Results.scrollbar:SetPoint("BOTTOMLEFT", this.Results.scrollframe, "BOTTOMRIGHT", 8, 16)
+                this.frame.ItemNameHeader:SetPoint("BOTTOMLEFT", this.Results.scrollframe, "TOPLEFT", -4, 3)
+                this.frame.PriceHeader:SetPoint("BOTTOMLEFT", this.frame.UpgradeHeader, "BOTTOMRIGHT", -2, 0)
+                this.frame.PriceHeader:SetPoint("BOTTOMRIGHT", this.Results.scrollframe, "TOPRIGHT", 4, 3)
+            end
             this.Results.frame:Show()
 
             this.frame.Results = this.Results
@@ -310,6 +335,13 @@ local function registerAuctionHouse(Type, titleOffset)
         end,
 
         ["OnRelease"] = function(this)
+            if C_AuctionHouse then
+                this.frame.ResultsInset:ClearAllPoints()
+                this.frame.ItemNameHeader:ClearAllPoints()
+                this.frame.PriceHeader:ClearAllPoints()
+                this.Results.scrollbar:SetPoint("TOPLEFT", this.Results.scrollframe, "TOPRIGHT", 4, -16)
+                this.Results.scrollbar:SetPoint("BOTTOMLEFT", this.Results.scrollframe, "BOTTOMRIGHT", 4, 16)
+            end
             if this.Results then AceGUI:Release(this.Results) end
 
             this.Results = nil
@@ -327,30 +359,56 @@ local function registerAuctionHouse(Type, titleOffset)
     local function Constructor()
         local frame = CreateFrame("Frame", nil, UIParent)
 
+        if C_AuctionHouse then
+            frame.ResultsInset = CreateFrame("Frame", nil, frame, "AuctionHouseBackgroundTemplate")
+            frame.ResultsInset:SetFrameLevel(frame:GetFrameLevel())
+            frame.ResultsInset.Background:ClearAllPoints()
+            frame.ResultsInset.Background:SetPoint("TOPLEFT", 2, -2)
+            frame.ResultsInset.Background:SetPoint("BOTTOMRIGHT", -2, 2)
+            local stockBackground = _G.AuctionHouseFrame.BrowseResultsFrame.ItemList.Background
+            local atlas = stockBackground:GetAtlas()
+            if atlas then
+                frame.ResultsInset.Background:SetAtlas(atlas)
+            else
+                frame.ResultsInset.Background:SetTexture(stockBackground:GetTexture())
+                frame.ResultsInset.Background:SetTexCoord(stockBackground:GetTexCoord())
+            end
+        end
+
         local title = frame:CreateFontString(nil, "BACKGROUND")
         title:SetFont(addon.v2:GetTheme().font, 12, "")
-        title:SetPoint("TOP", 0, titleOffset)
+        title:SetPoint("TOP", 0, C_AuctionHouse and -34 or -18)
         title:SetText(_G.MINIMAP_TRACKING_AUCTIONEER)
+        if C_AuctionHouse then title:Hide() end
         frame.Title = title
 
-        local itemName = createAuctionHouseColumnButton(frame, "Item Name", 260)
-        itemName:SetPoint("TOPLEFT", 65, -52)
+        local itemName = createAuctionHouseColumnButton(frame, "Item Name", C_AuctionHouse and 306 or 260)
+        if C_AuctionHouse then
+            frame.ItemNameHeader = itemName
+        else
+            itemName:SetPoint("TOPLEFT", 65, -52)
+        end
 
-        local level = createAuctionHouseColumnButton(frame, _G.REQ_LEVEL_ABBR, 86)
+        local level = createAuctionHouseColumnButton(frame, _G.REQ_LEVEL_ABBR, C_AuctionHouse and 88 or 86)
         level:SetPoint("LEFT", itemName, "RIGHT", -2, 0)
 
-        local upgradeEP = createAuctionHouseColumnButton(frame, "Upgrade/EP", 208)
+        local upgradeEP = createAuctionHouseColumnButton(frame, "Upgrade/EP", C_AuctionHouse and 206 or 208)
         upgradeEP:SetPoint("LEFT", level, "RIGHT", -2, 0)
 
         local buyout = createAuctionHouseColumnButton(frame, _G.AUCTION_PRICE, 186)
-        buyout:SetPoint("LEFT", upgradeEP, "RIGHT", -2, 0)
+        if C_AuctionHouse then
+            frame.UpgradeHeader = upgradeEP
+            frame.PriceHeader = buyout
+        else
+            buyout:SetPoint("LEFT", upgradeEP, "RIGHT", -2, 0)
+        end
 
         local closeButton = createAuctionHousePanelButton(frame, _G.CLOSE)
-        closeButton:SetPoint("BOTTOMRIGHT", -6, 14)
+        closeButton:SetPoint("BOTTOMRIGHT", -6, C_AuctionHouse and 6 or 14)
         closeButton:SetScript("OnClick", function(this) HideUIPanel(this:GetParent():GetParent()) end)
 
         local buyButton = createAuctionHousePanelButton(frame, _G.BUYOUT)
-        buyButton:SetPoint("RIGHT", closeButton, "LEFT")
+        buyButton:SetPoint("RIGHT", closeButton, "LEFT", C_AuctionHouse and -4 or 0, 0)
 
         buyButton:SetScript("OnClick", function(this)
             this:Disable()
@@ -361,7 +419,7 @@ local function registerAuctionHouse(Type, titleOffset)
         end)
 
         local searchButton = createAuctionHousePanelButton(frame, _G.SEARCH)
-        searchButton:SetPoint("RIGHT", buyButton, "LEFT")
+        searchButton:SetPoint("RIGHT", buyButton, "LEFT", C_AuctionHouse and -4 or 0, 0)
 
         frame.searchButton = searchButton
         frame.buyButton = buyButton
@@ -374,30 +432,7 @@ local function registerAuctionHouse(Type, titleOffset)
     end
 
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
-end
-
-function addon.ui.v2:RegisterRXPV2AuctionHouse()
-    registerAuctionHouse("RXPV2AuctionHouse", -18)
-end
-
-function addon.ui.v2:RegisterRXPV2ForeverAH()
-    registerAuctionHouse("RXPV2ForeverAH", -34)
-end
-
-function addon.ui.v2:CreateAuctionHouse(handlers, widgetType)
-    if self.auctionHouse then
-        self.auctionHouse:SetHandlers(handlers)
-
-        return self.auctionHouse
-    end
-
-    self:RegisterRXPV2AuctionHouseItemBlock()
-    if not widgetType then
-        self:RegisterRXPV2AuctionHouse()
-        widgetType = "RXPV2AuctionHouse"
-    end
-
-    self.auctionHouse = AceGUI:Create(widgetType)
+    self.auctionHouse = AceGUI:Create(Type)
     self.auctionHouse:SetHandlers(handlers)
     self.auctionHouse.frame:Hide()
 

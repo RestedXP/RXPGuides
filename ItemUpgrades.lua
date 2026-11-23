@@ -21,6 +21,7 @@ local GetItemStats = C_Item and C_Item.GetItemStats or _G.GetItemStats
 local UnitLevel = _G.UnitLevel
 local GetInventoryItemLink = _G.GetInventoryItemLink
 local AddTooltipPostCall = _G.TooltipDataProcessor and _G.TooltipDataProcessor.AddTooltipPostCall
+local C_AuctionHouse = _G.C_AuctionHouse
 
 local ItemArmorSubclass, ItemWeaponSubclass = Enum.ItemArmorSubclass, Enum.ItemWeaponSubclass
 
@@ -1543,7 +1544,13 @@ local function finishAHScan(cancelled)
 
     local hasResults = next(ahSession.scanData) ~= nil
     local title = cancelled and getAHCancelledTitle(hasResults) or ahSession.scanStatus.baseTitle
-    if ahSession.displayFrame then ahSession.displayFrame.Title:SetText(title) end
+    if ahSession.displayFrame then
+        if C_AuctionHouse and ahSession.displayFrame:GetParent() == _G.AuctionHouseFrame then
+            if ahSession.displayFrame:IsVisible() then _G.AuctionHouseFrame:SetTitle(title) end
+        else
+            ahSession.displayFrame.Title:SetText(title)
+        end
+    end
 
     if hasResults or not cancelled then
         addon.itemUpgrades.AH:Analyze()
@@ -1555,7 +1562,7 @@ addon.itemUpgrades.AH = addon:NewModule("ItemUpgradesAH", "AceEvent-3.0")
 
 function addon.itemUpgrades.AH:Setup()
     if not addon.settings.profile.enableItemUpgradesAH or addon.game == "CATA" then return end
-    if addon.game == "FOREVER" and not self.forever then return end
+    if self.forever and not addon.settings.profile.enableBetaFeatures then return end
 
     if ahSession.isInitialized then return end
 
@@ -1564,7 +1571,7 @@ function addon.itemUpgrades.AH:Setup()
 
     self:RegisterEvent("GET_ITEM_INFO_RECEIVED")
     if self.forever then
-        self.forever.RegisterEvents(self)
+        self.forever:Setup()
     else
         self:RegisterEvent("AUCTION_ITEM_LIST_UPDATE")
     end
@@ -2187,8 +2194,8 @@ local function getAuctionHouseBlockData(data, theme, upgradeIcon, valueIcon)
     return blockData
 end
 
-local function createEmbeddedGui(attachment, widgetType)
-    ahSession.displayFrame = addon.ui.v2:CreateAuctionHouse(auctionHouseHandlers, widgetType).frame
+local function createEmbeddedGui(attachment)
+    ahSession.displayFrame = addon.ui.v2:CreateAuctionHouse(auctionHouseHandlers).frame
 
     ahSession.displayFrame:SetParent(attachment)
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
@@ -2214,7 +2221,11 @@ local function createEmbeddedGui(attachment, widgetType)
 
         ahSession.scanCancelled = false
         ahSession.isScanning = true
-        ahSession.displayFrame.Title:SetText(ahSession.scanStatus.baseTitle)
+        if C_AuctionHouse and attachment == _G.AuctionHouseFrame then
+            attachment:SetTitle(ahSession.scanStatus.baseTitle)
+        else
+            ahSession.displayFrame.Title:SetText(ahSession.scanStatus.baseTitle)
+        end
 
         setAHScanButton(_G.CANCEL, true)
 
@@ -2351,21 +2362,19 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     if showEmptyResults and not hasResults then _G.StaticPopup_Show("RXPNoUpgradesFound") end
 end
 
-if addon.game ~= "FOREVER" or not _G.C_AuctionHouse then return end
+if addon.game ~= "FOREVER" or not C_AuctionHouse then return end
 
-local C_AuctionHouse = _G.C_AuctionHouse
-local forever = {}
-addon.itemUpgrades.AH.forever = forever
+addon.itemUpgrades.AH.forever = {}
 
-function forever.RegisterEvents(ah)
-    ah:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_UPDATED", forever.ProcessBrowseResults)
-    ah:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_ADDED", forever.ProcessBrowseResults)
-    ah:RegisterEvent("AUCTION_HOUSE_BROWSE_FAILURE", function()
+function addon.itemUpgrades.AH.forever:Setup()
+    addon.itemUpgrades.AH:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_UPDATED", self.ProcessBrowseResults)
+    addon.itemUpgrades.AH:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_ADDED", self.ProcessBrowseResults)
+    addon.itemUpgrades.AH:RegisterEvent("AUCTION_HOUSE_BROWSE_FAILURE", function()
         if ahSession.sentQuery then finishAHScan(true) end
     end)
 end
 
-function forever.ProcessBrowseResults(event, results)
+function addon.itemUpgrades.AH.forever.ProcessBrowseResults(event, results)
     if not ahSession.sentQuery then return end
 
     if event == "AUCTION_HOUSE_BROWSE_RESULTS_UPDATED" then results = C_AuctionHouse.GetBrowseResults() end
@@ -2392,7 +2401,7 @@ function forever.ProcessBrowseResults(event, results)
     end
 end
 
-function forever.Scan(retries, maxRetries, scanGeneration)
+function addon.itemUpgrades.AH.forever.Scan(retries, maxRetries, scanGeneration)
     if not C_AuctionHouse.IsThrottledMessageSystemReady() then
         C_Timer.After(1, function() addon.itemUpgrades.AH:Scan(retries + 1, maxRetries, scanGeneration) end)
         return
@@ -2413,7 +2422,7 @@ function forever.Scan(retries, maxRetries, scanGeneration)
     end
 end
 
-function forever.SearchForBuyoutItem(itemData)
+function addon.itemUpgrades.AH.forever.SearchForBuyoutItem(itemData)
     if not _G.AuctionHouseFrame:IsShown() or not itemData.ItemKey then return end
 
     if C_AuctionHouse.GetItemKeyInfo(itemData.ItemKey) then
@@ -2423,12 +2432,11 @@ function forever.SearchForBuyoutItem(itemData)
     end
 end
 
-function forever.CreateEmbeddedGui(ah)
+function addon.itemUpgrades.AH.forever.CreateEmbeddedGui(ah)
     local attachment = _G.AuctionHouseFrame
     if not attachment then return end
 
-    addon.ui.v2:RegisterRXPV2ForeverAH()
-    createEmbeddedGui(attachment, "RXPV2ForeverAH")
+    createEmbeddedGui(attachment)
 
     ahSession.displayFrame:HookScript("OnShow", function()
         if next(ahSession.scanData) then ah:Analyze() end
@@ -2440,7 +2448,7 @@ function forever.CreateEmbeddedGui(ah)
 
     local tabLibrary = LibStub("LibAHTab-1-0", true)
     if tabLibrary then
-        tabLibrary:CreateTab(addon.name, ahSession.displayFrame, addon.name)
+        tabLibrary:CreateTab(addon.name, ahSession.displayFrame, addon.name, ahSession.scanStatus.baseTitle)
     else
         local tabButton = CreateFrame("Button", nil, attachment, "AuctionHouseFrameDisplayModeTabTemplate")
         tabButton:SetText(addon.name)
@@ -2451,7 +2459,7 @@ function forever.CreateEmbeddedGui(ah)
             attachment.displayMode = nil
             for _, tab in ipairs(attachment.Tabs) do PanelTemplates_DeselectTab(tab) end
             PanelTemplates_SelectTab(this)
-            attachment:SetTitle(addon.name)
+            attachment:SetTitle(ahSession.scanStatus.baseTitle)
             ahSession.displayFrame:Show()
         end)
         hooksecurefunc(attachment, "SetDisplayMode", function(_, mode)
