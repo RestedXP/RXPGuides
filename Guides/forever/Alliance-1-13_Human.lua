@@ -3063,15 +3063,15 @@ step
     #optional << Warlock/Mage/Warrior/Rogue
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
-    .trainer >>Train 1h Swords and Staves << Warlock/Mage
-    .trainer >>Train 1h Swords << Rogue
+    .trainer >>Train 1h Swords and Staves << Warlock
+    .trainer >>Train 1h Swords << Rogue/Mage
     .trainer >>Train Staves << Priest
     .trainer >>Train 2h Swords << Warrior/Paladin
     .target Woo Ping
     .money <0.2 << Warlock/Mage
     .money <0.3 << Warrior
     .money <0.55 << Rogue
-step << Warlock/Mage
+step << Warlock
     .goto 1453/0,613.0,-8796.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Woo Ping|r
     .trainer >>Train Staves

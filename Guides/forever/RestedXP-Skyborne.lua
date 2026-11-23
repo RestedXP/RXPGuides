@@ -6933,10 +6933,10 @@ step << Alliance
     -- .turnin -94946 >>Turn in The Magical City of Dalaran
     .accept 94947 >>Accept Welcome to Azeroth
 step << Alliance Druid
-    .goto 1416/0,385.700,385.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archmage Ansirem Runeweaver::2543|r.
+    .goto 1416/0,455.400,444.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alfina Nightgaze|r.
     .accept 94912 >>Accept Child of Nature
-    .target Archmage Ansirem Runeweaver::2543
+    .target Alfina Nightgaze
 step << Alliance
     .goto 1416/0,445.93,450.00
     >>|TInterface/cursor/crosshair/interact.blp:20|tClick on the |cRXP_PICK_Portal|r
