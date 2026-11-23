@@ -1,9 +1,9 @@
 # Attunement guides and adaptive route engine (`AttuneRoute.lua`, `AttuneRouteData.lua`)
 
 <!-- explained-head -->
-<a href="videos/attunement-guides-explained.mp4"><img src="img/attune-02-order.webp" alt="Attunement guides and path finder" width="100%"></a>
+https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc
 
-[Watch: Attunement guides and path finder, explained (75 s)](videos/attunement-guides-explained.mp4) · [Back to the overview](README.md)
+[Back to the overview](README.md)
 
 Technical design notes for the RestedXP team. Describes the contributor feature as it is in
 `` (commit "Add attunement guides with adaptive routing and death skips (WoW
@@ -22,12 +22,12 @@ It also keeps pointing at places the player no longer needs to visit.
 
 <img src="img/attune-02-order.webp" alt="The step order: four chained guides, key steps, rogue variant, the route on the map" width="100%">
 
-*The step order: four chained guides, key steps, rogue variant, the route on the map* · [full-quality clip (MP4)](videos/attune-02-order.mp4)
+*The step order: four chained guides, key steps, rogue variant, the route on the map* · [watch it in the full explainer](https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc)
 
 
 <img src="img/attune-01-list.webp" alt="The guide list: Attunement guides > Alliance / Horde / Rogue Optimised" width="100%">
 
-*The guide list: Attunement guides > Alliance / Horde / Rogue Optimised* · [full-quality clip (MP4)](videos/attune-01-list.mp4)
+*The guide list: Attunement guides > Alliance / Horde / Rogue Optimised* · [watch it in the full explainer](https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc)
 
 
 Guide list > **Attunement guides** (`#group Attunement guides`, `#forever`, `#version 1`):
@@ -51,7 +51,7 @@ translated copy under `lang/` yet, so on locales with translated RXP guides thes
 
 <img src="img/attune-03-bestroute.webp" alt="The .bestroute line updating leg by leg, arrow and targeting following" width="100%">
 
-*The .bestroute line updating leg by leg, arrow and targeting following* · [full-quality clip (MP4)](videos/attune-03-bestroute.mp4)
+*The .bestroute line updating leg by leg, arrow and targeting following* · [watch it in the full explainer](https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc)
 
 
 Steps tagged `.bestroute` show one extra line, which updates as the player moves, and the arrow
@@ -119,7 +119,7 @@ the element has none.
 
 <img src="img/attune-04-choice.webp" alt="Candidates compared, the three death-skip rules, a rejected death skip" width="100%">
 
-*Candidates compared, the three death-skip rules, a rejected death skip* · [full-quality clip (MP4)](videos/attune-04-choice.mp4)
+*Candidates compared, the three death-skip rules, a rejected death skip* · [watch it in the full explainer](https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc)
 
 
 1. Within `max(radius, 40)` yd of the target: kind `here`, nothing shown.
@@ -138,7 +138,7 @@ waypoints to the target.
 
 <img src="img/attune-05-deathskip.webp" alt="A death skip leg by leg: die, release, Spirit Healer, travel on" width="100%">
 
-*A death skip leg by leg: die, release, Spirit Healer, travel on* · [full-quality clip (MP4)](videos/attune-05-deathskip.mp4)
+*A death skip leg by leg: die, release, Spirit Healer, travel on* · [watch it in the full explainer](https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc)
 
 
 Hard exclusions, `DeathForbidden()`: hardcore (profile setting, guide flag or
@@ -215,7 +215,7 @@ Automation during legs (`OnEvent`, `AttuneRoute.lua:1153`):
 
 <img src="img/attune-06-safepath.webp" alt="Safe path: direct route through mobs vs corridor waypoints" width="100%">
 
-*Safe path: direct route through mobs vs corridor waypoints* · [full-quality clip (MP4)](videos/attune-06-safepath.mp4)
+*Safe path: direct route through mobs vs corridor waypoints* · [watch it in the full explainer](https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc)
 
 
 `corridors[id][faction] = { name, inst, exposures, safeExposures, wps = { {wx, wy, uiMap}, ... } }`.
@@ -235,7 +235,7 @@ The id is `<from key>-<to key>`. When a faction has no entry, the first availabl
 
 <img src="img/attune-07-adapt.webp" alt="A step already done is released; drifting off re-plans the route" width="100%">
 
-*A step already done is released; drifting off re-plans the route* · [full-quality clip (MP4)](videos/attune-07-adapt.mp4)
+*A step already done is released; drifting off re-plans the route* · [watch it in the full explainer](https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc)
 
 
 Every 1 s, only when `currentGuide.group` (minus a leading `*`/`+`) is `Attunement guides`. For each

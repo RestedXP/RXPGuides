@@ -1,9 +1,9 @@
 # Group mode (`Duo.lua`, `GroupLocale.lua`, `GroupTranslations.lua`)
 
 <!-- explained-head -->
-<a href="videos/group-mode-explained.mp4"><img src="img/group-01-invite.webp" alt="Group mode: inviting a friend" width="100%"></a>
+https://github.com/user-attachments/assets/b71a1709-3072-4845-9741-616991e192f0
 
-[Watch: Group mode and one-click layer search, explained (37 s)](videos/group-mode-explained.mp4) · [Back to the overview](README.md)
+[Back to the overview](README.md)
 
 Technical design notes for the RestedXP team. Describes the contributor feature as it is in
 `Duo.lua` (commit "Add group mode (up to 5 players, roster sync, one-click
@@ -154,7 +154,7 @@ Whispers are sent to the `"First Last"` form. Section 6.1 explains why this is F
 
 <img src="img/group-01-invite.webp" alt="Invite flow and the hidden addon messages (INV, ACC, ROS, STP)" width="100%">
 
-*Invite flow and the hidden addon messages (INV, ACC, ROS, STP)* · [full-quality clip (MP4)](videos/group-01-invite.mp4)
+*Invite flow and the hidden addon messages (INV, ACC, ROS, STP)* · [watch it in the full explainer](https://github.com/user-attachments/assets/b71a1709-3072-4845-9741-616991e192f0)
 
 
 | Kind | Fields after `kind, proto` | Sent when | Receiver |
@@ -239,11 +239,11 @@ single-word names saved by early builds.
 
 <img src="img/group-02-layer-search.webp" alt="One-click layer search: /who scan, hidden whispers, host invite, layer change (time-lapse)" width="100%">
 
-*One-click layer search: /who scan, hidden whispers, host invite, layer change (time-lapse)* · [full-quality clip (MP4)](videos/group-02-layer-search.mp4)
+*One-click layer search: /who scan, hidden whispers, host invite, layer change (time-lapse)* · [watch it in the full explainer](https://github.com/user-attachments/assets/b71a1709-3072-4845-9741-616991e192f0)
 
 <img src="img/group-03-regroup.webp" alt="Regroup on the new layer: GRP, leave party, GOK, invite, auto-accept" width="100%">
 
-*Regroup on the new layer: GRP, leave party, GOK, invite, auto-accept* · [full-quality clip (MP4)](videos/group-03-regroup.mp4)
+*Regroup on the new layer: GRP, leave party, GOK, invite, auto-accept* · [watch it in the full explainer](https://github.com/user-attachments/assets/b71a1709-3072-4845-9741-616991e192f0)
 
 
 Assumption in the code (from LayerSwap's behaviour on Forever): a player changes layer by joining

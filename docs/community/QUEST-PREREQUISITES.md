@@ -1,9 +1,9 @@
 # Quest Prerequisites (`Prereq.lua`)
 
 <!-- explained-head -->
-<a href="videos/quest-prerequisites-explained.mp4"><img src="img/prereq-03-rows.webp" alt="Quest Prerequisites, explained (45 s)" width="100%"></a>
+https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e
 
-[Watch: Quest Prerequisites, explained (45 s)](videos/quest-prerequisites-explained.mp4) · [Back to the overview](README.md)
+[Back to the overview](README.md)
 
 Technical design notes for the RestedXP team. Describes the contributor feature as it is in
 `Prereq.lua`. The code is the reference; line numbers are approximate.
@@ -29,11 +29,11 @@ returns you to your original guide.
 
 <img src="img/prereq-01-open.webp" alt="Opening the window from the banner badge" width="100%">
 
-*Opening the window from the banner badge* · [full-quality clip (MP4)](videos/prereq-01-open.mp4)
+*Opening the window from the banner badge* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 <img src="img/prereq-03-rows.webp" alt="What each row shows: lock, XP, what to kill or loot, effort, next guides" width="100%">
 
-*What each row shows: lock, XP, what to kill or loot, effort, next guides* · [full-quality clip (MP4)](videos/prereq-03-rows.mp4)
+*What each row shows: lock, XP, what to kill or loot, effort, next guides* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 
 | Entry point | Behaviour (verified in code) |
@@ -157,7 +157,7 @@ When nothing is blocked.
 
 <img src="img/prereq-02-find.webp" alt="How blocked quests are found: guide scan, then Questie prerequisite trees (any one / all)" width="100%">
 
-*How blocked quests are found: guide scan, then Questie prerequisite trees (any one / all)* · [full-quality clip (MP4)](videos/prereq-02-find.mp4)
+*How blocked quests are found: guide scan, then Questie prerequisite trees (any one / all)* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 1. `ScanStatic(guide)` is cached per guide table (weak keys). It records `accepts`,
    `turnins` and `needs`:
@@ -211,7 +211,7 @@ duplicate ids. It also drops a target task if that quest is already in another c
 
 <img src="img/prereq-04-generate.webp" alt="Guide me (one chain) vs Do all (every chain merged)" width="100%">
 
-*Guide me (one chain) vs Do all (every chain merged)* · [full-quality clip (MP4)](videos/prereq-04-generate.mp4)
+*Guide me (one chain) vs Do all (every chain merged)* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 Header:
 ```
@@ -256,7 +256,7 @@ When regenerating from inside a generated guide, `returnTo` is taken from `plan.
 
 <img src="img/prereq-07-return.webp" alt="Back to your exact step in the original guide" width="100%">
 
-*Back to your exact step in the original guide* · [full-quality clip (MP4)](videos/prereq-07-return.mp4)
+*Back to your exact step in the original guide* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 1. Start from the saved progress of the original guide and look at up to 40 steps.
 2. Skip steps that will already be satisfied, assuming the chain is turned in and the target
@@ -270,7 +270,7 @@ When regenerating from inside a generated guide, `returnTo` is taken from `plan.
 
 <img src="img/prereq-06-follow.webp" alt="Following the generated guide: flight path picked up on the way, re-planning when you drift off" width="100%">
 
-*Following the generated guide: flight path picked up on the way, re-planning when you drift off* · [full-quality clip (MP4)](videos/prereq-06-follow.mp4)
+*Following the generated guide: flight path picked up on the way, re-planning when you drift off* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 Runs from the 3 s ticker and 2 s after `PLAYER_ENTERING_WORLD` / `ZONE_CHANGED_NEW_AREA`. It
 only acts when the active guide is the generated one (`plan.guideName`), the player is out of

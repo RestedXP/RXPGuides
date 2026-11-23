@@ -1,9 +1,9 @@
 # Travel Planner (`Travel.lua`, `TravelFlightMasters.lua`)
 
 <!-- explained-head -->
-<a href="videos/prereq-05-route.mp4"><img src="img/prereq-05-route.webp" alt="Route planning on the real map (13 s)" width="100%"></a>
+<img src="img/prereq-05-route.webp" alt="Route planning on the real map (13 s)" width="100%">
 
-[Watch: Route planning on the real map (13 s)](videos/prereq-05-route.mp4) · [Back to the overview](README.md)
+[Back to the overview](README.md)
 
 Technical design notes for the RestedXP team. Describes the contributor feature as it is in
 `Travel.lua`. The code is the reference; line numbers are approximate.
@@ -67,7 +67,7 @@ state. `AttuneRoute.lua` `PlanTo` saves and restores it around its own calls, an
 
 <img src="img/prereq-05-route.webp" alt="Route planning on the real map: you are here, next objective, travel graph, Dijkstra, ordering, guide built leg by leg" width="100%">
 
-*Route planning on the real map: you are here, next objective, travel graph, Dijkstra, ordering, guide built leg by leg* · [full-quality clip (MP4)](videos/prereq-05-route.mp4)
+*Route planning on the real map: you are here, next objective, travel graph, Dijkstra, ordering, guide built leg by leg* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 
 ### 4.1 Coordinates
@@ -160,7 +160,7 @@ chosen as the first of the node's maps where HBD can project the point, otherwis
 
 <img src="img/prereq-06-follow.webp" alt="Following the generated guide: flight path picked up on the way, re-planning when you drift off" width="100%">
 
-*Following the generated guide: flight path picked up on the way, re-planning when you drift off* · [full-quality clip (MP4)](videos/prereq-06-follow.mp4)
+*Following the generated guide: flight path picked up on the way, re-planning when you drift off* · [watch it in the full explainer](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e)
 
 - `unknown` holds the faction's flight masters missing from `RXPCData.flightPaths`.
 - **Candidates**: unknown nodes within `fpRadius` (150 yd) of any segment between the start

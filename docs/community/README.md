@@ -48,9 +48,9 @@ pixel-faithful HTML reproductions of the in-game UI; the map is the game's paint
 Shows every quest of your current guide you can't take yet, with the full missing chain, what to kill or loot, XP and
 distance, flags quests your next guides need, and builds a routed guide to unlock them.
 
-<a href="videos/quest-prerequisites-explained.mp4"><img src="img/prereq-03-rows.webp" alt="Quest Prerequisites explained" width="100%"></a>
+https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e
 
-[Watch the explainer (45 s)](videos/quest-prerequisites-explained.mp4) · [Design doc: QUEST-PREREQUISITES.md](QUEST-PREREQUISITES.md)
+[Design doc: QUEST-PREREQUISITES.md](QUEST-PREREQUISITES.md)
 
 <a href="QUEST-PREREQUISITES.md#screenshots"><img src="img/prereq-banner-button.png" alt="Banner button" width="200"></a> <a href="QUEST-PREREQUISITES.md#screenshots"><img src="img/prereq-window.png" alt="Quest Prerequisites window" width="200"></a> <a href="QUEST-PREREQUISITES.md#screenshots"><img src="img/prereq-do-all.png" alt="Do all" width="200"></a>
 
@@ -60,18 +60,18 @@ Fastest route between tasks: your known flight paths with their real flight time
 boats, zeppelins, tram, walking or riding speed; tasks ordered with prerequisites first, then improved until no shorter
 route exists. Re-plans when you drift off and brings you back to your exact step.
 
-<a href="videos/prereq-05-route.mp4"><img src="img/prereq-05-route.webp" alt="Route planning on the real map" width="100%"></a>
+<img src="img/prereq-05-route.webp" alt="Route planning on the real map" width="100%">
 
-[Watch the route planning (13 s)](videos/prereq-05-route.mp4) · [Design doc: TRAVEL-PLANNER.md](TRAVEL-PLANNER.md)
+[Watch the route planning in the full explainer (from 0:20)](https://github.com/user-attachments/assets/c153a439-4eb3-414e-b8ee-944d9c8bf54e) · [Design doc: TRAVEL-PLANNER.md](TRAVEL-PLANNER.md)
 
 ### Group mode and one-click layer search
 
 Up to 5 players share their guide steps, invite each other from the guide menu, and change layer together in one
 click (LayerSwap host search, then automatic regroup on the new layer).
 
-<a href="videos/group-mode-explained.mp4"><img src="img/group-01-invite.webp" alt="Group mode explained" width="100%"></a>
+https://github.com/user-attachments/assets/b71a1709-3072-4845-9741-616991e192f0
 
-[Watch the explainer (37 s)](videos/group-mode-explained.mp4) · [Design doc: GROUP-MODE.md](GROUP-MODE.md)
+[Design doc: GROUP-MODE.md](GROUP-MODE.md)
 
 <a href="GROUP-MODE.md#24-member-frame"><img src="img/group-members.png" alt="Member frame" width="200"></a> <a href="GROUP-MODE.md#23-dialogs"><img src="img/group-invite-popup.png" alt="Group request" width="200"></a> <a href="GROUP-MODE.md#25-pulsing-banner"><img src="img/group-layer-search.png" alt="Layer search" width="200"></a>
 
@@ -80,9 +80,9 @@ click (LayerSwap host search, then automatic regroup on the new layer).
 16 guides (Scholomance, LBRS, UBRS, Onyxia; Alliance, Horde, rogue-optimised) whose route adapts to your current
 quest objectives and uses death skips only at mapped death spots, never right before a fight (data: [Deathskip](#data-behind-the-death-skips-deathskip)).
 
-<a href="videos/attunement-guides-explained.mp4"><img src="img/attune-04-choice.webp" alt="Attunement guides explained" width="100%"></a>
+https://github.com/user-attachments/assets/590c5b6b-5cc0-4b17-9f20-173c18e18cfc
 
-[Watch the explainer (75 s)](videos/attunement-guides-explained.mp4) · [Design doc: ATTUNEMENT-GUIDES.md](ATTUNEMENT-GUIDES.md)
+[Design doc: ATTUNEMENT-GUIDES.md](ATTUNEMENT-GUIDES.md)
 
 ## Commits
 
@@ -130,9 +130,9 @@ The death skips in the attunement guides come from **Deathskip**, my other WoW F
 one question: *if I die right here, which graveyard will I respawn at?* It draws that answer on the world map, and the
 attunement route engine reads the same data to decide where a death is worth it.
 
-[Watch the full explainer (90 s)](videos/deathskip-explained.mp4)
+https://github.com/user-attachments/assets/52830c29-c3d1-4f34-a878-76416207e845
 
-<a href="videos/deathskip-01-addon.mp4"><img src="img/deathskip-01-addon.webp" alt="The addon: minimap button, on-screen box, map options, lines showing where you respawn" width="100%"></a>
+<img src="img/deathskip-01-addon.webp" alt="The addon: minimap button, on-screen box, map options, lines showing where you respawn" width="100%">
 
 *The addon: minimap button, on-screen box, map options, lines showing where you respawn*
 
@@ -146,11 +146,11 @@ attunement route engine reads the same data to decide where a death is worth it.
   their exports on the Discord, where a bot archives them.
 - The archive is merged and de-duplicated on my PC: **18,383 real deaths** so far (17,834 kept after filtering, release 0.4.31).
 
-<a href="videos/deathskip-02-collect.mp4"><img src="img/deathskip-02-collect.webp" alt="Players die, the record travels on the hidden channel, the collector gathers them" width="100%"></a>
+<img src="img/deathskip-02-collect.webp" alt="Players die, the record travels on the hidden channel, the collector gathers them" width="100%">
 
 *Players die, the record travels on the hidden channel, the collector gathers them*
 
-<a href="videos/deathskip-03-pipeline.mp4"><img src="img/deathskip-03-pipeline.webp" alt="Exports on Discord, the archive, the stats panel" width="100%"></a>
+<img src="img/deathskip-03-pipeline.webp" alt="Exports on Discord, the archive, the stats panel" width="100%">
 
 *Exports on Discord, the archive, the stats panel*
 
@@ -169,7 +169,7 @@ table. So the map is rebuilt offline from the real deaths, on the game's own sub
    factions when they are neutral; Classic links never seen in the data are dropped; caves and the sea edge are handled
    separately.
 
-<a href="videos/deathskip-04-rules.mp4"><img src="img/deathskip-04-rules.webp" alt="The rules on the map, with the real Wetlands (Alliance) example and the cross-validation score" width="100%"></a>
+<img src="img/deathskip-04-rules.webp" alt="The rules on the map, with the real Wetlands (Alliance) example and the cross-validation score" width="100%">
 
 *The rules on the map, with the real Wetlands (Alliance) example and the cross-validation score*
 
@@ -191,7 +191,7 @@ Two real examples of what this catches:
   Loch Modan death supported; the five tunnel deaths were excluded and Stonesplinter Valley went back to Thelsamar
   (cross-validation 98.8% to 99.1%).
 
-<a href="videos/deathskip-05-release.mp4"><img src="img/deathskip-05-release.webp" alt="Release: per-faction diff, changelog, CurseForge upload, patch note, the map updates" width="100%"></a>
+<img src="img/deathskip-05-release.webp" alt="Release: per-faction diff, changelog, CurseForge upload, patch note, the map updates" width="100%">
 
 *Release: per-faction diff, changelog, CurseForge upload, patch note, the map updates*
 
