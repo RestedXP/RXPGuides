@@ -49,7 +49,7 @@ step << Warrior
 step << Shaman
     .goto 1412/1,-264.47,-2874.20--c:Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉·晨行者|r 对话
-    .train 8017 >>影袭 |T136086:0|t[石化武器]
+    .train 8017 >>学习 |T136086:0|t[石化武器]
     .target 米拉·晨行者
 step
     #completewith next
@@ -489,7 +489,7 @@ RXPGuides.RegisterGuide([[
 step
 	#softcore
 	#completewith BloodhoofHome
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
 	#hardcore
 	#completewith BloodhoofHome
@@ -1032,7 +1032,7 @@ step << Tauren
 step
     #softcore
 	#completewith Escort1
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Hunter
     #softcore
     .goto 1412/1,-408.32,-2180.30--c:Mulgore,47.81,55.69
@@ -1116,7 +1116,7 @@ step
 step
     #softcore
 	#completewith Thunderhorn
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith Thunderhorn
@@ -1332,7 +1332,7 @@ step << Tauren
     .complete 758,1 --Cleanse the Thunderhorn Water Well (1)
 step
     .goto 1412/1,441.42,-1980.96--c:Mulgore,31.27,49.87
-    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r 和 |cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
+    >>击杀 |cRXP_ENEMY_巴尔丹掘地工|r和|cRXP_ENEMY_巴尔丹鉴定官|r。拾取它们的|cRXP_LOOT_探矿者的镐|r
     .use 4702 >> |cRXP_WARN_砸碎|r |T134707:0|t[矿工锄] |cRXP_WARN_在熔炉处|r
     >>|cRXP_WARN_小心|cRXP_ENEMY_ 巴尔丹鉴定官|r 会施放|r |T135929:0|t[次级治疗术] |cRXP_WARN_(远程施法:当自身或附近生命值低于 50% 的单位时，为其恢复约 75 点生命值)|r
     .complete 746,1 --Broken Tools (5)
@@ -1948,7 +1948,7 @@ step
 step << skip -- Tauren
     #softcore
 	#completewith Thunderhorn2
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Tauren
     --#hardcore
     #completewith Thunderhorn2
@@ -1985,14 +1985,14 @@ step
     .target Boarton Shadetotem
 step << Hunter
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestComplete 861
 step << Hunter
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄
     .isQuestTurnedIn 861
@@ -2087,7 +2087,7 @@ step << Tauren Druid
 step << Tauren Druid
     .goto 1450/1,-2678.76,8019.94--c:Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
-    .turnin 5930 >>交任务 巨熊之灵
+    .turnin 5930 >>交任务  巨熊之灵
     .accept 5932 >>接受任务 返回雷霆崖
     .target 德迪利特·星焰
 step << Tauren Druid
@@ -2318,7 +2318,7 @@ step
     .target Boarton Shadetotem
 step
     .goto 1456/1,-123.15,-1412.93--c:Thunder Bluff,61.3,80.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_梅洛|r 对话
     .turnin 861 >>交任务 猎人之道
     .accept 860 >>接受任务 瑟格拉·黑棘
     .target 梅洛·石蹄

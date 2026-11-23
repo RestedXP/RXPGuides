@@ -593,13 +593,13 @@ step
     #xprate <1.5
     #softcore
     #completewith Scavenging
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #xprate >1.49
     #softcore
     #completewith NightWebH
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << Warlock
     #softcore
@@ -689,7 +689,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto Tirisfal Glades,31.17,65.08
@@ -1519,7 +1519,7 @@ step
     #xprate <1.5
     #softcore
     #completewith NewPlague1
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #label NewPlague1
     .goto Tirisfal Glades,59.45,52.40
@@ -1892,7 +1892,7 @@ step
     #softcore
     #completewith Brill3
     .goto Tirisfal Glades,64.50,29.41
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_确保你在箭头位置（或箭头西侧）死亡|r
 step
     #label DoomedWeed
@@ -2372,7 +2372,7 @@ step
 step
     #softcore
     #completewith FoodandWater2
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     .goto Tirisfal Glades,58.20,51.44
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_Dillinger|r
@@ -4168,7 +4168,7 @@ step
 step
     #softcore
     #completewith ProveyourWorth
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith next
@@ -4379,7 +4379,7 @@ step
 step
     #softcore
     #completewith ArugalTurnin
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith next
@@ -4538,7 +4538,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate <1.5
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 和 |cRXP_FRIENDLY_达拉尔|r 对话
@@ -6337,13 +6337,13 @@ step
     #xprate <1.5
     #softcore
     #completewith Scavenging
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #xprate >1.49
     #softcore
     #completewith NightWebH
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << Warlock
     #softcore
@@ -6421,7 +6421,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto Tirisfal Glades,31.17,65.08
@@ -7252,7 +7252,7 @@ step
     #xprate <1.5
     #softcore
     #completewith NewPlague1
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #label NewPlague1
     #optional
@@ -7660,7 +7660,7 @@ step
     #softcore
     #completewith DoomedWeed
     .goto Tirisfal Glades,64.50,29.41
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_确保你在（或位于）前往箭头的西侧死亡|r
 step << skip
     #label DoomedWeed
@@ -8237,7 +8237,7 @@ step
     #xprate <2.1
     #softcore
     #completewith FoodandWater2
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate <2.1
     .goto Tirisfal Glades,58.20,51.44
@@ -8818,7 +8818,7 @@ step << Mage
     #label AtWarS
     #softcore
     #completewith AtWarS
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #completewith AgamandStart
     #xprate >2.09
@@ -8976,7 +8976,7 @@ step
     #xprate >2.09
     #softcore
     #completewith FoodandWater2
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #xprate >2.09
     .goto Tirisfal Glades,58.20,51.44

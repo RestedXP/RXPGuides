@@ -34,7 +34,7 @@ step << Warrior/Shaman/Warlock/Mage/Priest
     .money >0.01
 step << Warlock
     .goto 1411/1,-4214.45,-623.92.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Warrior/Shaman
@@ -60,7 +60,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话 << Shaman
     .train 6673 >>学习 |T132333:0|t[战斗怒吼] << Warrior
-    .train 8017 >>影袭 |T136086:0|t[石化武器] << Shaman
+    .train 8017 >>学习 |T136086:0|t[石化武器] << Shaman
     .target 弗朗恩 << Warrior
     .target 史克里克 << Shaman
 step << Warlock
@@ -257,7 +257,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto 1411/1,-4214.400,-624.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -853,7 +853,7 @@ step
     #softcore
     #completewith RazorHill1
     .goto 1411/1,-4326.01,-41.23
-    .deathskip >>死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >>死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     >>|cRXP_WARN_死亡时确保你在路点箭头上！|r
     .target 灵魂医者
 step
@@ -1037,7 +1037,7 @@ step << Warlock
     #label Hraug3
     .goto 1411/1,-4107.11,-604.18
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_赫劳格|r 对话
-    >>|cRXP_BUY_购买|r |T133738:0|t[魔典:血契]|cRXP_BUY_从他那里|r
+    >>|cRXP_BUY_从他那里购买|r |T133738:0|t[魔典：血契]|cRXP_BUY_|r
     .collect 16321,1,817,1 --Grimoire of Blood Pact
     .vendor >>把垃圾物品卖给商人
     .target 赫劳格
@@ -1325,7 +1325,7 @@ step
     .goto 1411/1,-4908.69,-998.27,40,0
     .goto 1411/1,-4829.91,-1091.33,40,0
     .goto 1411/1,-4722.57,-1117.42,40,0
-    >>沿着海滩往下跑。击杀|cRXP_ENEMY_海浪蟹|r和|cRXP_ENEMY_龙虾人|r。拾取它们的|cRXP_LOOT_蟹胶|r 和 |cRXP_LOOT_眼球|r。你不需要在这里完成这一步。
+    >>沿着海滩前进。击杀 |cRXP_ENEMY_海蟹|r 和 |cRXP_ENEMY_龙虾人|r，拾取它们掉落的 |cRXP_LOOT_粘液|r 和 |cRXP_LOOT_眼睛|r。你不需要在这里完成这一步。
     .complete 818,2 --Crawler Mucus (8)
     .mob 海浪蟹
     .mob 成熟海浪蟹
@@ -2909,7 +2909,7 @@ step
 step << Hunter/Shaman
     #softcore
     .goto 1411/1,-4449.74,1188.64
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 806
     .xp >10,1
 step << Hunter/Shaman
@@ -3246,7 +3246,7 @@ step << Shaman
     .target 泰尔夫·祖拉姆
 step << skip --Shaman
     #completewith MargozTurnIn
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Hunter
     #completewith MargozTurnIn
     +驯服一只|cRXP_ENEMY_毒尾蝎|r
@@ -3328,7 +3328,7 @@ step
 step << skip
     #softcore
     #completewith SecuringLinesTurnIn
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #hardcore
     #completewith next
@@ -3382,7 +3382,7 @@ step
 step << skip
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     .goto 1411/1,-4414.500,999.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_雷兹拉克|r 对话

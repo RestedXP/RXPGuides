@@ -50,7 +50,7 @@ step << Warrior
 step << Shaman
     .goto Mulgore,45.01,75.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_米拉|r 对话
-    .train 8017 >>影袭 |T136086:0|t[石化武器]
+    .train 8017 >>学习 |T136086:0|t[石化武器]
     .target 米拉·晨行者
 step
     #completewith next
@@ -1618,7 +1618,7 @@ step << Druid
 step << Druid
     .goto Moonglade,56.21,30.64
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特|r 对话
-    .turnin 5930 >>交任务 巨熊之灵
+    .turnin 5930 >>交任务  巨熊之灵
     .accept 5932 >>接受任务 返回雷霆崖
     .target 德迪利特·星焰
 step << Druid

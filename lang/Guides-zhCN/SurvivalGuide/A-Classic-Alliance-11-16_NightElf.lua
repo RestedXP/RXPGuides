@@ -1021,7 +1021,7 @@ step
     .target 雅尼·铁心
 step
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fp Thelsamar >> 获取塞尔萨玛的飞行路径
     .target 索格拉姆·伯雷森
 step
@@ -1076,7 +1076,7 @@ step
     .turnin 267 >> 交任务 穴居人的威胁
 step
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
 step << Priest

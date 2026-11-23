@@ -188,7 +188,7 @@ step << !Human Rogue
     #softcore
     #optional
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .train 398196,1
 step <<< !Human Rogue
@@ -498,7 +498,7 @@ step
 
 step << Dwarf/Gnome
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .turnin 6387 >> 交任务 荣誉学员
     .accept 6391 >> 接受任务 飞往铁炉堡
     .target 索格拉姆·伯雷森
@@ -512,12 +512,12 @@ step << Hunter
     .unitscan 森林潜伏者
 step << Human
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fp Thelsamar >> 获取塞尔萨玛的飞行路径
 step << Dwarf/Gnome
     #label flyIF
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
     .zoneskip Ironforge
@@ -602,7 +602,7 @@ step << Dwarf Paladin
     .goto Ironforge,24.2,6.8,12 >>前往 |cRXP_FRIENDLY_布兰度尔·铁锤|r
 step << Dwarf Paladin
     .goto Ironforge,23.131,6.143
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .accept 2999 >>接受任务圣洁之书
     .trainer >> 训练你的职业技能
     .target 布兰度尔·铁锤
@@ -815,7 +815,7 @@ step << Paladin Dwarf
     >>击败|cRXP_ENEMY_布鲁阿特|r
     >>|cRXP_WARN_小心他施放|r |T132939:0|t|T132939:0|t[反手一击] |cRXP_WARN_（击晕你2秒）|r
     >>|cRXP_WARN_记得预读|r |T135924:0|t|T135924:0|t[十字军圣印] |cRXP_WARN_对他|r
-    >>|cRXP_WARN_千万不要对他施放|r |T135906:0|t[力量祝福] |cRXP_WARN_|r
+    >>|cRXP_WARN_不要意外对他施放|r |T135906:0|t|T135906:0|t[力量祝福] |cRXP_WARN_ |r
     >>|cRXP_WARN_将他风筝到楼上的阳台，然后从旅店外跳下，必要时施放|r |T135920:0|t|T135920:0|t[圣光术] |cRXP_WARN_如果必要的话|r
     >>|cRXP_WARN_击败|cRXP_ENEMY_布鲁阿尔特|r后：|r
     >>再次与|cRXP_FRIENDLY_布鲁克·麦须|r对话，领取|T134419:0|t|T134419:0|t[责难符文]
@@ -948,7 +948,7 @@ step << Warlock !Human
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock !Human
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock !Human

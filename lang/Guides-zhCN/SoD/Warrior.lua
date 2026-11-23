@@ -722,7 +722,7 @@ step
     .goto Orgrimmar,57.40,53.93,-1
     .goto Orgrimmar,58.05,51.40,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_扎姆沙|r 和 |cRXP_FRIENDLY_格鲁阿克|r 对话
-    +当|cRXP_ENEMY_格鲁阿克|r变为敌对状态时将其击杀
+    +当|cRXP_ENEMY_格鲁阿克|r 变为敌对状态时将其击杀
     .target Zamja
     .target Gru'ark
     .skipgossip
@@ -853,7 +853,7 @@ step
     .goto Durotar,52.13,20.77,40,0
     .goto Durotar,51.26,19.19,40,0
     .goto Durotar,53.98,23.70
-    >>击杀|cRXP_ENEMY_尘风鹰身人|r，并从它们身上拾取|cRXP_LOOT_被砍下的鹰身人的头|r
+    >>击杀|cRXP_ENEMY_尘风鹰身人|r。拾取他们的|cRXP_LOOT_被砍下的鹰身人的头|r
     .collect 206995,1 ---Severed Harpy Head (1)
     .mob Dustwind Savage
     .mob Dustwind Storm Witch

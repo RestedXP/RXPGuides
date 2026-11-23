@@ -84,7 +84,7 @@ step << !Human
 step
     .goto Westfall,52.86,53.71
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_与旅店老板对话|r
-	>>|cRXP_BUY_如有需要，购买食物/水|r << !Warrior !Rogue
+	>>|cRXP_BUY_按需购买食物/水|r << !Warrior !Rogue
 	>>|cRXP_BUY_需要的话就买点食物|r << Warrior/Rogue
     .vendor >>|T133918:0|t[长嘴泥鳅] |cRXP_WARN_非常便宜|r
 	.target 旅店老板希瑟尔
@@ -283,7 +283,7 @@ step << Dwarf !Paladin/Gnome
 step << Dwarf !Paladin/Gnome
     #hardcore
     .goto Loch Modan,33.94,50.95
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
 step << Human/Dwarf Paladin
@@ -400,7 +400,7 @@ step << !NightElf
     .target 萨莫尔·菲斯蒂沃斯
 step << !NightElf
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fp Wetlands>> 获取湿地的飞行路径
     .target 谢尔雷·布隆迪尔
 step << Hunter !NightElf
@@ -448,7 +448,7 @@ step << Druid
     .goto Darnassus,35.375,8.405
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_玛斯雷·驭熊者|r 对话
     .accept 6121 >> 接受任务 新的课程
-    .accept 26 >> 接受任务 必修的课程
+    .accept 26 >> 接受任务必修的课程
     .trainer >> 训练你的职业技能
     .target 玛斯雷·驭熊者
 step << Druid
@@ -457,7 +457,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.63
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 6121 >> 交任务 新的课程
     .accept 6122 >> 接受任务 毒水之源
     .turnin 26 >> 交任务必修的课程
@@ -1959,7 +1959,7 @@ step
 step
 .group
     .goto Darkshore,44.44,84.69
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>等剧情结束
     .complete 995,1
     .isQuestTurnedIn 986
 step
@@ -2141,7 +2141,7 @@ step
 .dungeon WC
     .goto The Barrens,63.084,37.163
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布拉高克|r 对话
-    .fp Ratchet >> 开启棘齿城飞行点
+    .fp Ratchet >> 获取棘齿城飞行路径
     .target 布拉高克
 step
 .dungeon WC

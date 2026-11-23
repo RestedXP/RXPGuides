@@ -45,7 +45,7 @@ step
     .target 萨莫尔·菲斯蒂沃斯
 step << !Druid !Hunter
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fly Ironforge >> 飞往铁炉堡
     .target 谢尔雷·布隆迪尔
     .zoneskip Wetlands,1
@@ -56,7 +56,7 @@ step << !Druid !Hunter
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_芬斯维克|r 对话 << Rogue
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_托德雷·铁矿|r 对话 << Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_丁克|r 对话 << Mage
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Paladin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话 << Paladin
     .goto Ironforge,65.905,88.405 << Warrior
     .goto Ironforge,51.1,8.7,15,0 << Warlock
     .goto Ironforge,50.343,5.657 << Warlock
@@ -80,7 +80,7 @@ step << !Druid !Hunter
     .zoneskip Ironforge,1
 step
     .goto Wetlands,9.49,59.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 交谈
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_谢尔雷|r 对话
     .fly Loch Modan >> 飞往 洛克莫丹
     .target 谢尔雷·布隆迪尔
     .zoneskip Wetlands,1

@@ -206,7 +206,7 @@ step << Horde Shaman
     .xp <1,1
     .goto 2521,42.79,23.57
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塑风者波罗::251374|r 对话。
-    .train 8017 >>影袭 |T136086:0|t[石化武器]
+    .train 8017 >>学习 |T136086:0|t[石化武器]
     .target Windshaper Boro::251374
     .skipgossipid 136811
 step << Hunter

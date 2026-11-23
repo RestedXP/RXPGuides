@@ -24,7 +24,7 @@ step
     #completewith next
     .goto 1420/0,1675.90,1645.00,8,0
     .goto 1420/0,1665.51,1645.00,8,0
-    .goto 1420/0,1667.77,1679.04,10 >> 从地穴跑出来，朝 |cRXP_FRIENDLY_摩尔多|r 方向前进
+    .goto 1420/0,1667.77,1679.04,10 >> 跑出地穴，朝 |cRXP_FRIENDLY_摩尔多|r 的方向前进
 step
     .goto 1420/0,1667.77,1679.04
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_莫多|r 对话
@@ -540,7 +540,7 @@ step
 step
     #softcore
     #completewith Scavenging
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step << Warlock
     #softcore
@@ -623,7 +623,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     .goto 1420/0,1624.84,1876.96
@@ -815,7 +815,7 @@ step
     --too many .mobs, will cause clutter
 step << Rogue
     .goto 1420/0,270.12,2253.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话，并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t|cRXP_BUY_与|r |cRXP_FRIENDLY_温特斯夫人|r |cRXP_BUY_对话并|r|cRXP_BUY_从她那里购买一把|r |T135421:0|t[增重飞斧]
     .collect 3131,200,786,1 --Weighted Throwing Axe (200)
     .target 温特斯夫人
     .itemStat 18,QUALITY,<7
@@ -1650,7 +1650,7 @@ step
 step << skip
     #softcore
     #completewith Brill3
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     .goto 1420/0,244.36,2262.26
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_库勒曼|r 对话
@@ -1940,7 +1940,7 @@ step
 step
     #softcore
     #completewith FoodandWater2
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .xp <10,1
 step
     #softcore
@@ -2759,7 +2759,7 @@ step
 step << skip
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     .goto 1420/0,2037.100,2416.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_破坏者希尔达|r 对话
@@ -3428,7 +3428,7 @@ step
 step << skip
     #softcore
     #completewith ProveyourWorth
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     --#hardcore
     #completewith next
@@ -3660,7 +3660,7 @@ step
 step << skip
     #softcore
     #completewith ArugalTurnin
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     --#hardcore
     #completewith next
@@ -3876,7 +3876,7 @@ step
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_奥利斯特|r 和 |cRXP_FRIENDLY_达拉尔|r 对话
     .turnin 478 >>交任务 地图与符记

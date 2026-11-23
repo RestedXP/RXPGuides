@@ -61,7 +61,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话 << Shaman
     .train 6673 >>学习 |T132333:0|t[战斗怒吼] << Warrior
-    .train 8017 >>影袭 |T136086:0|t[石化武器] << Shaman
+    .train 8017 >>学习 |T136086:0|t[石化武器] << Shaman
     .target 弗朗恩 << Warrior
     .target 史克里克 << Shaman
 step << Warlock
@@ -3342,7 +3342,7 @@ step << Warrior/Shaman
     #xprate >1.49
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 806
 step << Warrior/Shaman
     #xprate >1.49
@@ -3486,7 +3486,7 @@ step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 806
 step << Warrior/Shaman/Hunter
     #xprate <1.5 << Shaman/Warrior
@@ -3497,7 +3497,7 @@ step << !Warrior !Shaman !Hunter
     #xprate >1.49
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 806
 step << !Warrior !Shaman !Hunter
     #xprate >1.49
@@ -3818,7 +3818,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Warrior/Shaman
     #label PoolsPickup
     .goto The Barrens,52.26,31.93
@@ -3899,7 +3899,7 @@ step << Warrior/Shaman
 step << Warrior/Shaman
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Warrior/Shaman
     #label FungalSporesComplete
     .goto The Barrens,51.44,30.15
@@ -3908,7 +3908,7 @@ step << Warrior/Shaman
     >>|cRXP_WARN_这将开启一个 45 分钟的限时任务|r
     .turnin 848 >> 交任务  菌类孢子
     .timer 7,菌类孢子 剧情
-    .accept 853 >> 接受任务 药剂师扎玛
+    .accept 853 >> 接受任务药剂师扎玛
     .target 药剂师赫布瑞姆
 step << Warrior/Shaman
     .goto The Barrens,51.67,29.95
@@ -4860,7 +4860,7 @@ step
     #xprate <1.5
     #softcore
     #completewith SecuringLinesTurnIn
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 813 << Warrior/Shaman/Hunter
 step
     #xprate <1.5
@@ -5544,7 +5544,7 @@ step
     #optional
     #softcore
     #completewith ProofofDemiseTurnin
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 427
 step
     #optional
@@ -6072,7 +6072,7 @@ step
     #optional
     #softcore
     #completewith MillsTurnin
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step
     #optional
     #hardcore
@@ -6640,7 +6640,7 @@ step << skip --Warrior
 step << Warrior
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Warrior
     #hardcore
     #completewith next
@@ -7144,7 +7144,7 @@ step << Warlock
     .aura 403619 >> 记得激活你的 |T136156:0|t[邪甲术]
 step << Warlock
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .accept 1485 >>接受任务 邪灵劣魔
     .target Ruzan
 step << Shaman
@@ -7251,7 +7251,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话 << Shaman
     .train 6673 >>学习 |T132333:0|t[战斗怒吼] << Warrior
-    .train 8017 >>影袭 |T136086:0|t[石化武器] << Shaman
+    .train 8017 >>学习 |T136086:0|t[石化武器] << Shaman
     .target 弗朗恩 << Warrior
     .target 史克里克 << Shaman
 step << Warrior/Shaman
@@ -7262,7 +7262,7 @@ step << Warrior/Shaman
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_弗朗恩|r 对话 << Warrior
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_史克里克|r 对话 << Shaman
     .train 6673 >>学习 |T132333:0|t[战斗怒吼] << Warrior
-    .train 8017 >>影袭 |T136086:0|t[石化武器] << Shaman
+    .train 8017 >>学习 |T136086:0|t[石化武器] << Shaman
     .accept 77588 >>接受任务 体能的试炼 << Troll Warrior
     .accept 77582 >>接受任务 体能的试炼 << Orc Warrior
     .turnin 77588 >>交任务 体能的试炼 << Troll Warrior
@@ -7497,7 +7497,7 @@ step << Rogue
 step << Warlock
     #label Ruzan2
     .goto Durotar,42.59,69.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_鲁赞|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_鲁赞|r 对话
     .turnin 1485 >>交任务 邪灵劣魔
     .accept 1499 >>接受任务 邪灵劣魔
     .target Ruzan
@@ -9723,7 +9723,7 @@ step
     #xprate <2.1
     #softcore
     .goto Durotar,47.04,17.58
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .isQuestComplete 806
 step
     #xprate <2.1
@@ -9849,7 +9849,7 @@ step
     #softcore
     #completewith
     .goto The Barrens,50.72,32.61
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .subzoneskip 380
 step
     #xprate >2.09

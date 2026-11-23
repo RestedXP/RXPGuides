@@ -231,7 +231,7 @@ step
 step
 	#softcore
 	#completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << skip --logout skip
 	#hardcore
 	#completewith next
@@ -268,7 +268,7 @@ step << Hunter
 step
     #requires vial1
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << Hunter
     #requires vial1
     .goto Teldrassil,58.6,44.3
@@ -467,7 +467,7 @@ step
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德纳兰|r 对话
-    .turnin 918 >> 交任务 林精的种子
+    .turnin 918 >> 交任务  林精的种子
     .target 德纳兰
     .accept 922 >> 接受任务 雷利亚·绿树
     .turnin 919 >> 交任务 林精的新芽
@@ -658,7 +658,7 @@ step << !Hunter
 step
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
 step << !Druid
     .goto Teldrassil,56.142,61.714
     .target 科瑞萨斯·月怒
@@ -905,7 +905,7 @@ step << Druid
 	.zoneskip Moonglade
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
     .turnin 5921 >> 交任务 月光林地
     .target 德迪利特·星焰
     .accept 5929 >> 接受任务 巨熊之灵
@@ -922,8 +922,8 @@ step << Druid
     >>|cRXP_WARN_这样可以让你更快返回|r
 step << Druid
     .goto Moonglade,56.21,30.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与楼上的 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
-    .turnin 5929 >> 交任务 巨熊之灵
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德迪利特·星焰|r 对话
+    .turnin 5929 >> 交任务  巨熊之灵
     .target 德迪利特·星焰
     .accept 5931 >> 接受任务 返回达纳苏斯
 step

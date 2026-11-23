@@ -778,7 +778,7 @@ step
 >>与 |cRXP_FRIENDLY_菲兹克斯|r 对话
     .turnin 1483 >> 交任务  菲兹克斯
 .target 菲兹克斯
-    .accept 1093 >> 接受任务 超级收割机6000
+    .accept 1093 >> 接受任务超级收割机6000
 step
     #sticky
     #requires deepmossegg
@@ -928,7 +928,7 @@ step
 >>与 |cRXP_FRIENDLY_药剂师赫布瑞姆|r 对话
     .turnin 848 >>交任务  菌类孢子
 .target 药剂师赫布瑞姆
-    .accept 853 >>接受任务 药剂师扎玛
+    .accept 853 >>接受任务药剂师扎玛
 step
     .goto The Barrens,51.5,30.3
     .fly Camp Taurajo >>飞往陶拉祖营地
@@ -939,7 +939,7 @@ step
 step
     .goto The Barrens,44.6,59.2
 >>与 |cRXP_FRIENDLY_碎牙|r 对话
-    .turnin 878 >>交任务野猪人的内战
+    .turnin 878 >>交任务  野猪人的内战
 .target 碎牙
     .accept 5052 >>接受任务 阿迦玛甘的血岩碎片
     .turnin 5052 >>交任务  阿迦玛甘的血岩碎片
@@ -1060,7 +1060,7 @@ step
 >>与 |cRXP_FRIENDLY_希雷斯·碎石|r 对话
     .turnin 1062 >>交任务地精侵略者
 >>与 |cRXP_FRIENDLY_玛卡巴·扁蹄|r 对话
-    .turnin 6629 >>交任务杀死格鲁迪格·黑云
+    .turnin 6629 >>交任务  杀死格鲁迪格·黑云
     .turnin 6523 >>交任务保护卡雅
 .target 玛卡巴·扁蹄
     .accept 6401 >>接受任务卡雅还活着
@@ -1091,7 +1091,7 @@ step
 step
     .goto Thunder Bluff,70.00,30.90
 >>与 |cRXP_FRIENDLY_玛加萨·恐怖图腾|r 对话
-    .turnin 1063 >> 交任务  巫婆长老
+    .turnin 1063 >> 交任务巫婆长老
 .target 玛加萨·恐怖图腾
     .accept 1064 >> 接受任务被遗忘者的援助
 step

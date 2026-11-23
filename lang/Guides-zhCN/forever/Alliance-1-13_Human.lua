@@ -595,7 +595,7 @@ step << Rogue
     #season 0,1
     .goto 1429/0,-210.90,-8863.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_乔里克·克里丹|r 对话
-    .turnin 3102 >> 交任务密文信件
+    .turnin 3102 >> 交任务 密文信件
     .train 1784 >>学习 |T132320:0|t[潜行]
     .train 921 >>学习 |T133644:0|t[偷窃技能]
     .target 乔里克·克里丹
@@ -633,7 +633,7 @@ step
     #optional
     #softcore
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 -- .subzoneskip 59,1
 step << Priest/Mage
@@ -731,7 +731,7 @@ step
     .target Shinyfinder Narf
 step
     #completewith next
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #optional
@@ -799,7 +799,7 @@ step << skip -- removing for now for camp fire buff/questline
     #season 0,1 << Rogue
     #softcore
     #completewith Goldshire
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .subzoneskip 87
 
@@ -1044,7 +1044,7 @@ step << Warlock
 step << Warlock
     .goto 1429/0,-5.53,-9466.95
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_塞琳娜·达克哈特|r 对话
-    .vendor 6374 >> |cRXP_BUY_如果钱够，就从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
+    .vendor 6374 >> |cRXP_BUY_如果钱够，从她那里购买一本|r |T133738:0|t[魔典：血契(等级 1)] |cRXP_BUY_如果钱不够，可以今后再来买|r
     .target 塞琳娜·达克哈特
     .money <0.0100
     .itemcount 16321,<1 --Grimoire of Blood Pact (Rank 1)
@@ -1526,7 +1526,7 @@ step
 step
     #softcore
     #completewith Exchange
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
 step
     #label Exchange
@@ -2420,7 +2420,7 @@ step << !Warlock
     #softcore
     #label EVDeathskip
     #completewith RedridgeS
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .zoneskip Redridge Mountains
     .xp >10,1 -- shows to 9 and under
@@ -2485,7 +2485,7 @@ step << !Warlock
 step << !Warlock
     #softcore
     #completewith RRFP
-    .deathskip >> 死亡并在 |cRXP_FRIENDLY_灵魂医者|r 处重生
+    .deathskip >> 死掉并在|cRXP_FRIENDLY_灵魂医者|r 处复生
     .target 灵魂医者
     .xp >10,1 -- shows to 9 and under
 step << !Warlock
@@ -3176,7 +3176,7 @@ step << Warlock
 step << Warlock
     #xprate >1.59
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 705 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -3185,7 +3185,7 @@ step << Warlock
     #xprate >1.59
     #optional
     .goto 1453/0,1029.98,-8971.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .train 689 >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <14,1
@@ -3381,7 +3381,7 @@ step << Warlock
 step << Warlock
     #optional
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
     .xp <12,1
@@ -3547,7 +3547,7 @@ step << skip
     #label TramCook1
     #completewith TramEnd
     >>|cRXP_WARN_地铁到站时：|r
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Ironforge
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -3561,7 +3561,7 @@ step << skip
     #label TramCook2
     #completewith TramEnd
     >>|cRXP_WARN_地铁到站时：|r
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Ironforge
     .itemcount 769,<1 --Chunk of Boar Meat (<1)
@@ -3575,7 +3575,7 @@ step << skip
     #label TramCook3
     #completewith TramEnd
     >>|cRXP_WARN_地铁到站时：|r
-    .cast 818 >>|cRXP_WARN_在你的法术书，通用选项卡中|r |cRXP_WARN_创建一个|r |T135805:0|t[基础篝火]
+    .cast 818 >>|cRXP_WARN_在你的法术书常规标签下创建一个|r |T135805:0|t[基础篝火] |cRXP_WARN_|r
     .usespell 818
     .zoneskip Ironforge
     .itemcount 769,1 --Chunk of Boar Meat (1+)
@@ -3735,7 +3735,7 @@ step << Mage
     .target 丁克
 step << Paladin
     .goto 1455/0,-896.47,-4601.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话，NPC在里面
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话，NPC在里面
     .train 633 >> 训练你的职业技能
     .target 布兰度尔·铁锤
 step << skip -- for dungeon route only
@@ -4271,7 +4271,7 @@ step
     .target 巡山人卡德雷尔
 step
     .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fp Thelsamar >> 获取塞尔萨玛的飞行路径
     .target 索格拉姆·伯雷森
 step
@@ -4614,7 +4614,7 @@ step << Human Warrior -- flying IF to train thrown before going westfall/darksho
     #completewith next
     #optional
     .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
     .zoneskip Ironforge
@@ -4739,7 +4739,7 @@ step << Warlock
     .goto 1453/0,1015.33,-8978.9,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto 1453/0,1029.89,-8971.06
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock

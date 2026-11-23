@@ -1960,7 +1960,7 @@ step
 	.goto Dun Morogh,49.09,54.74,40,0
 	.goto Dun Morogh,49.61,54.32,40,0
 	.goto Dun Morogh,51.43,53.21,40,0
-    .xp 5+2690 >> 刷怪达到2690+/2800经验
+    .xp 5+2690 >> 刷怪达到 2690+/2800 经验
     .mob 黑熊幼崽
     .mob 峭壁野猪
 step
@@ -3648,7 +3648,7 @@ step
     .goto Wetlands,7.89,56.22
     >>隔墙与 |cRXP_FRIENDLY_德温|r 对话
     >>|cRXP_WARN_如果船只刚刚抵达，跳过此步骤|r
-    .vendor 1453 >> |cRXP_BUY_购买|r |T134831:0|t[治疗药水] |cRXP_BUY_从他那里(如果有)|r
+    .vendor 1453 >> |cRXP_BUY_从他那里购买|r |T134831:0|t[治疗药水] |cRXP_BUY_(如果有)|r
     .target 德温·晨光
     .money <0.03
 step
@@ -4672,7 +4672,7 @@ step << Gnome
     .use 17117
 step
     >>与|cRXP_FRIENDLY_蒙提|r 对话
-    >>|cRXP_WARN_等待剧情演出完成|r << Gnome
+    >>等剧情结束 << Gnome
     .turnin 6661 >> 交任务 捕捉矿道老鼠 << Gnome
     .timer 13,捕捉矿道老鼠剧情表演 << Gnome
     .accept 6662 >> 接受任务 我的兄弟，尼普希
@@ -5385,7 +5385,7 @@ step
 step
     #label Talisman
     .goto Darkshore,52.24,33.08
-    >>|cRXP_WARN_等待剧情演出完成|r
+    >>等剧情结束
     >>击杀|cRXP_ENEMY_萨巴克希斯|r
     >>拾取掉落地上的|cRXP_PICK_萨布拉克斯的恶魔之袋|r，从中获得|cRXP_LOOT_堕落护符|r
     >>|cRXP_WARN_该操作有 5 秒施法时间|r
@@ -6928,7 +6928,7 @@ step
     #completewith next
     .goto Ashenvale,34.41,47.99
     >>与 |cRXP_FRIENDLY_黛琳希亚|r 对话
-    .fly Auberdine >> 飞往奥伯丁
+    .fly Auberdine >> 飞往奥伯丁，黑海岸
     .target 黛琳希亚
 step
     >>与 |cRXP_FRIENDLY_温尼斯|r 和 |cRXP_FRIENDLY_古博|r 对话

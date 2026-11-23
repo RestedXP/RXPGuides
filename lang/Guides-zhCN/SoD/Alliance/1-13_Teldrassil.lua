@@ -808,7 +808,7 @@ step << Rogue
 step
     .goto Teldrassil,60.900,68.489
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_德纳兰|r 对话
-    .turnin 918 >> 交任务 林精的种子
+    .turnin 918 >> 交任务  林精的种子
     .target 德纳兰
     .accept 922 >> 接受任务 雷利亚·绿树
     .turnin 919 >> 交任务 林精的新芽 << !sod/Warrior/Rogue

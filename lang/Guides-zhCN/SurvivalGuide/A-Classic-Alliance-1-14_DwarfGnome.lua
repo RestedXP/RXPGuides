@@ -52,7 +52,7 @@ step << Warlock
     .target 德南·弗卡特
 step << Warlock
     .goto Dun Morogh,28.650,66.145
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .train 348 >> 学习 |T135817:0|t[献祭]
     .accept 1599 >> 接受任务 开端
     .target 阿拉玛尔·格里姆
@@ -102,7 +102,7 @@ step << Warlock
     #completewith next
     .hs >> 炉石返回寒脊山谷
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .goto Dun Morogh,28.650,66.145
     .turnin 1599 >> 交任务 开端
     .turnin 3115 >> 交任务 被污染的备忘录 << Gnome Warlock
@@ -229,7 +229,7 @@ step << Gnome Mage
     .turnin 3114 >> 交任务 雕文备忘录
     .trainer >> 训练你的职业技能
 step << Warlock
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_阿拉玛尔·格里姆|r对话
     .target 阿拉玛尔·格里姆
     .goto Dun Morogh,28.650,66.145
     .trainer >> 训练你的腐蚀术
@@ -1515,14 +1515,14 @@ step
     .turnin 418 >> 交任务 塞尔萨玛血肠
 step
     #label Thelsamar1
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .target 索格拉姆·伯雷森
     .goto Loch Modan,33.938,50.954
     .turnin 6387 >> 交任务 荣誉学员
     .accept 6391 >> 接受任务 飞往铁炉堡
 step
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fly Ironforge >> 飞往铁炉堡
     .target 索格拉姆·伯雷森
 step
@@ -1660,7 +1660,7 @@ step << Warlock
     .goto StormwindClassic,27.2,78.1,15 >> 前往屠宰场，进入地下室
 step << Warlock
     .goto StormwindClassic,26.117,77.225
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_厄苏拉·德林|r 对话
     .trainer >> 训练你的职业技能
     .target 厄苏拉·德林
 step << Warlock
@@ -2372,7 +2372,7 @@ RXPGuides.RegisterGuide([[
 #next 13-15级 西部荒野
 
 step << Dwarf Paladin
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_布兰度尔·铁锤|r 对话
     .target 布兰度尔·铁锤
     .goto Ironforge,23.131,6.143
     .accept 2999 >>接受任务圣洁之书
@@ -2679,7 +2679,7 @@ step
     .turnin 224 >> 交任务 为了保卫国王的领土
 step << !Dwarf/!Paladin
     .goto Loch Modan,33.938,50.954
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t 与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|t与 |cRXP_FRIENDLY_索格拉姆·伯雷森|r 对话
     .fly Ironforge>> 飞往铁炉堡
     .target 索格拉姆·伯雷森
 step << Dwarf Paladin
