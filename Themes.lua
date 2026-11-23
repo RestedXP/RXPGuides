@@ -168,36 +168,21 @@ local function GetDefaultTheme()
     return themes['RXP Blue']
 end
 
-function addon:UsesDefaultTheme()
-    local profile = self.settings and self.settings.profile
-    local theme = profile and profile.activeTheme
-
-    return theme == 'Default' or theme == 'RXP Blue' or theme == 'RXP Blue V2'
-end
+local appliedThemeName
 
 function addon:LoadActiveTheme()
-    if self.activeTheme and not self.settings.profile.enableThemeLiveReload then return self.activeTheme end
-
-    local applicableTheme = addon.settings.profile.activeTheme
-    local v2Enabled = addon.v2:IsEnabled()
-    local useDefaultTheme = self:UsesDefaultTheme()
-
-    if applicableTheme == 'Default' then
-        applicableTheme = 'RXP Blue'
-
-        addon.settings.profile.activeTheme = applicableTheme
-    end
-
-    if v2Enabled then
-        if applicableTheme == 'RXP Blue' then
-            applicableTheme = 'RXP Blue V2'
-
-            addon.settings.profile.activeTheme = applicableTheme
+    local profile = self.settings.profile
+    local v2Enabled = self.v2:IsEnabled()
+    if not appliedThemeName or profile.enableThemeLiveReload then
+        appliedThemeName = profile.activeTheme
+        if appliedThemeName == 'Default' or appliedThemeName == 'RXP Blue' or appliedThemeName == 'RXP Blue V2' then
+            appliedThemeName = v2Enabled and 'RXP Blue V2' or 'RXP Blue'
         end
-    elseif addon.v2.themes[applicableTheme] and themes[addon.v2.themes[applicableTheme].name] then
-        applicableTheme = addon.v2.themes[applicableTheme].name
-        addon.settings.profile.activeTheme = applicableTheme
+        profile.activeTheme = appliedThemeName
     end
+
+    local applicableTheme = appliedThemeName
+    local useDefaultTheme = applicableTheme == 'RXP Blue' or applicableTheme == 'RXP Blue V2'
 
     local defaultTheme = GetDefaultTheme()
     local fallbackTheme = themes[defaultTheme.name] or defaultTheme
