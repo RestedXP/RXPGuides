@@ -966,7 +966,7 @@ function addon.settings:CreateAceOptionsPanel()
                         end
                     },
                     enableV2MenuTheme = {
-                        name = L("Brand Menus"),
+                        name = L("Theme Menus"),
                         desc = L("Apply the V2 style to RestedXP menus"),
                         type = "toggle",
                         width = optionsWidth,
