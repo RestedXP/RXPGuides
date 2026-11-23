@@ -735,6 +735,7 @@ function addon.settings:CreateAceOptionsPanel()
                         type = "toggle",
                         width = optionsWidth,
                         order = 2.11,
+                        hidden = not (WorldMapFrame and WorldMapFrame.MaximizeMinimizeFrame),
                         set = function(info, value)
                             SetProfileOption(info, value)
                             self:SetupMapButton()
