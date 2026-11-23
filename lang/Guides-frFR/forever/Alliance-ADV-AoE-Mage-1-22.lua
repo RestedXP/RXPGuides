@@ -1960,7 +1960,7 @@ step
 	.goto 1426/0,-615.60,-5674.38,40,0
 	.goto 1426/0,-641.21,-5660.59,40,0
 	.goto 1426/0,-730.84,-5624.15,40,0
-    .xp 5+2690 >> Montez votre expérience jusqu'à 2690+/2800xp
+    .xp 5+2690 >> Monter votre expérience jusqu'à 2690+/2800xp
     .mob Young Black Bear
     .mob Crag Boar
 step
@@ -2530,7 +2530,7 @@ step
 step
     .goto 1426/0,605.80,-5545.020,40,0
     .goto 1426/0,654.07,-5563.40
-    >>Tuez les|cRXP_ENEMY_Frostmane Headhunters|r à l'intérieur de la grotte
+    >>Tuez |cRXP_ENEMY_Frostmane Headhunters|r à l'intérieur de la grotte
     >>|cRXP_WARN_Soyez prudent car ils lancent|r |T132222:0|t[Tir] |cRXP_WARN_(À distance : inflige 8-15 dégâts)|r
     >>|cRXP_WARN_Faites attention au |cRXP_ENEMY_Chasseur de têtes Crins-de-givre|r qui patrouille à l'intérieur|r
     .complete 287,1 --Kill Frostmane Headhunter (x5)
@@ -7134,7 +7134,7 @@ step
     #requires Bank1
     .goto 1453/0,847.43,-8991.99
     >>Parlez à |cRXP_FRIENDLY_Larimaine Purdue|r
-    .train 3561 >> Apprenez [Téléportation : Stormwind]
+    .train 3561 >> Apprenez [Téléportation : Hurlevent]
     >>Coût total : 20 pièces d'argent
     .target Larimaine Purdue
 step

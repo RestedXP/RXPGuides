@@ -44,7 +44,7 @@ step << Warrior
     .vendor >> Vendez tout ce dont nous n'avez pas besoin
     .target +Brother Danil
     .goto 1429/0,-112.74,-8901.66
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .train 6673 >>Apprenez [Cri de guerre]
     .target +Llane Beshere
     .goto 1429/0,-208.40,-8918.35
@@ -412,7 +412,7 @@ step << Warrior/Paladin
 step << Warrior
     #season 0,1
     .goto 1429/0,-208.40,-8918.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .turnin 3100 >> Rendez la quête Lettre simple
     .trainer >> Apprenez vos sorts de classe
     .target Llane Beshere
@@ -1112,7 +1112,7 @@ step << Hunter
     .target Jeena Featherbow
 step << Hunter
     #completewith next
-    .equip 18,2506 >> Équipez le [Arc courbe en bois de corne]
+    .equip 18,2506 >> Équipez l'[Arc courbe en bois de corne]
     .use 2506
     .itemcount 2506,1 --Hornwood Recurve Bow (1)
 step << Hunter
@@ -1216,7 +1216,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft1
     #completewith NecklaceStart
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1296,7 +1296,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft2
     #completewith Lovers
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1378,7 +1378,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft3
     #completewith Exchange
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1892,7 +1892,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft4
     #completewith JasperlodeExplore
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1980,7 +1980,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft5
     #completewith Find
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -2186,7 +2186,7 @@ step << !Paladin
     >>Lancez [Rénovation] et [Mot de pouvoir : Bouclier] |cRXP_WARN_puis remontez votre barre de mana à fond. Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous, tuez-en un rapidement. Enfuyez-vous après en avoir tué un, puis tuez l'autre|r << Priest
     >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, sortez et lancez [Métamorphone] sur l'un des deux avant de tuer l'autre. Tuez celui qui est Métamorphosé ensuite << Mage
     >>Gardez 100 points de rage. Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous et maintenez [Brise-genou] sur l'un des deux avant de tuer l'autre. Utilisez le [Sac de billes] sur celui que vous tuez. Enfuyez-vous de celui que vous avez ralenti après avoir tué le premier << Warrior
-    >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, écartez-vous et concentrez-vous sur l'un des deux. Utilisez [Évasion] une fois qu'ils vous attaquent tous les deux. C'est une bonne opportunité pour utiliser votre [Sac de billes]. Enfuyez-vous après avoir tué le premier << Rogue
+    >>Engagez les 2 |cRXP_ENEMY_Murlocs|r devant les huttes, sortez et concentrez-vous sur l'un d'entre eux. Utilisez [Évasion] une fois qu'ils vous attaquent tous les deux. Il s'agit d'une bonne opportunité pour utiliser le [Sac de billes]. Enfuyez-vous une fois que vous avez tué l'un des deux << Rogue
     >>Engagez les 2  |cRXP_ENEMY_Murlocs|r devant les huttes, sortez et maintenez [Peur] sur l'un d'entre eux en boucle, en essayant de maintenir vos DoTs sur les deux << Warlock
     .turnin 45 >> Rendez la quête La destinée de Rolf
     .accept 71 >> Acceptez la quête Faire son rapport au garde Thomas

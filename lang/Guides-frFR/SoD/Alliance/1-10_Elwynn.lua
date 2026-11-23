@@ -95,7 +95,7 @@ step << Warlock
     #sticky
     .aura 403619 >> |cRXP_WARN_N'oubliez pas d'activer votre|r |T136156:0|t[Gangrarmure]
 step << Warrior
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .train 6673 >>Apprenez [Cri de guerre]
     .accept 77616 >> Acceptez la quête La Rune perdue
     .turnin 77616 >> Rendez la quête La Rune perdue
@@ -587,7 +587,7 @@ step << Warrior
     #xprate >1.59
     #season 2
     .goto Elwynn Forest,50.242,42.287
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tParlez à |cRXP_FRIENDLY_Llane Beshere|r en bas des escaliers à l'intérieur
     .turnin 3100 >> Rendez la quête Lettre simple
     .accept 77616 >> Acceptez la quête La Rune perdue << Human
     .turnin 77616 >> Rendez la quête La Rune perdue << Human
@@ -1163,7 +1163,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft1
     #completewith NecklaceStart
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1236,7 +1236,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft2
     #completewith Lovers
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1311,7 +1311,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft3
     #completewith Exchange
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1775,7 +1775,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft4
     #completewith JasperlodeExplore
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
@@ -1885,7 +1885,7 @@ step << Warrior/Paladin/Rogue
     #requires RoughStoneCraft5
     #completewith Find
     .cast 2828 >>Utilisez la [Pierre à aiguiser brute] sur votre arme actuelle << Warrior/Rogue
-    .cast 3112 >>Utilisez les [Caillou brut] sur votre arme actuelle << Paladin
+    .cast 3112 >>Utilisez le [Caillou brut] sur votre arme actuelle << Paladin
     .use 2862 << Rogue/Warrior --Rough Sharpening Stone (1)
     .use 3239 << Paladin --Rough Weightstone (1)
     .itemcount 2862,1 << Rogue/Warrior --Rough Sharpening Stone (1)
