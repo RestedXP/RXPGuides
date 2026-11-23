@@ -227,7 +227,8 @@ end
 function addon:ReloadTheme()
     if not self.settings.profile.enableThemeLiveReload then return end
 
-    self.v2:ConvertThemes()
+    self:RegisterTheme(CopyTable(self.settings.profile.customTheme))
+    if not self.v2:IsEnabled() then self.v2:ConvertThemes() end
     self:UpdateTheme(true)
 
     if self.v2:IsEnabled() then
@@ -297,7 +298,7 @@ end
 
 function addon:ImportCustomThemes()
     -- Register empty custom theme
-    self:RegisterTheme(addon.settings.profile.customTheme)
+    self:RegisterTheme(CopyTable(self.settings.profile.customTheme))
 
     if not _G.RXPGuides_Themes then return end
 

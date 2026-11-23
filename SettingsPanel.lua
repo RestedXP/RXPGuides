@@ -2777,7 +2777,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.background = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2799,7 +2798,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.bottomFrameBG = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2822,7 +2820,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.bottomFrameHighlight = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2842,7 +2839,6 @@ function addon.settings:CreateAceOptionsPanel()
                         end,
                         set = function(_, r, g, b, a)
                             self.profile.customTheme.mapPins = {r, g, b, a or 1}
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2863,7 +2859,6 @@ function addon.settings:CreateAceOptionsPanel()
                         set = function(_, value)
                             self.profile.customTheme.tooltip = fmt('|c%sFF',
                                                                    value)
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2896,7 +2891,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.font = value
                             -- TODO replace \ with \\
 
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2916,7 +2910,6 @@ function addon.settings:CreateAceOptionsPanel()
                             self.profile.customTheme.textColor = {
                                 r, g, b, a or 1
                             }
-                            addon:RegisterTheme(self.profile.customTheme)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
@@ -2937,8 +2930,7 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 1.91,
                         func = function()
-                            self.profile.customTheme = addon.customThemeBase
-                            addon:RegisterTheme(self.profile.customTheme)
+                            self.profile.customTheme = CopyTable(addon.customThemeBase)
                             addon:ReloadTheme()
                         end,
                         hidden = function()
