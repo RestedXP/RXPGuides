@@ -787,7 +787,10 @@ function addon.itemUpgrades:ActivateSpecWeights()
     local spec
     if addon.game == "FOREVER" then
         spec = addon.settings.profile.itemUpgradeSpec
-        if not session.specWeights[spec] then spec = next(session.specWeights) end
+        if not session.specWeights[spec] then
+            spec = next(session.specWeights)
+            if spec then addon.settings.profile.itemUpgradeSpec = spec end
+        end
     else
         spec = getSpec()
 
