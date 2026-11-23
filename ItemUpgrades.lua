@@ -845,9 +845,11 @@ local function GetTooltipLines(tooltip, baseItemData)
     local setMatch = {}
 
     for _, r in ipairs(regions) do
+        rText = r:IsObjectType("FontString") and r:GetText()
+        -- A partial scan could miss stats and cache an incorrect score.
+        if addon.IsSecretValue(rText) then return end
 
-        if r:IsObjectType("FontString") and r:GetText() then
-            rText = r:GetText()
+        if rText then
             -- print("GetTooltipLines, regions", rText)
 
             -- Set bonus, so stop gathering lines past set bonus
@@ -1114,8 +1116,6 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
     -- Parse tooltip for all additional stats
     if tooltip then
         tooltipTextLines = GetTooltipLines(tooltip, itemData)
-
-        if not tooltipTextLines then return end
     else -- If not tooltip, set hidden comparison tooltip
         tooltip = GetComparisonTip()
 
@@ -1129,15 +1129,11 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         -- print("RXPItemUpgradesComparison:SetHyperlink", itemLink)
 
         tooltipTextLines = GetTooltipLines(tooltip, itemData)
-
-        if not tooltipTextLines then
-            -- print("Comparisontip lines empty")
-            return
-        end
-
         -- Would bug out if cache is reset or invalidated
         tooltip:ClearLines()
     end
+
+    if not tooltipTextLines then return end
 
     local match1, match2
 
