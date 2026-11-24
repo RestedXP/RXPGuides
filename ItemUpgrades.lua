@@ -2156,7 +2156,13 @@ local function getAuctionHouseBlockData(data, theme, upgradeIcon, valueIcon)
     return blockData
 end
 
-local function createEmbeddedGui(attachment)
+function addon.itemUpgrades.AH:CreateEmbeddedGui()
+    if ahSession.displayFrame or not addon.ui.v2 then return end
+
+    local attachment = _G.AuctionFrame
+    if self.forever then attachment = _G.AuctionHouseFrame end
+    if not attachment then return end
+
     ahSession.displayFrame = addon.ui.v2:CreateAuctionHouse().frame
 
     ahSession.displayFrame:SetParent(attachment)
@@ -2199,16 +2205,8 @@ local function createEmbeddedGui(attachment)
         addon.itemUpgrades.AH:SearchForBuyoutItem(ahSession.selectedRow and ahSession.selectedRow.nodeData)
     end)
     ahSession.displayFrame.buyButton:Disable()
-end
 
-function addon.itemUpgrades.AH:CreateEmbeddedGui()
-    if ahSession.displayFrame or not addon.ui.v2 then return end
-    if self.forever then return self.forever.CreateEmbeddedGui(self) end
-
-    local attachment = _G.AuctionFrame
-    if not attachment then return end
-
-    createEmbeddedGui(attachment)
+    if self.forever then return self.forever.CreateTab(self, attachment) end
 
     local index = attachment.numTabs + 1
     local tabButton = CreateFrame("Button", "AuctionFrameTab" .. index, attachment, "AuctionTabTemplate")
@@ -2405,12 +2403,7 @@ function addon.itemUpgrades.AH.forever.SearchForBuyoutItem(itemData)
     end
 end
 
-function addon.itemUpgrades.AH.forever.CreateEmbeddedGui(ah)
-    local attachment = _G.AuctionHouseFrame
-    if not attachment then return end
-
-    createEmbeddedGui(attachment)
-
+function addon.itemUpgrades.AH.forever.CreateTab(ah, attachment)
     ahSession.displayFrame:HookScript("OnShow", function()
         if next(ahSession.scanData) then ah:Analyze() end
         ah:DisplayEmbeddedResults()
