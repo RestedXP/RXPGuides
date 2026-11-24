@@ -420,6 +420,8 @@ L["|c%sSold junk items for|r %s"] = ""
 -- ItemUpgrades.lua file
 
 L["No item upgrades found"] = ""
+L["Full auction scan unavailable"] = ""
+L["Full scan on cooldown (%s remaining)"] = ""
 
 -- LevelingTracker.lua file
 

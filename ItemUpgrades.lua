@@ -1475,14 +1475,14 @@ local function getAHCache()
     return cache
 end
 
-local function resetAHScanResults()
+local function resetAHScanResults(keepCache)
     invalidateAHCallbacks()
     clearAHSelection()
     ahSession.scanData = {}
     ahSession.pendingItemInfo = {}
     ahSession.bestAnalysis = nil
 
-    if RXPCData then RXPCData.itemUpgradeAHCache = nil end
+    if RXPCData and not keepCache then RXPCData.itemUpgradeAHCache = nil end
 end
 
 local function resetAHScanProgress()
@@ -1521,13 +1521,19 @@ local function getAHCancelledTitle(hasResults)
     return title
 end
 
-local function finishAHScan(cancelled)
+local function finishAHScan(cancelled, failureTitle)
     resetAHScanProgress()
     ahSession.scanCancelled = cancelled
-    setAHScanButton(_G.SEARCH, true)
+
+    local ah = addon.itemUpgrades.AH
+    if ah.forever then
+        ah.forever.UpdateSearchButton()
+    else
+        setAHScanButton(_G.SEARCH, true)
+    end
 
     local hasResults = next(ahSession.scanData) ~= nil
-    local title = cancelled and getAHCancelledTitle(hasResults) or ahSession.scanStatus.baseTitle
+    local title = failureTitle or (cancelled and getAHCancelledTitle(hasResults) or ahSession.scanStatus.baseTitle)
     if ahSession.displayFrame then
         if C_AuctionHouse and ahSession.displayFrame:GetParent() == _G.AuctionHouseFrame then
             if ahSession.displayFrame:IsVisible() then _G.AuctionHouseFrame:SetTitle(title) end
@@ -1537,8 +1543,8 @@ local function finishAHScan(cancelled)
     end
 
     if hasResults or not cancelled then
-        addon.itemUpgrades.AH:Analyze()
-        addon.itemUpgrades.AH:DisplayEmbeddedResults(true)
+        if not failureTitle then ah:Analyze() end
+        ah:DisplayEmbeddedResults(not failureTitle)
     end
 end
 
@@ -1905,7 +1911,7 @@ function addon.itemUpgrades.AH:Analyze()
 
     local cache = {
         version = AHCacheVersion,
-        createdAt = time(),
+        createdAt = self.forever and RXPCData.itemUpgradeAHScan and RXPCData.itemUpgradeAHScan.createdAt or time(),
         class = addon.player.class,
         level = UnitLevel("player"),
         spec = addon.settings.profile.itemUpgradeSpec or false,
@@ -2158,7 +2164,7 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
             return
         end
 
-        resetAHScanResults()
+        resetAHScanResults(self.forever ~= nil)
         ahSession.displayFrame.Results:ReleaseChildren()
         ahSession.displayFrame.Results:SetScroll(0)
         resetAHScanProgress()
@@ -2316,7 +2322,24 @@ local GetReplicateItemLink = C_AuctionHouse.GetReplicateItemLink
 local MakeItemKey = C_AuctionHouse.MakeItemKey
 local ReplicateItems = C_AuctionHouse.ReplicateItems
 
-local replicateReceivedAt, replicateTimeout
+local replicateCooldown = 15 * 60
+local replicateTimeout, searchCooldownTimer
+
+function addon.itemUpgrades.AH.forever.UpdateSearchButton()
+    if ahSession.isScanning then return end
+
+    if searchCooldownTimer then
+        searchCooldownTimer:Cancel()
+        searchCooldownTimer = nil
+    end
+
+    local lastScan = RXPData.itemUpgradeAHReplicateAt
+    local remaining = lastScan and lastScan + replicateCooldown - time() or 0
+    setAHScanButton(_G.SEARCH, remaining <= 0)
+    if remaining > 0 then
+        searchCooldownTimer = C_Timer.NewTimer(remaining, addon.itemUpgrades.AH.forever.UpdateSearchButton)
+    end
+end
 
 local function processReplicateResults()
     local scanGeneration = ahSession.scanGeneration
@@ -2382,6 +2405,11 @@ local function processReplicateResults()
                 end
             end
         end
+        RXPCData.itemUpgradeAHScan = {
+            createdAt = RXPData.itemUpgradeAHReplicateAt or time(),
+            level = maxLevel,
+            listings = CopyTable(ahSession.scanData)
+        }
         finishAHScan(false)
     end
 
@@ -2390,7 +2418,14 @@ end
 
 function addon.itemUpgrades.AH.forever:Setup()
     addon.itemUpgrades.AH:RegisterEvent("REPLICATE_ITEM_LIST_UPDATE", function()
-        replicateReceivedAt = time()
+        if ahSession.isScanning and not replicateTimeout then return end
+
+        local now = time()
+        if GetNumReplicateItems() > 0 and (not RXPData.itemUpgradeAHReplicateAt or
+            now - RXPData.itemUpgradeAHReplicateAt >= replicateCooldown) then
+            RXPData.itemUpgradeAHReplicateAt = now
+            if ahSession.displayFrame then self.UpdateSearchButton() end
+        end
         if not ahSession.sentQuery or not replicateTimeout then return end
 
         replicateTimeout:Cancel()
@@ -2405,21 +2440,36 @@ function addon.itemUpgrades.AH.forever.Scan(retries, maxRetries, scanGeneration)
         replicateTimeout = nil
     end
 
-    if replicateReceivedAt and time() - replicateReceivedAt < AHCacheTTL and GetNumReplicateItems() > 0 then
-        ahSession.sentQuery = true
-        processReplicateResults()
-        return
+    if RXPData.itemUpgradeAHReplicateAt then
+        local snapshotAge = time() - RXPData.itemUpgradeAHReplicateAt
+        if snapshotAge < AHCacheTTL and GetNumReplicateItems() > 0 then
+            ahSession.sentQuery = true
+            processReplicateResults()
+            return
+        elseif snapshotAge < replicateCooldown then
+            finishAHScan(false, L("Full auction scan unavailable"))
+            return
+        end
     end
 
     if not C_AuctionHouse.IsThrottledMessageSystemReady() then
-        C_Timer.After(1, function() addon.itemUpgrades.AH:Scan(retries + 1, maxRetries, scanGeneration) end)
+        if retries < 10 then
+            C_Timer.After(1, function() addon.itemUpgrades.AH:Scan(retries + 1, maxRetries, scanGeneration) end)
+        else
+            finishAHScan(false, L("Full auction scan unavailable"))
+        end
         return
     end
 
     ahSession.sentQuery = true
     replicateTimeout = C_Timer.NewTimer(45, function()
         replicateTimeout = nil
-        if ahSession.isScanning and scanGeneration == ahSession.scanGeneration then finishAHScan(true) end
+        if not ahSession.isScanning or scanGeneration ~= ahSession.scanGeneration then return end
+        if ahSession.cancelRequested then
+            finishAHScan(true)
+        else
+            finishAHScan(false, L("Full auction scan unavailable"))
+        end
     end)
     ReplicateItems()
 end
@@ -2435,8 +2485,38 @@ function addon.itemUpgrades.AH.forever.SearchForBuyoutItem(itemData)
 end
 
 function addon.itemUpgrades.AH.forever.CreateTab(ah, attachment)
+    ah.forever.UpdateSearchButton()
+    local searchButton = ahSession.displayFrame.searchButton
+    searchButton:SetMotionScriptsWhileDisabled(true)
+    searchButton:HookScript("OnEnter", function(this)
+        if this:IsEnabled() or ahSession.isScanning or not RXPData.itemUpgradeAHReplicateAt then return end
+
+        local remaining = RXPData.itemUpgradeAHReplicateAt + replicateCooldown - time()
+        if remaining <= 0 then return end
+
+        GameTooltip:SetOwner(this, "ANCHOR_TOP")
+        GameTooltip:SetText(fmt(L("Full scan on cooldown (%s remaining)"),
+                                fmt("%d:%02d", math.floor(remaining / 60), remaining % 60)))
+        GameTooltip:Show()
+    end)
+    searchButton:HookScript("OnLeave", function(this)
+        if GameTooltip:IsOwned(this) then GameTooltip:Hide() end
+    end)
+
     ahSession.displayFrame:HookScript("OnShow", function()
-        if next(ahSession.scanData) then ah:Analyze() end
+        ah.forever.UpdateSearchButton()
+
+        local cache = getAHCache()
+        if cache then
+            ahSession.bestAnalysis = cache.results
+        elseif not next(ahSession.scanData) then
+            local scan = RXPCData.itemUpgradeAHScan
+            if scan and scan.level == addon.player.level and time() - scan.createdAt < AHCacheTTL then
+                ahSession.scanData = CopyTable(scan.listings)
+            end
+        end
+
+        if not cache and next(ahSession.scanData) then ah:Analyze() end
         ah:DisplayEmbeddedResults()
     end)
     ahSession.displayFrame:HookScript("OnHide", function()
