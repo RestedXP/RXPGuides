@@ -2487,13 +2487,17 @@ function addon.itemUpgrades.AH.forever.Scan(retries, maxRetries, scanGeneration)
 end
 
 function addon.itemUpgrades.AH.forever.SearchForBuyoutItem(itemData)
-    if not _G.AuctionHouseFrame:IsShown() or not itemData.ItemKey then return end
+    if not _G.AuctionHouseFrame:IsShown() then return end
 
-    if C_AuctionHouse.GetItemKeyInfo(itemData.ItemKey) then
-        _G.AuctionHouseFrame:SelectBrowseResult({itemKey = itemData.ItemKey, minPrice = itemData.BuyoutMoney})
-    else
+    if not C_AuctionHouse.IsThrottledMessageSystemReady() then
         ahSession.displayFrame.buyButton:Enable()
+        return
     end
+
+    _G.AuctionHouseFrame:SetDisplayMode(_G.AuctionHouseFrameDisplayMode.Buy)
+    _G.AuctionHouseFrame:GetCategoriesList():SetSelectedCategory(nil)
+    _G.AuctionHouseFrame:SetSearchText(itemData.Name)
+    _G.AuctionHouseFrame.SearchBar:StartSearch()
 end
 
 function addon.itemUpgrades.AH.forever.CreateTab(ah, attachment)
