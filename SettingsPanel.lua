@@ -2721,7 +2721,8 @@ function addon.settings:CreateAceOptionsPanel()
                         width = optionsWidth,
                         order = 5.6,
                         hidden = function()
-                            return not addon.itemUpgrades or addon.game == "CATA"
+                            return not addon.itemUpgrades or addon.game == "CATA" or
+                                (addon.game == "FOREVER" and not self.profile.enableBetaFeatures)
                         end,
                         disabled = function()
                             return not (self.profile.enableTips and

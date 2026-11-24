@@ -1445,6 +1445,7 @@ local function clearAHSelection()
     if ahSession.selectedRow then ahSession.selectedRow:UnlockHighlight() end
 
     ahSession.selectedRow = nil
+    ahSession.buyoutSearch = nil
 
     if ahSession.displayFrame and ahSession.displayFrame.buyButton then ahSession.displayFrame.buyButton:Disable() end
 end
@@ -1511,10 +1512,11 @@ local function resetAHScanProgress()
     ahSession.scanStatus.totalAuctions = 0
     ahSession.cancelRequested = false
     ahSession.isScanning = false
+    if ahSession.displayFrame and ahSession.displayFrame.SearchStatus then ahSession.displayFrame.SearchStatus:Hide() end
 end
 
 local function setAHScanButton(text, enabled)
-    local button = ahSession.displayFrame and ahSession.displayFrame.scanButton
+    local button = ahSession.displayFrame and ahSession.displayFrame.searchButton
     if not button then return end
 
     button:SetText(text)
@@ -1624,21 +1626,12 @@ function addon.itemUpgrades.AH:GET_ITEM_INFO_RECEIVED(_, itemID, success)
     end)
 end
 
-function addon.itemUpgrades.AH:SearchForSelectedItem()
-    local itemData = ahSession.selectedRow and ahSession.selectedRow.nodeData
-    if not itemData then return end
-
-    return self:SearchForBuyoutItem(itemData)
-end
-
 function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
     if not (itemData and itemData.Name) then return end
 
     if self.forever then return self.forever.SearchForBuyoutItem(itemData) end
 
     if not _G.AuctionFrame:IsShown() then return end
-
-    -- print("SearchForBuyoutItem", itemData.itemLink)
 
     if _G.BrowseResetButton then _G.BrowseResetButton:Click() end
 
@@ -1651,33 +1644,20 @@ function addon.itemUpgrades.AH:SearchForBuyoutItem(itemData)
 
     -- Sort to make item very likely on first page
     -- sortTable, sortColumn, oppositeOrder
-    _G.AuctionFrame_SetSort("list", "bid", false);
+    _G.AuctionFrame_SetSort("list", "bid", false)
     _G.AuctionFrameTab1:Click()
 
     -- Pre-populates UI, so let user retry if server overloaded
     if CanSendAuctionQuery() then
-        session.sentQuery = true
+        ahSession.buyoutSearch = itemData
         _G.AuctionFrameBrowse_Search()
     end
 
     -- Results get processed async by AUCTION_ITEM_LIST_UPDATE
 end
 
-function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
-    if not itemData then
-        -- print("FindItemAuction error: itemData nil")
-        return
-    end
-    if not (itemData.ItemID and itemData.ItemLink and itemData.BuyoutMoney) then return end
-
-    local resultCount, totalAuctions = GetNumAuctionItems("list")
-
-    if resultCount == 0 then
-        -- print("FindItemAuction no results, recursive =", recursive)
-        return
-    end
-
-    -- print("FindItemAuction", itemData.Name, resultCount)
+local function findItemAuction(itemData)
+    local resultCount = GetNumAuctionItems("list")
     local itemLink, buyoutPrice, itemID
 
     for i = 1, resultCount do
@@ -1685,25 +1665,17 @@ function addon.itemUpgrades.AH:FindItemAuction(itemData, recursive)
 
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
         _, _, _, _, _, _, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ = GetAuctionItemInfo("list", i)
-        -- print("Evaluating", i, itemLink, buyoutPrice)
-
         if itemID == itemData.ItemID and itemLink == itemData.ItemLink and buyoutPrice == itemData.BuyoutMoney then
+            ahSession.buyoutSearch = nil
             SetSelectedAuctionItem("list", i)
-            return i
+            return
         end
-
     end
 
-    -- Rely on BrowseNextPageButton:IsEnabled() for easy pagination handling
-    if _G.BrowseNextPageButton:IsEnabled() then
-        -- If next button is enabled, and we're down here; then auction not found
-        -- Additionally, the next page button is disabled on final page, so no need to track count
+    if resultCount > 0 and _G.BrowseNextPageButton:IsEnabled() then
         _G.BrowseNextPageButton:Click()
-        return self:FindItemAuction(itemData, true)
     else
-        -- If next page not enabled, and we're here; then no results at all
-        -- print("FindItemAuction no matches in", totalAuctions, "results")
-        return nil
+        ahSession.buyoutSearch = nil
     end
 end
 
@@ -1711,9 +1683,9 @@ end
 -- Scrolling, initial population
 -- Blizzard's standard auction house view overcomes this problem by reacting to AUCTION_ITEM_LIST_UPDATE and re-querying the items.
 function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
-    -- TODO prevent overwriting/blocking full scan
-    if ahSession.selectedRow and ahSession.selectedRow.nodeData then
-        self:FindItemAuction(ahSession.selectedRow.nodeData)
+    if ahSession.buyoutSearch then
+        findItemAuction(ahSession.buyoutSearch)
+        return
     end
 
     if not ahSession.sentQuery then return end
@@ -1747,7 +1719,7 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
     end
 
     local itemLink
-    local name, texture, level, buyoutPrice, itemID
+    local name, texture, level, buyoutPrice, itemID, scanData
 
     for i = 1, resultCount do
         itemLink = GetAuctionItemLink("list", i)
@@ -1755,23 +1727,18 @@ function addon.itemUpgrades.AH:AUCTION_ITEM_LIST_UPDATE()
         -- name, texture, count, quality, canUse, level, levelColHeader, minBid, minIncrement, buyoutPrice, bidAmount, highBidder, bidderFullName, owner, ownerFullName, saleStatus, itemId, hasAllInfo = GetAuctionItemInfo(type, index)
         name, texture, _, _, _, level, _, _, _, buyoutPrice, _, _, _, _, _, _, itemID, _ = GetAuctionItemInfo("list", i)
 
-        -- TODO if not hasAllInfo
-        if ahSession.scanData[itemLink] then
-            if buyoutPrice < ahSession.scanData[itemLink].lowestPrice then
-                ahSession.scanData[itemLink].lowestPrice = buyoutPrice
+        if itemLink and itemID and buyoutPrice and buyoutPrice > 0 then
+            scanData = ahSession.scanData[itemLink]
+            if not scanData or buyoutPrice < scanData.lowestPrice then
+                ahSession.scanData[itemLink] = {
+                    name = name,
+                    lowestPrice = buyoutPrice,
+                    itemID = itemID,
+                    level = level,
+                    itemIcon = texture
+                }
             end
-        else
-            ahSession.scanData[itemLink] = {
-                name = name,
-                lowestPrice = buyoutPrice,
-                itemID = itemID,
-                level = level,
-                scanType = ahSession.scanType, -- TODO propagate scanType for proper filters
-                itemIcon = texture
-            }
         end
-
-        -- print("scan", itemLink, itemID, hasAllInfo, buyoutPrice)
     end
 
     ahSession.sentQuery = false
@@ -2020,8 +1987,6 @@ function addon.itemUpgrades.AH:Analyze()
     RXPCData.itemUpgradeAHCache = cache
 end
 
-local function isAHV2Enabled() return addon.v2 and addon.v2:IsEnabled() end
-
 local function setKindIcon(frame, image)
     if not frame or not image then
         -- print("setKindIcon: error", frame, image)
@@ -2031,7 +1996,7 @@ local function setKindIcon(frame, image)
     if not frame.KindIcon then frame.KindIcon = frame:CreateTexture(nil, 'OVERLAY') end
 
     frame.KindIcon:ClearAllPoints()
-    if isAHV2Enabled() then
+    if addon.v2 and addon.v2:IsEnabled() then
         frame.KindIcon:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", 4, -4)
         frame.KindIcon:SetSize(20, 20)
     else
@@ -2129,8 +2094,6 @@ local auctionHouseRowHandlers = {
     OnClick = onAuctionHouseRowClick
 }
 
-local auctionHouseHandlers = {OnBuyout = function() addon.itemUpgrades.AH:SearchForSelectedItem() end}
-
 local function initializeAuctionHouseRow(row, data)
     if not data then
         row:Hide()
@@ -2195,7 +2158,7 @@ local function getAuctionHouseBlockData(data, theme, upgradeIcon, valueIcon)
 end
 
 local function createEmbeddedGui(attachment)
-    ahSession.displayFrame = addon.ui.v2:CreateAuctionHouse(auctionHouseHandlers).frame
+    ahSession.displayFrame = addon.ui.v2:CreateAuctionHouse().frame
 
     ahSession.displayFrame:SetParent(attachment)
     ahSession.displayFrame:SetPoint("TOPLEFT", attachment, "TOPLEFT")
@@ -2204,9 +2167,7 @@ local function createEmbeddedGui(attachment)
     ahSession.scanStatus.baseTitle = fmt("%s - %s", addon.title, _G.MINIMAP_TRACKING_AUCTIONEER)
     ahSession.displayFrame.Title:SetText(ahSession.scanStatus.baseTitle)
 
-    ahSession.displayFrame.scanButton = ahSession.displayFrame.searchButton
-
-    ahSession.displayFrame.scanButton:SetScript("OnClick", function(this)
+    ahSession.displayFrame.searchButton:SetScript("OnClick", function()
         if ahSession.isScanning then
             ahSession.cancelRequested = true
             setAHScanButton(_G.CANCEL, false)
@@ -2223,6 +2184,8 @@ local function createEmbeddedGui(attachment)
         ahSession.isScanning = true
         if C_AuctionHouse and attachment == _G.AuctionHouseFrame then
             attachment:SetTitle(ahSession.scanStatus.baseTitle)
+            ahSession.displayFrame.SearchStatus:SetText(_G.SEARCHING)
+            ahSession.displayFrame.SearchStatus:Show()
         else
             ahSession.displayFrame.Title:SetText(ahSession.scanStatus.baseTitle)
         end
@@ -2232,6 +2195,10 @@ local function createEmbeddedGui(attachment)
         addon.itemUpgrades.AH:Scan(0)
     end)
 
+    ahSession.displayFrame.buyButton:SetScript("OnClick", function(this)
+        this:Disable()
+        addon.itemUpgrades.AH:SearchForBuyoutItem(ahSession.selectedRow and ahSession.selectedRow.nodeData)
+    end)
     ahSession.displayFrame.buyButton:Disable()
 end
 
@@ -2283,7 +2250,8 @@ function addon.itemUpgrades.AH:CreateEmbeddedGui()
         ahSession.displayFrame:Hide()
     end
 
-    hooksecurefunc(_G, "AuctionFrameTab_OnClick", function(button, ...)
+    hooksecurefunc(_G, "AuctionFrameTab_OnClick", function(button)
+        ahSession.buyoutSearch = nil
         if not button.isRXP then
             tabButton:Deselected()
 
@@ -2310,7 +2278,7 @@ StaticPopupDialogs["RXPNoUpgradesFound"] = {
 
 function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     self:CreateEmbeddedGui()
-    if not ahSession.displayFrame or not ahSession.displayFrame:GetParent():IsShown() then return end
+    if not ahSession.displayFrame or not ahSession.displayFrame:IsVisible() then return end
 
     if not ahSession.bestAnalysis then
         local cache = getAHCache()
@@ -2331,7 +2299,7 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     results:PauseLayout()
 
     local theme = addon.v2:GetAuctionHouseTheme()
-    local useV2Icons = isAHV2Enabled()
+    local useV2Icons = addon.v2 and addon.v2:IsEnabled()
     local upgradeIcon = useV2Icons and theme.upgradeIcon or theme.legacyUpgradeIcon
     local valueIcon = useV2Icons and theme.valueIcon or theme.legacyValueIcon
     local blockData, itemBlock
@@ -2377,7 +2345,12 @@ end
 function addon.itemUpgrades.AH.forever.ProcessBrowseResults(event, results)
     if not ahSession.sentQuery then return end
 
-    if event == "AUCTION_HOUSE_BROWSE_RESULTS_UPDATED" then results = C_AuctionHouse.GetBrowseResults() end
+    if event == "AUCTION_HOUSE_BROWSE_RESULTS_UPDATED" then
+        results = C_AuctionHouse.GetBrowseResults()
+        ahSession.scanResults = #results
+    else
+        ahSession.scanResults = ahSession.scanResults + #results
+    end
 
     local itemLink, scanData
     for _, result in ipairs(results) do
@@ -2395,6 +2368,7 @@ function addon.itemUpgrades.AH.forever.ProcessBrowseResults(event, results)
     if ahSession.cancelRequested or C_AuctionHouse.HasFullBrowseResults() then
         finishAHScan(ahSession.cancelRequested)
     else
+        ahSession.displayFrame.SearchStatus:SetText(fmt("%s (%d)", _G.SEARCHING, ahSession.scanResults))
         ahSession.sentQuery = false
         ahSession.scanPage = ahSession.scanPage + 1
         addon.itemUpgrades.AH:Scan(0)

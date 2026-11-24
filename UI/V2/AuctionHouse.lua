@@ -301,12 +301,8 @@ function addon.ui.v2:RegisterRXPV2AuctionHouseItemBlock()
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
 end
 
-function addon.ui.v2:CreateAuctionHouse(handlers)
-    if self.auctionHouse then
-        self.auctionHouse:SetHandlers(handlers)
-
-        return self.auctionHouse
-    end
+function addon.ui.v2:CreateAuctionHouse()
+    if self.auctionHouse then return self.auctionHouse end
 
     self:RegisterRXPV2AuctionHouseItemBlock()
     local Type, Version = C_AuctionHouse and "RXPV2ForeverAH" or "RXPV2AuctionHouse", 1
@@ -336,6 +332,7 @@ function addon.ui.v2:CreateAuctionHouse(handlers)
 
         ["OnRelease"] = function(this)
             if C_AuctionHouse then
+                this.frame.SearchStatus:Hide()
                 this.frame.ResultsInset:ClearAllPoints()
                 this.frame.ItemNameHeader:ClearAllPoints()
                 this.frame.PriceHeader:ClearAllPoints()
@@ -346,14 +343,12 @@ function addon.ui.v2:CreateAuctionHouse(handlers)
 
             this.Results = nil
             this.frame.Results = nil
-            this.frame.OnBuyout = nil
+            this.frame.buyButton:SetScript("OnClick", nil)
 
             if addon.ui.v2.auctionHouse == this then addon.ui.v2.auctionHouse = nil end
 
             this.frame:Hide()
-        end,
-
-        ["SetHandlers"] = function(this, handlers) this.frame.OnBuyout = handlers.OnBuyout end
+        end
     }
 
     local function Constructor()
@@ -373,6 +368,11 @@ function addon.ui.v2:CreateAuctionHouse(handlers)
                 frame.ResultsInset.Background:SetTexture(stockBackground:GetTexture())
                 frame.ResultsInset.Background:SetTexCoord(stockBackground:GetTexCoord())
             end
+
+            frame.SearchStatus = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+            frame.SearchStatus:SetFont(addon.v2:GetTheme().font, 13, "")
+            frame.SearchStatus:SetPoint("TOP", 0, -120)
+            frame.SearchStatus:Hide()
         end
 
         local title = frame:CreateFontString(nil, "BACKGROUND")
@@ -410,14 +410,6 @@ function addon.ui.v2:CreateAuctionHouse(handlers)
         local buyButton = createAuctionHousePanelButton(frame, _G.BUYOUT)
         buyButton:SetPoint("RIGHT", closeButton, "LEFT", C_AuctionHouse and -4 or 0, 0)
 
-        buyButton:SetScript("OnClick", function(this)
-            this:Disable()
-
-            local handler = this:GetParent().OnBuyout
-
-            if handler then handler() end
-        end)
-
         local searchButton = createAuctionHousePanelButton(frame, _G.SEARCH)
         searchButton:SetPoint("RIGHT", buyButton, "LEFT", C_AuctionHouse and -4 or 0, 0)
 
@@ -433,7 +425,6 @@ function addon.ui.v2:CreateAuctionHouse(handlers)
 
     AceGUI:RegisterWidgetType(Type, Constructor, Version)
     self.auctionHouse = AceGUI:Create(Type)
-    self.auctionHouse:SetHandlers(handlers)
     self.auctionHouse.frame:Hide()
 
     return self.auctionHouse
