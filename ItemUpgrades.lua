@@ -1840,36 +1840,35 @@ local function calculate(itemLink, scanData)
     scanData.ratio = 10.0 -- Empty slot value
     scanData.comparisons = addon.itemUpgrades:CompareItemWeight(itemLink) or {}
 
-    local rwpc
-    local highestRWPC, highestRatio, hightestWeightIncrease = -1, 0, 0
+    local ratio, rwpc, weightIncrease
+    local highestRWPC, highestRatio, highestWeightIncrease = -1, 0, 0
     -- TODO account for multi-slot comparisons, show both
     for _, compareData in ipairs(scanData.comparisons) do
         -- To avoid complicated comparison, use ratio as a multiplier
-        if compareData.Ratio then
-            rwpc = (scanData.totalWeight * compareData.Ratio) / scanData.lowestPrice
+        ratio = compareData.Ratio
+        weightIncrease = compareData.WeightIncrease
+        if ratio then
+            rwpc = (scanData.totalWeight * ratio) / scanData.lowestPrice
         else -- Treat an empty slot as 1:1 upgrade weight
-            rwpc = scanData.totalWeight / scanData.lowestPrice
-            compareData.Ratio = scanData.totalWeight
+            weightIncrease = scanData.totalWeight
+            if itemData.dpsWeights then
+                weightIncrease = addon.itemUpgrades:CalculateWeaponWeight(itemData, compareData.SlotCompared)
+            end
+            ratio = weightIncrease
+            rwpc = weightIncrease / scanData.lowestPrice
         end
 
         if rwpc > highestRWPC then highestRWPC = rwpc end
 
-        if compareData.Ratio > highestRatio then
-            highestRatio = compareData.Ratio
-
-            -- Include flat EP for AH Scanning UI
-            if compareData.WeightIncrease then -- Item upgrade
-                hightestWeightIncrease = compareData.WeightIncrease
-            else -- Empty slot upgrade
-                hightestWeightIncrease = scanData.totalWeight
-            end
-            -- print(itemLink, scanData.totalWeight, hightestWeightIncrease)
+        if ratio > highestRatio then
+            highestRatio = ratio
+            highestWeightIncrease = weightIncrease
         end
     end
 
     scanData.ratio = highestRatio
     scanData.relativeWeightPerCopper = highestRWPC
-    scanData.weightIncrease = hightestWeightIncrease
+    scanData.weightIncrease = highestWeightIncrease
 end
 
 local function analyzeSlotUpgrade(scanData, itemLink, bAS)
