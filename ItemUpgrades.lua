@@ -1333,6 +1333,11 @@ function addon.itemUpgrades:CompareItemWeight(itemLink, tooltip)
         -- print("Stack2.2, CompareItemWeight pairs(slotNamesToCompare)", slotId or itemEquipLoc)
         equippedItemLink = GetInventoryItemLink("player", slotId or itemEquipLoc)
 
+        if comparedData.itemEquipLoc == "INVTYPE_2HWEAPON" and
+            (not equippedItemLink or select(4, GetItemInfoInstant(equippedItemLink)) ~= "INVTYPE_2HWEAPON") then
+            return statComparisons
+        end
+
         if comparedData.itemEquipLoc == "INVTYPE_SHIELD" or comparedData.itemEquipLoc == "INVTYPE_HOLDABLE" then
             -- Prevent shields from showing up as "Empty: " upgrades when using 2H
             ratio, weightIncrease, debug = self:GetEquippedComparisonRatio(equippedItemLink, comparedData, slotId)
@@ -1469,6 +1474,13 @@ local function getAHCache()
 
                 return
             end
+        end
+    end
+
+    if cache.results and cache.results["INVTYPE_2HWEAPON"] then
+        equippedItemLink = cache.gear[_G.INVSLOT_MAINHAND]
+        if not equippedItemLink or select(4, GetItemInfoInstant(equippedItemLink)) ~= "INVTYPE_2HWEAPON" then
+            cache.results["INVTYPE_2HWEAPON"] = nil
         end
     end
 
