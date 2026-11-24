@@ -2277,32 +2277,33 @@ function addon.itemUpgrades.AH:DisplayEmbeddedResults(showEmptyResults)
     local useV2Icons = addon.v2 and addon.v2:IsEnabled()
     local upgradeIcon = useV2Icons and theme.upgradeIcon or theme.legacyUpgradeIcon
     local valueIcon = useV2Icons and theme.valueIcon or theme.legacyValueIcon
-    local blockData, itemBlock
-    local hasResults = false
-
-    for _, data in pairs(ahSession.bestAnalysis) do
-        if data.budget.itemLink or data.best.itemLink then
-            hasResults = true
-
-            -- print("DisplayEmbeddedResults:", data.slotName, "processing upgrades")
-            blockData = getAuctionHouseBlockData(data, theme, upgradeIcon, valueIcon)
-
-            if blockData.best or blockData.budget then
-                itemBlock = AceGUI:Create("RXPV2AuctionHouseItemBlock")
-                itemBlock:SetFullWidth(true)
-                itemBlock:SetResultCount(blockData.best and blockData.budget and 2 or 1)
-
-                initializeAuctionHouseBlock(itemBlock, blockData)
-
-                results:AddChild(itemBlock)
+    local orderedResults, weaponCount = {}, 0
+    for equipSlot, data in pairs(ahSession.bestAnalysis) do
+        if data.best.itemLink or data.budget.itemLink then
+            if IsWeaponSlot(equipSlot) then
+                weaponCount = weaponCount + 1
+                tinsert(orderedResults, weaponCount, data)
+            else
+                tinsert(orderedResults, data)
             end
         end
+    end
+
+    local blockData, itemBlock
+    for _, data in ipairs(orderedResults) do
+        blockData = getAuctionHouseBlockData(data, theme, upgradeIcon, valueIcon)
+        itemBlock = AceGUI:Create("RXPV2AuctionHouseItemBlock")
+        itemBlock:SetFullWidth(true)
+        itemBlock:SetResultCount(blockData.best and blockData.budget and 2 or 1)
+
+        initializeAuctionHouseBlock(itemBlock, blockData)
+        results:AddChild(itemBlock)
     end
 
     results:ResumeLayout()
     results:DoLayout()
 
-    if showEmptyResults and not hasResults then _G.StaticPopup_Show("RXPNoUpgradesFound") end
+    if showEmptyResults and #orderedResults == 0 then _G.StaticPopup_Show("RXPNoUpgradesFound") end
 end
 
 if addon.game ~= "FOREVER" or not C_AuctionHouse then return end
