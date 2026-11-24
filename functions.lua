@@ -1534,7 +1534,35 @@ function addon.functions.turnin(self, ...)
         end
 
         if step.active then
-            if (element.skipIfMissing and not IsOnQuest(id)) or (element.skipIfIncomplete and not IsQuestComplete(id)) then
+            -- On WoW: Forever, a turn-in marker is only useful when the quest is
+            -- actually complete in the player's quest log. Upstream guides can
+            -- contain stale turn-in steps (including quests gated by breadcrumbs),
+            -- so skip these before the player follows the route to the NPC.
+            local skipForeverTurnIn = addon.game == "FOREVER" and not isComplete
+                and not (IsOnQuest(id) and IsQuestComplete(id))
+            if skipForeverTurnIn then
+                if not element.missingQuestNotified then
+                    local questName = element.title ~= "" and element.title or tostring(id)
+                    addon.comms.PrettyPrint(L("Skipping turn-in for %s (%d): quest is not in your log or is not complete."), questName, id)
+                    local quest = db and db.QueryQuest and db:GetQuest(id)
+                    if quest and db.IsDoable and not db:IsDoable(id) then
+                        local requiredQuests = GetRequiredQuests(quest)
+                        if #requiredQuests > 0 then
+                            local requiredNames = {}
+                            for _, requiredId in ipairs(requiredQuests) do
+                                local requiredQuest = db:GetQuest(requiredId)
+                                requiredNames[#requiredNames + 1] = requiredQuest and requiredQuest.name or tostring(requiredId)
+                            end
+                            addon.comms.PrettyPrint("%s: %s", L("Missing pre-requisites"), table.concat(requiredNames, ", "))
+                        end
+                    end
+                    element.missingQuestNotified = true
+                end
+                element.tooltipText = L("Step skipped: Quest not in log or not complete")
+                addon.SetElementComplete(self, true)
+                ProcessItems(false, step, id, true)
+                addon.UpdateItemFrame()
+            elseif (element.skipIfMissing and not IsOnQuest(id)) or (element.skipIfIncomplete and not IsQuestComplete(id)) then
                 addon.SetElementComplete(self, true)
                 ProcessItems(false, step, id, true)
                 addon.UpdateItemFrame()
