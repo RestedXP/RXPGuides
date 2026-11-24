@@ -18,6 +18,7 @@ local GetItemInfoInstant = C_Item and C_Item.GetItemInfoInstant or _G.GetItemInf
 local GetItemLinkByGUID = C_Item and C_Item.GetItemLinkByGUID
 local IsEquippedItem = C_Item and C_Item.IsEquippedItem or _G.IsEquippedItem
 local GetItemStats = C_Item and C_Item.GetItemStats or _G.GetItemStats
+local GetCombatRatingBonusForCombatRatingValue = _G.GetCombatRatingBonusForCombatRatingValue
 local UnitLevel = _G.UnitLevel
 local GetInventoryItemLink = _G.GetInventoryItemLink
 local AddTooltipPostCall = _G.TooltipDataProcessor and _G.TooltipDataProcessor.AddTooltipPostCall
@@ -345,6 +346,16 @@ local OUT_OF_BAND_KEYS = {
     ['STAT_SPELLDAMAGE'] = {_G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE}
 }
 
+if addon.game == "FOREVER" then
+    OUT_OF_BAND_KEYS['ITEM_MOD_ATTACK_POWER_SHORT'] = OUT_OF_BAND_KEYS['ITEM_MOD_ATTACK_POWER_SHORT'] .. "%s*%.?%s*$"
+    OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] = nil
+    -- Some crit effects are only available in the tooltip.
+    OUT_OF_BAND_KEYS['ITEM_MOD_CRIT_RATING_SHORT'] = {
+        "Improves your chance to get a [Cc]ritical [Ss]trike with [Ss]pells by (%d+[.,]?%d*)%%%s*%.?%s*$",
+        "Improves your chance to get a [Cc]ritical [Ss]trike with [Mm]elee and [Rr]anged [Aa]ttacks by (%d+[.,]?%d*)%%%s*%.?%s*$"
+    }
+end
+
 local WEAPON_SLOT_MAP = {
     ['2H'] = {['Slot'] = {["INVTYPE_2HWEAPON"] = _G.INVSLOT_MAINHAND}},
     ['MH'] = {['Slot'] = {["INVTYPE_WEAPON"] = _G.INVSLOT_MAINHAND, ["INVTYPE_WEAPONMAINHAND"] = _G.INVSLOT_MAINHAND}},
@@ -392,7 +403,9 @@ if locale == 'frFR' then
     OUT_OF_BAND_KEYS['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+,%d+)"
 
     OUT_OF_BAND_KEYS['ITEM_MOD_CRIT_RATING_SHORT'] = "%s+Augmente vos chances d'infliger un coup critique de (%d+)%%."
-    OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] = "%s+Augmente vos chances de toucher de (%d+)%%."
+    if OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] then
+        OUT_OF_BAND_KEYS['ITEM_MOD_HIT_RATING_SHORT'] = "%s+Augmente vos chances de toucher de (%d+)%%."
+    end
     OUT_OF_BAND_KEYS['ITEM_MOD_DODGE_RATING_SHORT'] = "%s+Augmente vos chances d'esquiver une attaque de (%d+)%%."
     OUT_OF_BAND_KEYS['ITEM_MOD_PARRY_RATING_SHORT'] = "%s+Augmente vos chances de parer une attaque de (%d+)%%."
 end
@@ -1102,6 +1115,18 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
         return
     end
 
+    -- Forever returns rating points, while its stat weights use percentage points.
+    if addon.game == "FOREVER" then
+        if stats.ITEM_MOD_HIT_RATING_SHORT then
+            stats.ITEM_MOD_HIT_RATING_SHORT =
+                GetCombatRatingBonusForCombatRatingValue(_G.CR_HIT_MELEE, stats.ITEM_MOD_HIT_RATING_SHORT)
+        end
+        if stats.ITEM_MOD_CRIT_RATING_SHORT then
+            stats.ITEM_MOD_CRIT_RATING_SHORT =
+                GetCombatRatingBonusForCombatRatingValue(_G.CR_CRIT_MELEE, stats.ITEM_MOD_CRIT_RATING_SHORT)
+        end
+    end
+
     local totalWeight = 0
     local statWeight, tooltipTextLines
 
@@ -1142,28 +1167,27 @@ function addon.itemUpgrades:GetItemData(itemLink, tooltip)
 
     if not tooltipTextLines then return end
 
-    local match1, match2
+    local match1, match2, patterns
 
     -- Will be more stat weighted keys than tooltip lines
     -- Use larger dataset as parent loop
     for key, regex in pairs(session.statsRegexes) do
-        -- Skip if stat already came from API call
         if not stats[key] then
+            patterns = type(regex) == "table" and regex
 
             -- Check all tooltip lines for regex matches
             for _, line in ipairs(tooltipTextLines) do
                 -- print("Checking tooltip line", i, line)
 
-                if type(regex) == "table" then
-                    for _, r in ipairs(regex) do
+                if patterns then
+                    for _, r in ipairs(patterns) do
                         -- print("Parsing table", i, line, "for", r)
                         match1, match2 = smatch(line, r)
 
                         -- Only expect one number per line, so ignore if double match
                         if match1 and not match2 then
                             -- print("Extracted multi-match", tonumber(match1), "from", line)
-                            -- If no match, try EU , -> . for numbers
-                            stats[key] = tonumber(match1) or tonumber((match1:gsub(",", "%.", 1)))
+                            stats[key] = tonumber(match1) or tonumber((match1:gsub(",", ".", 1)))
                         end
                     end
                 else
