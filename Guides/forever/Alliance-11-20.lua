@@ -842,10 +842,11 @@ RXPGuides.RegisterGuide([[
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
 #name 14-16 Darkshore
-#displayname 11-16 Darkshore/Loch Modan << NightElf
+#displayname 11-14 Darkshore << NightElf
 #displayname 13-16 Darkshore << Dwarf Hunter/Human Hunter/Skyborne Hunter
 #displayname 15-16 Darkshore << !NightElf/!Dwarf/!Human/!Skyborne Hunter
-#next 16-19 Darkshore
+#next 16-19 Darkshore << !NightElf
+#next 14-16 Loch Modan << NightElf
 
 
 -- #displayname 11-16 Darkshore << NightElf/Dwarf Hunter !SoD
@@ -2278,609 +2279,7 @@ step << NightElf
     .isQuestComplete 963
 step
     #label DarkshoreEndNE --hidden step for #include
-step  << NightElf
-    #include 15-16 Loch Modan
-step << NightElf
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .accept 1138 >> Accept Fruit of the Sea
-    .target Gubber Blump
-step
-    #optional
-    #completewith next
-    +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
-    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
-step
-    .goto 1439/1,438.72,7077.74--c:1439,38.213,28.754
---  .goto 1439,38.234,28.796
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Silver Dawning's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Silver Dawning's Lockbox|r inside|r
-    .complete 982,1 --Silver Dawning's Lockbox (1)
-    .isOnQuest 982
-step
-    #label MistVeil
-    .goto 1439/1,349.11,7133.07--c:1439,39.581,27.487
---  .goto 1439,39.629,27.462
-    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
-    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
-    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Mist Veil's Lockbox|r from outside the boat|r
-    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Mist Veil's Lockbox|r inside|r
-    .complete 982,2 --Mist Veil Lockbox (1)
-    .isOnQuest 982
-step
-    #optional
-    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4723 >> Accept Beached Sea Creature
-    .isOnQuest 982
 
-
-----End of NE >1.49x catchup (everyone 1x) Final boat section----
-
-
-step
-    #optional
-    #completewith BoatSeaCreature
-    .goto 1439/1,47.22,6861.90,0--c:1439,44.190,33.697
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .mob Moonstalker
-    .isOnQuest 1002
-step
-    #optional
-    #completewith BoatSeaCreature
-    .goto 1439/1,91.83,6883.29,0--c:1439,43.509,33.207
-    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
-    .collect 5469,5,2178,1 --Strider Meat (5)
-    .mob Foreststrider Fledgling
-step
-    #optional
-    #completewith BoatSeaCreature
-    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
-    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
-    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups you still need to reach 50 cooking|r
-    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
-    .mob Young Moonkin
-    .mob Raging Moonkin
-    .mob Moonkin Oracle
-    .mob Moonkin
-    .subzoneskip 446 --BashalAran
-    .subzoneskip 452 --Mists Edge
---   .skill cooking,<10,1
-    .skill cooking,50,1 --XX Shows if cooking skill is between 10-50
-step
-    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
-    >>Click the |cRXP_PICK_Mysterious Red Crystal|r
-    >>|cRXP_WARN_Be careful of the 2 groups of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
-    .turnin 4812 >> Turn in As Water Cascades
-    .accept 4813 >> Accept The Fragments Within
-step
-    #label BashalEnd
-    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
-    .turnin 957 >> Turn in Bashal'Aran
-    .isOnQuest 957
-    .target Asterion
-step
-    #optional
-    #completewith CrabTurtle
-    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
-    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
-    .complete 2138,1 -- Rabid Thistle Bear slain (20)
-    .mob Rabid Thistle Bear
-step
-    #label BoatSeaCreature
-    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
-    >>Click the |cRXP_PICK_Beached Sea Creature|r
-    .accept 4723 >> Accept Beached Sea Creature
-step
-    #optional
-    #completewith CrabTurtle
-    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r and |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    >>|cRXP_WARN_Be careful|r |cRXP_ENEMY_Foreststrider Fledglings|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .mob Foreststrider Fledgling
-    .mob Foreststrider
-step
-    #optional
-    #completewith CrabTurtle
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .mob Moonstalker
-    .isOnQuest 1002
-step
-    #label CrabTurtle
-    .goto 1439/1,47.88,7433.800
-    >>Click the |cRXP_PICK_Beached Sea Turtle|r
-    .accept 4725 >> Accept Beached Sea Turtle
-step
-    #optional
-    #completewith next
-    .goto 1439/1,-6.10,7401.31,0--c:1439,45.004,21.344
-    .goto 1439/1,-203.18,7398.47,0--c:1439,48.013,21.409
-    .goto 1439/1,-312.37,7352.23,0--c:1439,49.680,22.468
-    .goto 1439/1,-6.10,7401.31,70,0--c:1439,45.004,21.344
-    .goto 1439/1,-36.49,7445.33,70,0--c:1439,45.468,20.336
-    .goto 1439/1,-160.15,7435.59,70,0--c:1439,47.356,20.559
-    .goto 1439/1,-203.18,7398.47,70,0--c:1439,48.013,21.409
-    .goto 1439/1,-242.42,7427.47,70,0--c:1439,48.612,20.745
-    .goto 1439/1,-312.37,7352.23,70,0--c:1439,49.680,22.468
-    .goto 1439/1,-288.33,7273.50,70,0--c:1439,49.313,24.271
-    >>Kill |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
-    >>|cRXP_WARN_Consider skipping some of the level 17|r |cRXP_ENEMY_Reef Crawlers|r |cRXP_WARN_if you get decent drops.|r |cRXP_WARN_You don't have to complete this quest now|r
-    >>|cRXP_WARN_Be careful as they can cast|r |T132155:0|t[Muscle Tear] |cRXP_WARN_an instant attack dealing 30-55 damage|r
-    .complete 1138,1 --Fine Crab Chunks (6)
-    .mob Reef Crawler
-step
-    .goto 1439/1,-386.39,7219.830
-    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
-    .complete 4762,1 --Cliffspring River Sample (1)
-    .use 12350
-step
-    #optional
-    #completewith next
-    .goto 1439/1,-406.56,7299.74,20,0--c:1439,51.118,23.670
-    .goto 1439/1,-417.70,7261.14,12 >>Travel up the ramp toward the |cRXP_PICK_Buzzbox 323|r--c:1439,51.288,24.554
-    .isQuestComplete 1002
-step
-    #optional
-    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
-    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
-    .turnin 1002 >> Turn in Buzzbox 323
-    .accept 1003 >> Accept Buzzbox 525
-    .isQuestComplete 1002
-step
-    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
-    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
-    .accept 1003 >> Accept Buzzbox 525
-    .isQuestTurnedIn 1002
-
-
-----Start of Hunter/Druid 1x early Althalaxx section (for money+xp)----
-
-
-step << Hunter/Druid
-    #optional
-    #completewith Tower1
-    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
-    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
-    .complete 2138,1 -- Rabid Thistle Bear slain (20)
-    .mob Rabid Thistle Bear
-step << Hunter/Druid
-    #optional
-    #completewith Tower1
-    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .mob Foreststrider
-step << Hunter/Druid
-    #optional
-    #completewith Tower1
-    >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker
-    .isOnQuest 1002
-step << Hunter/Druid
-    #optional
-    #completewith Tower1
-    .goto 1439/1,-406.56,7299.74,20,0--c:1439,51.118,23.670
-    .goto 1439/1,-430.93,7269.26,30,0--c:1439,51.490,24.368
-    .goto 1439/1,-659.06,7246.69,15 >>Travel toward |cRXP_FRIENDLY_Balthule Shadowstrike|r--c:1439,54.973,24.885
-    .isQuestAvailable 1002 << !NightElf/Hunter
-step << Hunter/Druid
-    #label Tower1
-    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
-    .turnin 965 >> Turn in The Tower of Althalaxx
-    .accept 966 >> Accept The Tower of Althalaxx
-    .target Balthule Shadowstrike
-step << Hunter/Druid
-    #loop
-    .goto 1439/1,-675.96,7175.82,0--c:1439,55.231,26.508
-    .goto 1439/1,-739.04,7151.23,0--c:1439,56.194,27.071
-    .goto 1439/1,-729.41,7172.41,0--c:1439,56.047,26.586
-    .goto 1439/1,-675.96,7175.82,50,0--c:1439,55.231,26.508
-    .goto 1439/1,-685.00,7153.24,50,0--c:1439,55.369,27.025
-    .goto 1439/1,-710.81,7167.65,50,0--c:1439,55.763,26.695
-    .goto 1439/1,-714.22,7155.56,50,0--c:1439,55.815,26.972
-    .goto 1439/1,-739.04,7151.23,50,0--c:1439,56.194,27.071
-    .goto 1439/1,-778.08,7127.22,50,0--c:1439,56.790,27.621
-    .goto 1439/1,-810.04,7184.42,50,0--c:1439,57.278,26.311
-    .goto 1439/1,-794.85,7187.78,50,0--c:1439,57.046,26.234
-    .goto 1439/1,-761.97,7171.89,50,0--c:1439,56.544,26.598
-    .goto 1439/1,-729.41,7172.41,50,0--c:1439,56.047,26.586
-    .goto 1439/1,-709.50,7201.71,50,0--c:1439,55.743,25.915
-    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for their |cRXP_LOOT_Worn Parchments|r
-    .complete 966,1 --Worn Parchment (4)
-    .mob Dark Strand Fanatic
-step << Hunter/Druid
-    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
-    .turnin 966 >> Turn in The Tower of Althalaxx
-    .accept 967 >> Accept The Tower of Althalaxx
-    .target Balthule Shadowstrike
-step << Hunter/Druid
-    #loop
-    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
-    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
-    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
-    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
-    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
-    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
-    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
-    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
-    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
-    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
-    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
-    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
-    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
-    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
-    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
-    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
-    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
-    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
-    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .mob Foreststrider
-
-----End of Hunter/Druid 1x and SoD Warrior early Althalaxx section (for money+xp)----
-
-step
-    #optional
-    #completewith CliffCave
-    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
-    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
-    .complete 2138,1 -- Rabid Thistle Bear slain (20)
-    .mob Rabid Thistle Bear
-step
-    #optional
-    #completewith CliffCave
-    >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker
-    .isOnQuest 1002
-step
-    #optional
-    #loop
-    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
-    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
-    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
-    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
-    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
-    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
-    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
-    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
-    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
-    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
-    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
-    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
-    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
-    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
-    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
-    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
-    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
-    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
-    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .mob Foreststrider
-    .itemcount 5469,3 --Strider Meat (3+)
-----XX Start from West Side if 3+
-step
-    #loop
-    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
-    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
-    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
-    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
-    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
-    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
-    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
-    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
-    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
-    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
-    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
-    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
-    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
-    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
-    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
-    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
-    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
-    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
-    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    .collect 5469,5,2178,1 -- Strider Meat (5)
-    .mob Foreststrider
-step
-    #optional
-    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
-    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
-    .turnin 1002 >> Turn in Buzzbox 323
-    .accept 1003 >> Accept Buzzbox 525
-    .isQuestComplete 1002
-    .subzoneskip 456,1 --Only turnin if you're nearby (Cliffspring River)
-step
-    #optional
-    #completewith next
-    #label CliffCave
-    .goto 1439/1,-656.51,6904.52,20,0--c:1439,54.934,32.721
-    .goto 1439/1,-667.91,6866.13,40 >> Travel to the Cliffspring River Cave--c:1439,55.108,33.600
-step << Druid
-    .goto 1439/1,-660.18,6874.43
-    >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
-    .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
-    .isOnQuest 6122
-step
-    #label CaveMushrooms
-    .goto 1439/1,-690.31,6751.29,12,0
-    .goto 1439/1,-706.68,6748.23,12,0
-    .goto 1439/1,-719.13,6787.530,12,0
-    >>Loot the |cRXP_LOOT_Scaber Stalks|r and a |cRXP_LOOT_Death Cap|r on the ground
-    >>|cRXP_WARN_Stay on the upper section. If there is not a |cRXP_LOOT_Death Cap|r at the end of the top side, drop down and get one from the southern room below|r
-    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast|r |T135836:0|t[Aqua Jet] |cRXP_WARN_(Ranged Instant: Deals damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
-    .complete 947,1 --Scaber Stalk (5)
-    .goto 1439/1,-663.45,6877.49,8,0
-    .goto 1439/1,-679.17,6848.67,8,0
-    .goto 1439/1,-666.73,6819.41,8,0
-    .goto 1439/1,-680.48,6779.67,8,0
-    .goto 1439/1,-663.45,6877.49,8,0
-    .goto 1439/1,-679.17,6848.67,8,0
-    .goto 1439/1,-666.73,6819.41,8,0
-    .goto 1439/1,-680.48,6779.67,8,0
-    .goto 1439/1,-663.45,6877.49
-    .complete 947,2 --Death Cap (1)
-    .goto 1439/1,-685.72,6746.49
--- step << NightElf !Druid
---     #softcore
---     #optional
---     #completewith CavetoAuber
---     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
---     .target Spirit Healer
-step << skip --logout skip
-    #optional
-    #label MushroomLS
-    #completewith CavetoAuber
-    .goto 1439/1,-658.48,6825.26--c:1439,54.964,34.536
-    .goto 1439/1,209.99,6739.19,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r--c:1439,41.705,36.507
-step
-    #completewith CavetoAuber
-    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
-    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
-    .collect 5469,5,2178,1 --Strider Meat (5)
-    .mob Foreststrider Fledgling
-    .isQuestAvailable 2178
-step
-    #requires MushroomLS
-    #completewith CavetoAuber
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 -- Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .mob Moonstalker
-    .isOnQuest 1002
-step
-    #optional
-    #label CavetoAuber
-    #completewith CliffspringEnd
-    .subzone 442 >> Travel to Auberdine
-step
-    #label CliffspringEnd
-    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
-    .turnin 4762 >> Turn in The Cliffspring River
-    .accept 4763 >> Accept The Blackwood Corrupted
-    .target Thundris Windweaver
-step
-    .goto 1439/1,472.32,6556.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
-    .accept 2178 >> Accept Easy Strider Living
-    .turnin 2178 >> Turn in Easy Strider Living
-    .target Alanndarian Nightsong
-    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
-    .itemcount 5469,5 -- strider meat (5)
-step << Druid
-    #optional
-    .isOnQuest 6122
-    .goto 1439/1,472.32,6556.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
-    .turnin 6122 >> Turn in The Principal Source
-    .accept 6123 >> Accept Gathering the Cure
-    .target Alanndarian Nightsong
-step << Druid
-    #optional
-    .isQuestTurnedIn 6123
-    .goto 1439/1,472.32,6556.100
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
-    .accept 6123 >> Accept Gathering the Cure
-    .target Alanndarian Nightsong
-step << !NightElf
-    #optional
-    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
-    .accept 729 >> Accept The Absent Minded Prospector
-    .target Archaeologist Hollee
-    .isQuestComplete 2138
-step
-    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
-    .turnin 982 >> Turn in Deep Ocean, Vast Sea
-    .target Gorbold Steelhand
-step << !NightElf
-    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
-    .accept 729 >> Accept The Absent Minded Prospector
-    .target Archaeologist Hollee
-step
-    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
-    .turnin 2138 >> Turn in Cleansing of the Infected
-    .accept 2139 >> Accept Tharnariun's Hope
-    .target Tharnariun Treetender
-    .isQuestComplete 2138
-step
-    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
-    .accept 2139 >> Accept Tharnariun's Hope
-    .target Tharnariun Treetender
-    .isQuestTurnedIn 2138
-step
-    .goto 1439/1,472.32,6438.64
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    >>|cRXP_WARN_Choose the|r |T135641:0|t[Curvewood Dagger] |cRXP_WARN_as you should try to save a|r |T135641:0|t[Dagger] |cRXP_WARN_for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r << Rogue
-    .turnin 4813 >> Turn in The Fragments Within
-    .target Sentinel Glynda Nal'Shea
-step
-    .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
-    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
-    .use 12346
-    .isOnQuest 4763
-step
-    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
-    .turnin 947 >> Turn in Cave Mushrooms
-    .accept 948 >> Accept Onu
-    .target Barithras Moonshade
-step
-    .goto 1439/1,504.41,6402.39
-    >>Click the |cRXP_PICK_Wanted Poster|r
-    .accept 4740 >> Accept WANTED: Murkdeep!
--- step << NightElf !Druid
---     .goto 1439,36.767,44.285
---     #optional
---     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
---     .accept 6343 >> Accept Return to Nessa
---     .isQuestAvailable 6343
---     .target Laird
-step
-    #optional
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
-    .turnin 1138 >> Turn in Fruit of the Sea
-    .target Gubber Blump
-    .isQuestComplete 1138
-step
-    #optional
-    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
-    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4723 >> Turn in Beached Sea Creature
-    .turnin 4725 >> Turn in Beached Sea Turtle
-    .target Gwennyth Bly'Leggonde
-    .isOnQuest 4723
-step
-    #optional
-    #label End
-    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
-    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
-    .turnin 4725 >> Turn in Beached Sea Turtle
-    .target Gwennyth Bly'Leggonde
-
-
-----Start of Druid Quest section----
-
-
-step << Druid
-    #optional
-    .goto 1439/1,328.28,5942.80,0--c:1439,39.899,54.745
-    .goto 1439/1,309.81,5878.00,0--c:1439,40.181,56.229
-    .goto 1439/1,369.68,6014.98,50,0--c:1439,39.267,53.092
-    .goto 1439/1,337.78,5999.61,50,0--c:1439,39.754,53.444
-    .goto 1439/1,306.34,5961.14,50,0--c:1439,40.234,54.325
-    .goto 1439/1,328.28,5942.80,50,0--c:1439,39.899,54.745
-    .goto 1439/1,309.81,5878.00,50,0--c:1439,40.181,56.229
-    .goto 1439/1,361.75,5858.70,50,0--c:1439,39.388,56.671
-    .goto 1439/1,374.66,5871.32,50,0--c:1439,39.191,56.382
-    .goto 1439/1,324.48,5918.57,50,0--c:1439,39.957,55.300
-    .goto 1439/1,365.42,5971.88,50,0--c:1439,39.332,54.079
-    .xp 16 >> Grind to level 16
-    .mob Blackwood Pathfinder
-    .mob Blackwood Windtalker
-step << Skyborne Druid
-    .goto 1439/1,766.22,6591.78--c:1439,33.213,39.883
-    .zone Teldrassil >> Take the boat to Darnassus
-    .zoneskip Darnassus
-step << Skyborne Druid
-    .goto 1438/1,841.56,8640.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
-    .fp Teldrassil >> Get the Teldrassil Flight Path
-    .target Vesprystus
-step << NightElf Druid
-    #optional
-    #completewith DruidLesson
-    .goto 1439/1,561.66,6343.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
-    .fly Teldrassil >> Fly to Teldrassil
-    .target Caylais Moonfeather
-step << NightElf Druid
-    #optional
-    .goto 1438/1,950.52,8694.07
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
-    .turnin 6343 >> Turn in Return to Nessa
-    .target Nessa Shadowsong
-step << Druid
-    #optional
-    #label DruidLesson
-    #completewith next
-    .goto 1438/1,965.80,8780.95
-    .zone Darnassus >> Take the purple portal into Darnassus
-step << Druid
-    .goto 1457/1,2563.98,10179.00
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
-    .accept 26 >> Accept A Lesson to Learn
-    .trainer >> Train your class spells
-    .target Mathrengyl Bearwalker
-step << Druid
-    #optional
-    #completewith next
-    .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
-step << NightElf Druid
-    .goto 1438/1,2607.86,9641.94
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
-    .accept 730 >> Accept Trouble In Darkshore?
-    .target Chief Archaeologist Greywhisker
-step << Druid
-    #optional
-	#completewith TotL
-	.cast 18960 >> Cast Teleport: Moonglade
-	.zoneskip Moonglade
-step << Druid
-    .goto 1450/1,-2676.22,8019.01
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
-    .turnin 26 >> Turn in A Lesson to Learn
-    .accept 29 >> Accept Trial of the Lake
-    .target Dendrite Starblaze
-step << Druid
-    .goto 1450/1,-2595.43,7697.24
-    >>Swim into Lake Elune'Ara
-    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
-    >>|cRXP_WARN_It may spawn in different locations underwater|r
-    .collect 15877,1,29,1 -- Shrine Bauble (1)
-step << Druid
-    #optional
-    #completewith next
-    .cast 18960 >> Cast Teleport: Moonglade
-    .itemcount 15877,1 -- Shrine Bauble (1)
-step << Druid
-    .goto 1450/1,-2212.85,7854.68
-    >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
-    .complete 29,1 --Complete the Trial of the Lake.
-    .use 15877
-step << Druid
-    #label TotL
-    .goto 1450/1,-2224.18,7874.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
-    .turnin 29 >> Turn in Trial of the Lake
-    .accept 272 >> Accept Trial of the Sea Lion
-    .target Tajarri
-step << Druid
-    #optional
-    .hs >> Hearth to Darkshore
-    .zoneskip Darkshore
-
-
-----End of Druid Quest section----
 
 
 ]])
@@ -2889,12 +2288,17 @@ RXPGuides.RegisterGuide([[
 #forever
 #disabledungeons
 #version 1
-<< Alliance
-#defaultfor None
+<< NightElf
 #group RestedXP Forever Guide (A)
 #subgroup Speedrun Guide 1-20
 --#groupid RXP-SRGCE-A1
-#name 15-16 Loch Modan
+#name 14-16 Loch Modan
+#next 16-19 Darkshore
+
+step
+    #completewith next
+    +|cRXP_WARN_This is a filler section designed to catch you up on XP so you can finish Darkshore after returning|r
+    >>You will be guided through Loch Modan quests to do so. |cRXP_WARN_Alternatively you could run the Hall of Thanes dungeon and skip the Loch section|r
 step
     #label SWBoat
     .goto 1439/1,929.100,6543.600
@@ -3759,6 +3163,607 @@ RXPGuides.RegisterGuide([[
 -- step << NightElf !Druid
 --     #label start
 --     .hs >> Hearth to Auberdine
+step << NightElf
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .accept 1138 >> Accept Fruit of the Sea
+    .target Gubber Blump
+step
+    #optional
+    #completewith next
+    +|cRXP_WARN_Press Escape, then go into -> Options -> Controls|r
+    >>|cRXP_WARN_Check "Enable Interact Key" and bind the "Interact with Target" option to a key|r
+step
+    .goto 1439/1,438.72,7077.74--c:1439,38.213,28.754
+--  .goto 1439,38.234,28.796
+    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
+    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
+    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Silver Dawning's Lockbox|r from outside the boat|r
+    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Silver Dawning's Lockbox|r inside|r
+    .complete 982,1 --Silver Dawning's Lockbox (1)
+    .isOnQuest 982
+step
+    #label MistVeil
+    .goto 1439/1,349.11,7133.07--c:1439,39.581,27.487
+--  .goto 1439,39.629,27.462
+    >>|cRXP_WARN_==BE AWARE OF YOUR BREATH METER==|r
+    >>|cRXP_WARN_Swim underwater to the outside of the back of the boat|r
+    >>|cRXP_WARN_On the arrow location, press your "Interact with Target" keybind to loot the |cRXP_LOOT_Mist Veil's Lockbox|r from outside the boat|r
+    >>|cRXP_WARN_If you don't want to do this, swim underwater into the bottom floor of the boat then loot the |cRXP_LOOT_Mist Veil's Lockbox|r inside|r
+    .complete 982,2 --Mist Veil Lockbox (1)
+    .isOnQuest 982
+step
+    #optional
+    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4723 >> Accept Beached Sea Creature
+    .isOnQuest 982
+
+
+----End of NE >1.49x catchup (everyone 1x) Final boat section----
+
+
+step
+    #optional
+    #completewith BoatSeaCreature
+    .goto 1439/1,47.22,6861.90,0--c:1439,44.190,33.697
+    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
+    .complete 1002,1 -- Moonstalker Fang (6)
+    .mob Moonstalker Runt
+    .mob Moonstalker
+    .isOnQuest 1002
+step
+    #optional
+    #completewith BoatSeaCreature
+    .goto 1439/1,91.83,6883.29,0--c:1439,43.509,33.207
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
+    .collect 5469,5,2178,1 --Strider Meat (5)
+    .mob Foreststrider Fledgling
+step
+    #optional
+    #completewith BoatSeaCreature
+    >>Kill |cRXP_ENEMY_Moonkin|r. Loot them for their |T132832:0|t|cRXP_LOOT_[Small Eggs]|r
+    >>|cRXP_WARN_This will be used to level your|r |T133971:0|t[Cooking] |cRXP_WARN_to 50 later|r
+    >>|cRXP_WARN_Don't go out of your way to farm this now. Just remember to hold onto the eggs and start thinking how many skillups you still need to reach 50 cooking|r
+    .collect 6889,50,90,1,0x20,cooking --Small Egg (10-49)
+    .mob Young Moonkin
+    .mob Raging Moonkin
+    .mob Moonkin Oracle
+    .mob Moonkin
+    .subzoneskip 446 --BashalAran
+    .subzoneskip 452 --Mists Edge
+--   .skill cooking,<10,1
+    .skill cooking,50,1 --XX Shows if cooking skill is between 10-50
+step
+    .goto 1439/1,-157.40,6207.81--c:1439,47.314,48.676
+    >>Click the |cRXP_PICK_Mysterious Red Crystal|r
+    >>|cRXP_WARN_Be careful of the 2 groups of 2 |cRXP_ENEMY_Raging Moonkins|r west of the |cRXP_PICK_Mysterious Red Crystal|r as the duos closest to each other are leashed together|r
+    .turnin 4812 >> Turn in As Water Cascades
+    .accept 4813 >> Accept The Fragments Within
+step
+    #label BashalEnd
+    .goto 1439/1,48.66,6748.71--c:1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
+    .turnin 957 >> Turn in Bashal'Aran
+    .isOnQuest 957
+    .target Asterion
+step
+    #optional
+    #completewith CrabTurtle
+    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
+    #label BoatSeaCreature
+    .goto 1439/1,197.15,6964.86--c:1439,41.901,31.339
+    >>Click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4723 >> Accept Beached Sea Creature
+step
+    #optional
+    #completewith CrabTurtle
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r and |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>|cRXP_WARN_Be careful|r |cRXP_ENEMY_Foreststrider Fledglings|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .mob Foreststrider Fledgling
+    .mob Foreststrider
+step
+    #optional
+    #completewith CrabTurtle
+    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
+    .complete 1002,1 -- Moonstalker Fang (6)
+    .mob Moonstalker Runt
+    .mob Moonstalker
+    .isOnQuest 1002
+step
+    #label CrabTurtle
+    .goto 1439/1,47.88,7433.800
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r
+    .accept 4725 >> Accept Beached Sea Turtle
+step
+    #optional
+    #completewith next
+    .goto 1439/1,-6.10,7401.31,0--c:1439,45.004,21.344
+    .goto 1439/1,-203.18,7398.47,0--c:1439,48.013,21.409
+    .goto 1439/1,-312.37,7352.23,0--c:1439,49.680,22.468
+    .goto 1439/1,-6.10,7401.31,70,0--c:1439,45.004,21.344
+    .goto 1439/1,-36.49,7445.33,70,0--c:1439,45.468,20.336
+    .goto 1439/1,-160.15,7435.59,70,0--c:1439,47.356,20.559
+    .goto 1439/1,-203.18,7398.47,70,0--c:1439,48.013,21.409
+    .goto 1439/1,-242.42,7427.47,70,0--c:1439,48.612,20.745
+    .goto 1439/1,-312.37,7352.23,70,0--c:1439,49.680,22.468
+    .goto 1439/1,-288.33,7273.50,70,0--c:1439,49.313,24.271
+    >>Kill |cRXP_ENEMY_Reef Crawlers|r. Loot them for their |cRXP_LOOT_Fine Crab Chunks|r
+    >>|cRXP_WARN_Consider skipping some of the level 17|r |cRXP_ENEMY_Reef Crawlers|r |cRXP_WARN_if you get decent drops.|r |cRXP_WARN_You don't have to complete this quest now|r
+    >>|cRXP_WARN_Be careful as they can cast|r |T132155:0|t[Muscle Tear] |cRXP_WARN_an instant attack dealing 30-55 damage|r
+    .complete 1138,1 --Fine Crab Chunks (6)
+    .mob Reef Crawler
+step
+    .goto 1439/1,-386.39,7219.830
+    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
+    .complete 4762,1 --Cliffspring River Sample (1)
+    .use 12350
+step
+    #optional
+    #completewith next
+    .goto 1439/1,-406.56,7299.74,20,0--c:1439,51.118,23.670
+    .goto 1439/1,-417.70,7261.14,12 >>Travel up the ramp toward the |cRXP_PICK_Buzzbox 323|r--c:1439,51.288,24.554
+    .isQuestComplete 1002
+step
+    #optional
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
+    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
+    .turnin 1002 >> Turn in Buzzbox 323
+    .accept 1003 >> Accept Buzzbox 525
+    .isQuestComplete 1002
+step
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
+    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
+    .accept 1003 >> Accept Buzzbox 525
+    .isQuestTurnedIn 1002
+
+
+----Start of Hunter/Druid 1x early Althalaxx section (for money+xp)----
+
+
+step << Hunter/Druid
+    #optional
+    #completewith Tower1
+    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step << Hunter/Druid
+    #optional
+    #completewith Tower1
+    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .mob Foreststrider
+step << Hunter/Druid
+    #optional
+    #completewith Tower1
+    >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
+    .complete 1002,1 -- Moonstalker Fang (6)
+    .mob Moonstalker
+    .isOnQuest 1002
+step << Hunter/Druid
+    #optional
+    #completewith Tower1
+    .goto 1439/1,-406.56,7299.74,20,0--c:1439,51.118,23.670
+    .goto 1439/1,-430.93,7269.26,30,0--c:1439,51.490,24.368
+    .goto 1439/1,-659.06,7246.69,15 >>Travel toward |cRXP_FRIENDLY_Balthule Shadowstrike|r--c:1439,54.973,24.885
+    .isQuestAvailable 1002 << !NightElf/Hunter
+step << Hunter/Druid
+    #label Tower1
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
+    .turnin 965 >> Turn in The Tower of Althalaxx
+    .accept 966 >> Accept The Tower of Althalaxx
+    .target Balthule Shadowstrike
+step << Hunter/Druid
+    #loop
+    .goto 1439/1,-675.96,7175.82,0--c:1439,55.231,26.508
+    .goto 1439/1,-739.04,7151.23,0--c:1439,56.194,27.071
+    .goto 1439/1,-729.41,7172.41,0--c:1439,56.047,26.586
+    .goto 1439/1,-675.96,7175.82,50,0--c:1439,55.231,26.508
+    .goto 1439/1,-685.00,7153.24,50,0--c:1439,55.369,27.025
+    .goto 1439/1,-710.81,7167.65,50,0--c:1439,55.763,26.695
+    .goto 1439/1,-714.22,7155.56,50,0--c:1439,55.815,26.972
+    .goto 1439/1,-739.04,7151.23,50,0--c:1439,56.194,27.071
+    .goto 1439/1,-778.08,7127.22,50,0--c:1439,56.790,27.621
+    .goto 1439/1,-810.04,7184.42,50,0--c:1439,57.278,26.311
+    .goto 1439/1,-794.85,7187.78,50,0--c:1439,57.046,26.234
+    .goto 1439/1,-761.97,7171.89,50,0--c:1439,56.544,26.598
+    .goto 1439/1,-729.41,7172.41,50,0--c:1439,56.047,26.586
+    .goto 1439/1,-709.50,7201.71,50,0--c:1439,55.743,25.915
+    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for their |cRXP_LOOT_Worn Parchments|r
+    .complete 966,1 --Worn Parchment (4)
+    .mob Dark Strand Fanatic
+step << Hunter/Druid
+    .goto 1439/1,-659.06,7246.69--c:1439,54.973,24.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
+    .turnin 966 >> Turn in The Tower of Althalaxx
+    .accept 967 >> Accept The Tower of Althalaxx
+    .target Balthule Shadowstrike
+step << Hunter/Druid
+    #loop
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
+    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .mob Foreststrider
+
+----End of Hunter/Druid 1x and SoD Warrior early Althalaxx section (for money+xp)----
+
+step
+    #optional
+    #completewith CliffCave
+    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r
+    >>|cRXP_WARN_Be careful as they cast|r |T135914:0|t[Rabies] |cRXP_WARN_if you dont kill them fast enough (Instant Melee: Reduces ALL health regen by 50% for 10 Minutes)|r
+    .complete 2138,1 -- Rabid Thistle Bear slain (20)
+    .mob Rabid Thistle Bear
+step
+    #optional
+    #completewith CliffCave
+    >>Kill |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
+    .complete 1002,1 -- Moonstalker Fang (6)
+    .mob Moonstalker
+    .isOnQuest 1002
+step
+    #optional
+    #loop
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
+    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .mob Foreststrider
+    .itemcount 5469,3 --Strider Meat (3+)
+----XX Start from West Side if 3+
+step
+    #loop
+    .goto 1439/1,-571.03,7195.64,0--c:1439,53.629,26.054
+    .goto 1439/1,-608.70,7002.59,0--c:1439,54.204,30.475
+    .goto 1439/1,-318.60,7008.01,0--c:1439,49.775,30.351
+    .goto 1439/1,-260.89,7175.56,0--c:1439,48.894,26.514
+    .goto 1439/1,-203.77,7145.64,60,0--c:1439,48.022,27.199
+    .goto 1439/1,-260.89,7175.56,60,0--c:1439,48.894,26.514
+    .goto 1439/1,-304.38,7194.20,60,0--c:1439,49.558,26.087
+    .goto 1439/1,-326.91,7132.02,60,0--c:1439,49.902,27.511
+    .goto 1439/1,-318.66,7093.51,60,0--c:1439,49.776,28.393
+    .goto 1439/1,-318.60,7008.01,60,0--c:1439,49.775,30.351
+    .goto 1439/1,-386.91,7002.11,60,0--c:1439,50.818,30.486
+    .goto 1439/1,-378.46,6935.96,60,0--c:1439,50.689,32.001
+    .goto 1439/1,-416.32,6922.07,60,0--c:1439,51.267,32.319
+    .goto 1439/1,-608.70,7002.59,60,0--c:1439,54.204,30.475
+    .goto 1439/1,-588.72,7082.81,60,0--c:1439,53.899,28.638
+    .goto 1439/1,-533.04,7111.41,60,0--c:1439,53.049,27.983
+    .goto 1439/1,-514.38,7184.38,60,0--c:1439,52.764,26.312
+    .goto 1439/1,-571.03,7195.64,60,0--c:1439,53.629,26.054
+    >>Kill |cRXP_ENEMY_Foreststriders|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    .collect 5469,5,2178,1 -- Strider Meat (5)
+    .mob Foreststrider
+step
+    #optional
+    .goto 1439/1,-417.70,7261.14--c:1439,51.288,24.554
+    >>Click the |cRXP_PICK_Buzzbox 323|r on the ground
+    .turnin 1002 >> Turn in Buzzbox 323
+    .accept 1003 >> Accept Buzzbox 525
+    .isQuestComplete 1002
+    .subzoneskip 456,1 --Only turnin if you're nearby (Cliffspring River)
+step
+    #optional
+    #completewith next
+    #label CliffCave
+    .goto 1439/1,-656.51,6904.52,20,0--c:1439,54.934,32.721
+    .goto 1439/1,-667.91,6866.13,40 >> Travel to the Cliffspring River Cave--c:1439,55.108,33.600
+step << Druid
+    .goto 1439/1,-660.18,6874.43
+    >>|cRXP_WARN_Use the|r |T134776:0|t[Empty Cliffspring Falls Sampler] |cRXP_WARN_in the water at the entrance of the Cliffspring River Cave|r
+    .complete 6122,1 --Filled Cliffspring Falls Sampler (1)
+    .isOnQuest 6122
+step
+    #label CaveMushrooms
+    .goto 1439/1,-690.31,6751.29,12,0
+    .goto 1439/1,-706.68,6748.23,12,0
+    .goto 1439/1,-719.13,6787.530,12,0
+    >>Loot the |cRXP_LOOT_Scaber Stalks|r and a |cRXP_LOOT_Death Cap|r on the ground
+    >>|cRXP_WARN_Stay on the upper section. If there is not a |cRXP_LOOT_Death Cap|r at the end of the top side, drop down and get one from the southern room below|r
+    >>|cRXP_WARN_Be careful as |cRXP_ENEMY_Stormscale Wave Riders|r cast|r |T135836:0|t[Aqua Jet] |cRXP_WARN_(Ranged Instant: Deals damage to nearby enemies and knocks them back) - make sure you're not in a position to get knocked off the upper level of the cave|r
+    .complete 947,1 --Scaber Stalk (5)
+    .goto 1439/1,-663.45,6877.49,8,0
+    .goto 1439/1,-679.17,6848.67,8,0
+    .goto 1439/1,-666.73,6819.41,8,0
+    .goto 1439/1,-680.48,6779.67,8,0
+    .goto 1439/1,-663.45,6877.49,8,0
+    .goto 1439/1,-679.17,6848.67,8,0
+    .goto 1439/1,-666.73,6819.41,8,0
+    .goto 1439/1,-680.48,6779.67,8,0
+    .goto 1439/1,-663.45,6877.49
+    .complete 947,2 --Death Cap (1)
+    .goto 1439/1,-685.72,6746.49
+-- step << NightElf !Druid
+--     #softcore
+--     #optional
+--     #completewith CavetoAuber
+--     .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+--     .target Spirit Healer
+step << skip --logout skip
+    #optional
+    #label MushroomLS
+    #completewith CavetoAuber
+    .goto 1439/1,-658.48,6825.26--c:1439,54.964,34.536
+    .goto 1439/1,209.99,6739.19,20 >>|cRXP_WARN_Jump on top of the rock on the top floor inside the cave. Position your character until it looks like they're floating, then perform a Logout Skip by logging out and back in|r--c:1439,41.705,36.507
+step
+    #completewith CavetoAuber
+    >>Kill |cRXP_ENEMY_Foreststrider Fledglings|r. Loot them for their |cRXP_LOOT_Strider Meat|r
+    >>|cRXP_WARN_Be careful as they|r |T132307:0|t[Flee] |cRXP_WARN_at <30% health|r
+    .collect 5469,5,2178,1 --Strider Meat (5)
+    .mob Foreststrider Fledgling
+    .isQuestAvailable 2178
+step
+    #requires MushroomLS
+    #completewith CavetoAuber
+    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r. Loot them for their |cRXP_LOOT_Moonstalker Fangs|r
+    .complete 1002,1 -- Moonstalker Fang (6)
+    .mob Moonstalker Runt
+    .mob Moonstalker
+    .isOnQuest 1002
+step
+    #optional
+    #label CavetoAuber
+    #completewith CliffspringEnd
+    .subzone 442 >> Travel to Auberdine
+step
+    #label CliffspringEnd
+    .goto 1439/1,492.36,6581.08--c:1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4762 >> Turn in The Cliffspring River
+    .accept 4763 >> Accept The Blackwood Corrupted
+    .target Thundris Windweaver
+step
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .accept 2178 >> Accept Easy Strider Living
+    .turnin 2178 >> Turn in Easy Strider Living
+    .target Alanndarian Nightsong
+    .skill cooking,<10,1 -- step only displays if skill is 10 or higher
+    .itemcount 5469,5 -- strider meat (5)
+step << Druid
+    #optional
+    .isOnQuest 6122
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .turnin 6122 >> Turn in The Principal Source
+    .accept 6123 >> Accept Gathering the Cure
+    .target Alanndarian Nightsong
+step << Druid
+    #optional
+    .isQuestTurnedIn 6123
+    .goto 1439/1,472.32,6556.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alanndarian Nightsong|r
+    .accept 6123 >> Accept Gathering the Cure
+    .target Alanndarian Nightsong
+step << !NightElf
+    #optional
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    .accept 729 >> Accept The Absent Minded Prospector
+    .target Archaeologist Hollee
+    .isQuestComplete 2138
+step
+    .goto 1439/1,445.66,6535.79--c:1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+step << !NightElf
+    .goto 1439/1,489.41,6506.36--c:1439,37.439,41.839
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    .accept 729 >> Accept The Absent Minded Prospector
+    .target Archaeologist Hollee
+step
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2138 >> Turn in Cleansing of the Infected
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+    .isQuestComplete 2138
+step
+    .goto 1439/1,397.45,6437.50--c:1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+    .isQuestTurnedIn 2138
+step
+    .goto 1439/1,472.32,6438.64
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|cRXP_WARN_Choose the|r |T135641:0|t[Curvewood Dagger] |cRXP_WARN_as you should try to save a|r |T135641:0|t[Dagger] |cRXP_WARN_for your|r |T132290:0|t[Poisons] |cRXP_WARN_quest later|r << Rogue
+    .turnin 4813 >> Turn in The Fragments Within
+    .target Sentinel Glynda Nal'Shea
+step
+    .goto 1439/1,467.08,6409.38
+    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
+    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
+    .use 12346
+    .isOnQuest 4763
+step
+    .goto 1439/1,497.08,6427.72--c:1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .turnin 947 >> Turn in Cave Mushrooms
+    .accept 948 >> Accept Onu
+    .target Barithras Moonshade
+step
+    .goto 1439/1,504.41,6402.39
+    >>Click the |cRXP_PICK_Wanted Poster|r
+    .accept 4740 >> Accept WANTED: Murkdeep!
+-- step << NightElf !Druid
+--     .goto 1439,36.767,44.285
+--     #optional
+--     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Laird|r
+--     .accept 6343 >> Accept Return to Nessa
+--     .isQuestAvailable 6343
+--     .target Laird
+step
+    #optional
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r
+    .turnin 1138 >> Turn in Fruit of the Sea
+    .target Gubber Blump
+    .isQuestComplete 1138
+step
+    #optional
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4723 >> Turn in Beached Sea Creature
+    .turnin 4725 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+    .isOnQuest 4723
+step
+    #optional
+    #label End
+    .goto 1439/1,537.75,6363.01,8,0--c:1439,36.701,45.122
+    .goto 1439/1,542.99,6342.31--c:1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4725 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+
+
+----Start of Druid Quest section----
+
+
+step << Druid
+    #optional
+    .goto 1439/1,328.28,5942.80,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,0--c:1439,40.181,56.229
+    .goto 1439/1,369.68,6014.98,50,0--c:1439,39.267,53.092
+    .goto 1439/1,337.78,5999.61,50,0--c:1439,39.754,53.444
+    .goto 1439/1,306.34,5961.14,50,0--c:1439,40.234,54.325
+    .goto 1439/1,328.28,5942.80,50,0--c:1439,39.899,54.745
+    .goto 1439/1,309.81,5878.00,50,0--c:1439,40.181,56.229
+    .goto 1439/1,361.75,5858.70,50,0--c:1439,39.388,56.671
+    .goto 1439/1,374.66,5871.32,50,0--c:1439,39.191,56.382
+    .goto 1439/1,324.48,5918.57,50,0--c:1439,39.957,55.300
+    .goto 1439/1,365.42,5971.88,50,0--c:1439,39.332,54.079
+    .xp 16 >> Grind to level 16
+    .mob Blackwood Pathfinder
+    .mob Blackwood Windtalker
+step << Skyborne Druid
+    .goto 1439/1,766.22,6591.78--c:1439,33.213,39.883
+    .zone Teldrassil >> Take the boat to Darnassus
+    .zoneskip Darnassus
+step << Skyborne Druid
+    .goto 1438/1,841.56,8640.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vesprystus|r
+    .fp Teldrassil >> Get the Teldrassil Flight Path
+    .target Vesprystus
+step << NightElf Druid
+    #optional
+    #completewith DruidLesson
+    .goto 1439/1,561.66,6343.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r
+    .fly Teldrassil >> Fly to Teldrassil
+    .target Caylais Moonfeather
+step << NightElf Druid
+    #optional
+    .goto 1438/1,950.52,8694.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nessa Shadowsong|r
+    .turnin 6343 >> Turn in Return to Nessa
+    .target Nessa Shadowsong
+step << Druid
+    #optional
+    #label DruidLesson
+    #completewith next
+    .goto 1438/1,965.80,8780.95
+    .zone Darnassus >> Take the purple portal into Darnassus
+step << Druid
+    .goto 1457/1,2563.98,10179.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mathrengyl Bearwalker|r
+    .accept 26 >> Accept A Lesson to Learn
+    .trainer >> Train your class spells
+    .target Mathrengyl Bearwalker
+step << Druid
+    #optional
+    #completewith next
+    .abandon 729 >> Abandon The Absent Minded Prospector to accept the quest Trouble In Darkshore?
+step << NightElf Druid
+    .goto 1438/1,2607.86,9641.94
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chief Archaeologist Greywhisker|r
+    .accept 730 >> Accept Trouble In Darkshore?
+    .target Chief Archaeologist Greywhisker
+step << Druid
+    #optional
+	#completewith TotL
+	.cast 18960 >> Cast Teleport: Moonglade
+	.zoneskip Moonglade
+step << Druid
+    .goto 1450/1,-2676.22,8019.01
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dendrite Starblaze|r
+    .turnin 26 >> Turn in A Lesson to Learn
+    .accept 29 >> Accept Trial of the Lake
+    .target Dendrite Starblaze
+step << Druid
+    .goto 1450/1,-2595.43,7697.24
+    >>Swim into Lake Elune'Ara
+    >>Open a |cRXP_PICK_Bauble Container|r. Loot it for a |T134125:0|t[Shrine Bauble]
+    >>|cRXP_WARN_It may spawn in different locations underwater|r
+    .collect 15877,1,29,1 -- Shrine Bauble (1)
+step << Druid
+    #optional
+    #completewith next
+    .cast 18960 >> Cast Teleport: Moonglade
+    .itemcount 15877,1 -- Shrine Bauble (1)
+step << Druid
+    .goto 1450/1,-2212.85,7854.68
+    >>|cRXP_WARN_Use the|r |T134125:0|t[Shrine Bauble] |cRXP_WARN_at the Shrine of Remulos tree|r
+    .complete 29,1 --Complete the Trial of the Lake.
+    .use 15877
+step << Druid
+    #label TotL
+    .goto 1450/1,-2224.18,7874.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tajarri|r
+    .turnin 29 >> Turn in Trial of the Lake
+    .accept 272 >> Accept Trial of the Sea Lion
+    .target Tajarri
+step << Druid
+    #optional
+    .hs >> Hearth to Darkshore
+    .zoneskip Darkshore
+
+----End of Druid Quest section----
+
 step
     .goto 1439/1,504.41,6402.39
     >>Click the |cRXP_PICK_Wanted Poster|r
