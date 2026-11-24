@@ -1818,7 +1818,7 @@ end
 
 local function calculate(itemLink, scanData)
     if scanData.lowestPrice <= 0 then return end
-    local itemDataLink = "item:" .. scanData.itemID
+    local itemDataLink = scanData.itemKey and itemLink or "item:" .. scanData.itemID
     local itemData = session.itemCache[itemDataLink] or
                      addon.itemUpgrades:GetItemData(itemDataLink)
 
@@ -2376,6 +2376,11 @@ function addon.itemUpgrades.AH.forever.ProcessBrowseResults(event, results)
     local itemLink, scanData
     for _, result in ipairs(results) do
         itemLink = "item:" .. result.itemKey.itemID
+
+        if result.itemKey.itemSuffix and result.itemKey.itemSuffix ~= 0 then
+            itemLink = itemLink .. ":0:0:0:0:0:" .. result.itemKey.itemSuffix
+        end
+
         scanData = ahSession.scanData[itemLink]
         if result.minPrice > 0 and (not scanData or result.minPrice < scanData.lowestPrice) then
             ahSession.scanData[itemLink] = {
