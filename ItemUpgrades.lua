@@ -305,7 +305,6 @@ local KEY_TO_TEXT = {
     ['ITEM_MOD_DEFENSE_SKILL_RATING_SHORT'] = _G.ITEM_MOD_DEFENSE_SKILL_RATING
 
     -- Data in GetItemStats
-    -- ['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] = _G.DPS_TEMPLATE,
     -- ['ITEM_MOD_SPELL_DAMAGE_DONE'] = { -- CANNOT BE TRUSTED, replaced by parsing STAT_SPELLDAMAGE
     --   _G.ITEM_MOD_SPELL_POWER, _G.ITEM_MOD_SPELL_DAMAGE_DONE
     -- },
@@ -408,6 +407,18 @@ if locale == 'frFR' then
     end
     OUT_OF_BAND_KEYS['ITEM_MOD_DODGE_RATING_SHORT'] = "%s+Augmente vos chances d'esquiver une attaque de (%d+)%%."
     OUT_OF_BAND_KEYS['ITEM_MOD_PARRY_RATING_SHORT'] = "%s+Augmente vos chances de parer une attaque de (%d+)%%."
+end
+
+if addon.game == "FOREVER" then
+    OUT_OF_BAND_KEYS['ITEM_MOD_CR_SPEED_SHORT'] = _G.ITEM_MOD_CR_SPEED_SHORT .. "%s+(%d+[.,]?%d*)"
+
+    if _G.DPS_TEMPLATE then
+        local prefix, suffix = _G.DPS_TEMPLATE:match("^(.-)%%[%d%.]*[fgs](.*)$")
+        if prefix then
+            OUT_OF_BAND_KEYS['ITEM_MOD_DAMAGE_PER_SECOND_SHORT'] =
+                prefix:gsub("([^%w%s])", "%%%1") .. "(%d+[.,]?%d*)" .. suffix:gsub("([^%w%s])", "%%%1")
+        end
+    end
 end
 
 local SPEC_MAP = {
@@ -2354,71 +2365,118 @@ if addon.game ~= "FOREVER" or not C_AuctionHouse then return end
 
 addon.itemUpgrades.AH.forever = {}
 
+local GetNumReplicateItems = C_AuctionHouse.GetNumReplicateItems
+local GetReplicateItemInfo = C_AuctionHouse.GetReplicateItemInfo
+local GetReplicateItemLink = C_AuctionHouse.GetReplicateItemLink
+local MakeItemKey = C_AuctionHouse.MakeItemKey
+local ReplicateItems = C_AuctionHouse.ReplicateItems
+
+local replicateReceivedAt, replicateTimeout
+
+local function processReplicateResults()
+    local scanGeneration = ahSession.scanGeneration
+    local total = GetNumReplicateItems()
+    local minLevel, maxLevel = math.max(1, addon.player.level - 5), addon.player.level
+    local listingGroups = {}
+    local processed = 0
+
+    local function processBatch()
+        if scanGeneration ~= ahSession.scanGeneration or not ahSession.isScanning then return end
+        if ahSession.cancelRequested then
+            finishAHScan(true)
+            return
+        end
+
+        local quality, usable, buyout, itemID, itemLink, equipSlot, classID, subclassID
+        local itemLevel, requiredLevel, suffix, groupKey, group
+        local batchEnd = math.min(processed + 1000, total)
+        for index = processed, batchEnd - 1 do
+            _, _, _, quality, usable, _, _, _, _, buyout, _, _, _, _, _, _, itemID = GetReplicateItemInfo(index)
+            if usable ~= false and quality and quality >= Enum.ItemQuality.Uncommon and
+                buyout and buyout > 0 and itemID and itemID > 0 then
+                _, _, _, equipSlot, _, classID, subclassID = GetItemInfoInstant(itemID)
+                if (classID == Enum.ItemClass.Armor or classID == Enum.ItemClass.Weapon) and
+                    session.equippableSlots[equipSlot] and IsUsableForClass(subclassID, equipSlot) then
+                    itemLink = GetReplicateItemLink(index)
+                    if itemLink then
+                        _, _, _, itemLevel, requiredLevel = GetItemInfo(itemLink)
+                        if requiredLevel and requiredLevel >= minLevel and requiredLevel <= maxLevel then
+                            -- The suffix follows the enchant and four gem fields.
+                            suffix = tonumber(itemLink:match("item:%d+:[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:([%-]?%d+)")) or 0
+                            groupKey = fmt("%d:%d:%d", itemID, itemLevel, suffix)
+                            group = listingGroups[groupKey]
+                            if not group then
+                                group = {itemKey = MakeItemKey(itemID, itemLevel, suffix)}
+                                listingGroups[groupKey] = group
+                            end
+                            tinsert(group, {itemLink = itemLink, lowestPrice = buyout})
+                        end
+                    end
+                end
+            end
+        end
+        processed = batchEnd
+
+        if processed < total then
+            ahSession.displayFrame.SearchStatus:SetText(fmt("%s %s / %s (%d/%d)", _G.SEARCHING,
+                                                           _G.AUCTION_CATEGORY_ARMOR, _G.AUCTION_CATEGORY_WEAPONS,
+                                                           processed, total))
+            C_Timer.After(0, processBatch)
+            return
+        end
+
+        local listing
+        for _, listings in pairs(listingGroups) do
+            table.sort(listings, function(first, second) return first.lowestPrice < second.lowestPrice end)
+            for listingIndex = 1, math.min(5, #listings) do
+                listing = listings[listingIndex]
+                if not ahSession.scanData[listing.itemLink] then
+                    listing.itemID = listings.itemKey.itemID
+                    listing.itemKey = listings.itemKey
+                    ahSession.scanData[listing.itemLink] = listing
+                end
+            end
+        end
+        finishAHScan(false)
+    end
+
+    processBatch()
+end
+
 function addon.itemUpgrades.AH.forever:Setup()
-    addon.itemUpgrades.AH:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_UPDATED", self.ProcessBrowseResults)
-    addon.itemUpgrades.AH:RegisterEvent("AUCTION_HOUSE_BROWSE_RESULTS_ADDED", self.ProcessBrowseResults)
-    addon.itemUpgrades.AH:RegisterEvent("AUCTION_HOUSE_BROWSE_FAILURE", function()
-        if ahSession.sentQuery then finishAHScan(true) end
+    addon.itemUpgrades.AH:RegisterEvent("REPLICATE_ITEM_LIST_UPDATE", function()
+        replicateReceivedAt = time()
+        if not ahSession.sentQuery or not replicateTimeout then return end
+
+        replicateTimeout:Cancel()
+        replicateTimeout = nil
+        processReplicateResults()
     end)
 end
 
-function addon.itemUpgrades.AH.forever.ProcessBrowseResults(event, results)
-    if not ahSession.sentQuery then return end
-
-    if event == "AUCTION_HOUSE_BROWSE_RESULTS_UPDATED" then
-        results = C_AuctionHouse.GetBrowseResults()
-        ahSession.scanResults = #results
-    else
-        ahSession.scanResults = ahSession.scanResults + #results
-    end
-
-    local itemLink, scanData
-    for _, result in ipairs(results) do
-        itemLink = "item:" .. result.itemKey.itemID
-
-        if result.itemKey.itemSuffix and result.itemKey.itemSuffix ~= 0 then
-            itemLink = itemLink .. ":0:0:0:0:0:" .. result.itemKey.itemSuffix
-        end
-
-        scanData = ahSession.scanData[itemLink]
-        if result.minPrice > 0 and (not scanData or result.minPrice < scanData.lowestPrice) then
-            ahSession.scanData[itemLink] = {
-                itemID = result.itemKey.itemID,
-                itemKey = result.itemKey,
-                lowestPrice = result.minPrice
-            }
-        end
-    end
-
-    if ahSession.cancelRequested or C_AuctionHouse.HasFullBrowseResults() then
-        finishAHScan(ahSession.cancelRequested)
-    else
-        ahSession.displayFrame.SearchStatus:SetText(fmt("%s (%d)", _G.SEARCHING, ahSession.scanResults))
-        ahSession.sentQuery = false
-        ahSession.scanPage = ahSession.scanPage + 1
-        addon.itemUpgrades.AH:Scan(0)
-    end
-end
-
 function addon.itemUpgrades.AH.forever.Scan(retries, maxRetries, scanGeneration)
+    if replicateTimeout then
+        replicateTimeout:Cancel()
+        replicateTimeout = nil
+    end
+
+    if replicateReceivedAt and time() - replicateReceivedAt < AHCacheTTL and GetNumReplicateItems() > 0 then
+        ahSession.sentQuery = true
+        processReplicateResults()
+        return
+    end
+
     if not C_AuctionHouse.IsThrottledMessageSystemReady() then
         C_Timer.After(1, function() addon.itemUpgrades.AH:Scan(retries + 1, maxRetries, scanGeneration) end)
         return
     end
 
     ahSession.sentQuery = true
-    if ahSession.scanPage > 0 then
-        C_AuctionHouse.RequestMoreBrowseResults()
-    else
-        C_AuctionHouse.SendBrowseQuery({
-            searchString = "",
-            minLevel = math.max(1, addon.player.level - 5),
-            maxLevel = addon.player.level,
-            filters = {Enum.AuctionHouseFilter.UsableOnly, Enum.AuctionHouseFilter.UncommonQuality},
-            itemClassFilters = {{classID = Enum.ItemClass.Armor}, {classID = Enum.ItemClass.Weapon}},
-            sorts = {}
-        })
-    end
+    replicateTimeout = C_Timer.NewTimer(45, function()
+        replicateTimeout = nil
+        if ahSession.isScanning and scanGeneration == ahSession.scanGeneration then finishAHScan(true) end
+    end)
+    ReplicateItems()
 end
 
 function addon.itemUpgrades.AH.forever.SearchForBuyoutItem(itemData)
