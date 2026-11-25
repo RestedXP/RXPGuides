@@ -1049,9 +1049,8 @@ step << !Rogue !Warrior
     #label VendorStep
     .goto 2521,44.72,45.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r.
-    >>|cRXP_BUY_Buy|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_from her|r << Shaman/Druid/Priest/Warlock/Paladin/Mage
-    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Shaman/Druid
-    >>|cRXP_WARN_Save 2 silver for your class spells!|r << Mage
+    *|cRXP_BUY_Buy 5 to 10|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_if needed and you can afford it|r. << Shaman/Druid/Priest/Warlock/Paladin/Mage
+    *|cRXP_WARN_Save 2 silver for your class spells|r. << Shaman/Druid/Mage
     .vendor 254358 >>|cRXP_WARN_Vendor trash|r.
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
@@ -1347,7 +1346,7 @@ step << Druid/Priest/Warlock/Mage
     .subzoneskip 16624,1 -- Shen'dar Village
     .goto 2521,44.72,45.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r.
-    .collect 1179,5 >>|cRXP_BUY_Buy 5|r |T132815:0|t[Ice Cold Milk], |cRXP_BUY_or 10 if you can afford them|r
+    .collect 1179,5 >>|cRXP_BUY_Buy enough|r |T132815:0|t[Ice Cold Milk] |cRXP_BUY_to have at least 5|r.
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
     *|cRXP_WARN_We need them for Cooking later|r.
@@ -1631,8 +1630,8 @@ step
     .isOnQuest 94413 << Alliance -- A Magical Affront
     .isQuestNotComplete 94413 << Alliance -- A Magical Affront
     .goto 2521,43.86,43.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices].
-    .vendor 251905 >>Vendor Trash
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r.
+    .vendor 251905 >>|cRXP_BUY_Buy enough|r |T134059:0|t[Mild Spices] |cRXP_BUY_to have at least 5|r.
     .collect 2678,5 -- Mild Spices
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs], |T133972:0|t[Strider Meat], or |T132889:0|t[Linen Cloth]. << Horde
@@ -2330,8 +2329,8 @@ step
     .isQuestComplete 92516 -- Hippogryph Harassment
     .isQuestComplete 92553 -- Restocking the Larders
     .goto 2521,43.851,43.848
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r and buy 5 |T134059:0|t[Mild Spices]
-    .vendor 251905 >>Vendor Trash
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r.
+    .vendor 251905 >>|cRXP_BUY_Buy enough|r |T134059:0|t[Mild Spices] |cRXP_BUY_to have at least 5|r.
     *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
     *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
     *|cRXP_WARN_We need them for Cooking later|r.
@@ -3080,16 +3079,10 @@ step
     .turnin 92553 >>Turn in Restocking the Larders
     .target Zerril Softbreeze::251905
 step
+    #optional
+    #completewith SkybornePart1End
     .isQuestComplete 92550 -- Havoc in the Highlands
-    .goto 2521,43.86,43.85
-    *|cRXP_WARN_Do not use|r |T132845:0|t[Walk on Air] |cRXP_WARN_during this step|r.
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zerril Softbreeze::251905|r.
-    .vendor 251905 >>Vendor Trash
-    .skipgossipid 137550
-    *Don't sell |T133970:0|t[Stringy Meat], |T132832:0|t[Small Eggs], or |T133972:0|t[Strider Meat]. << Alliance
-    *Don't sell |T132832:0|t[Small Eggs] and |T133972:0|t[Strider Meat]. << Horde
-    *|cRXP_WARN_We need them for Cooking later|r.
-    .target Zerril Softbreeze::251905
+    +|cRXP_WARN_Save|r |T132845:0|t[Walk on Air] |cRXP_WARN_for the next trip out of Shen'dar Village|r.
 step
     .train 2550,3 -- Cooking Trained
     .isQuestComplete 96646 -- Camping 101: Cooking
@@ -3198,7 +3191,6 @@ step
     .turnin 97969 >>Turn in Camping 101: Leatherworking
     .target Indari Sunseam::251993
 step
-    .subzoneskip 16624,1 -- Shen'dar Village
     .isQuestComplete 92550 -- Havoc in the Highlands
     .goto 2521,44.71,45.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Veena Vericloud::254358|r
