@@ -652,7 +652,14 @@ local function LoadGuide(guideData,n)
     else
         local guide, errorMsg, metadata, length, key, group, name
         local enabled = true
-        if RXPCData.guideDisabled[n] then
+        local cachedLen = RXPCData.guideDisabled[n]
+        if cachedLen and type(guideData.groupOrContent) == "string" and cachedLen ~= true
+            and cachedLen ~= guideData.groupOrContent:len() then
+            -- the guide at this index changed (different content length): the cached flag no longer applies
+            RXPCData.guideDisabled[n] = nil
+            cachedLen = nil
+        end
+        if cachedLen then
             enabled = false
         elseif not guideData.text then
             length = guideData.groupOrContent:len()

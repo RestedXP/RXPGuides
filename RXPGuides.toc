@@ -20,7 +20,7 @@
 ## Category-zhTW: 任務
 ## OptionalDeps: Questie, RXPGuides_Themes
 ## SavedVariables: RXPData, RXPDB, RXPSettings, RXPString
-## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings
+## SavedVariablesPerCharacter: RXPCData, RXPCTrackingData, RXPCComms, RXPCSettings, RXPDuoDB, RXPPrereqDB
 ## X-Curse-Project-ID: 486246
 ## X-Wago-ID: ZKbebq61
 
@@ -117,3 +117,12 @@ Guides/Talents/classic.xml [AllowLoadGameType vanilla,camelot]
 ItemUpgrades.lua [AllowLoadGameType tbc,vanilla,camelot,cata]
 
 CptStadicsVendorTreasures.lua [AllowLoadGameType vanilla,camelot,tbc,wrath]
+
+GroupLocale.lua
+GroupTranslations.lua
+Duo.lua
+TravelFlightMasters.lua
+Travel.lua
+AttuneRouteData.lua
+AttuneRoute.lua
+Prereq.lua

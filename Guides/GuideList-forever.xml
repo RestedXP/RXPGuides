@@ -44,4 +44,8 @@
 
 	<Script file="Guides/Classic-Attunements.lua"/>
 	<Script file="Guides/Classic-0.5.lua"/>
+    <Script file="Guides/forever/Attunements-Rogue-Alliance.lua"/>
+    <Script file="Guides/forever/Attunements-Alliance.lua"/>
+    <Script file="Guides/forever/Attunements-Rogue-Horde.lua"/>
+    <Script file="Guides/forever/Attunements-Horde.lua"/>
 </Ui>

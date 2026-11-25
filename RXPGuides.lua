@@ -318,7 +318,7 @@ function addon.GetStepQuestReward(titleOrId)
     if not element then return 0 end
     if not addon.settings.profile.enableQuestRewardAutomation then return 0,element end
 
-    return (element.reward >= 0 and element.reward or 0), element
+    return ((element.reward or -1) >= 0 and element.reward or 0), element
 end
 
 function addon.IsPlayerSpell(id)
