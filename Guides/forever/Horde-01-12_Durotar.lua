@@ -2534,7 +2534,7 @@ step
     .vendor >> Vendor trash and repair
     .target Trayexir
     .isOnQuest 808
-step
+step << !Rogue !Warrior
     .goto 1411/1,-4960.100,-791.400
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pa'zula|r
     .turnin 96873 >>Turn in A Pain in the Neck
@@ -3996,7 +3996,6 @@ step
     .target Hadric Harlson
     .isQuestComplete 96897
     .isQuestComplete 96898
-    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -4004,7 +4003,6 @@ step
     .turnin 96897 >>Turn in The Cult of the Damned
     .target Hadric Harlson
     .isQuestComplete 96897
-    .dungeon !ROL
 step
     #optional
     .goto 1420/0,54.500,1996.400
@@ -4020,7 +4018,6 @@ step
     .turnin 356 >>Turn in Rear Guard Patrol
     .target Deathguard Linnea
     .isQuestComplete 356
-    .dungeon !ROL
 step
     #label LinneaTurnin
     .goto 1420/0,73.800,2022.300

@@ -847,7 +847,7 @@ step
     .turnin 1492 >>Turn in Wharfmaster Dizzywig
     .turnin 890 >>Turn in The Missing Shipment
     .accept 892 >>Accept The Missing Shipment
-    --.accept 896 >>Accept Miner's Fortune
+    .accept 896 >>Accept Miner's Fortune << Tauren/Hunter/Orc Shaman/Troll Shaman
     .target Wharfmaster Dizzywig
 step
     .goto 1413/1,-3728.66,-835.29
@@ -2938,7 +2938,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sputtervalve|r
     .turnin 902 >>Turn in Samophlange
     .target Sputtervalve
-step << skip
+step << Tauren/Hunter/Orc Shaman/Troll Shaman
     .goto 1413/1,-3796.55,-985.28
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to  |cRXP_FRIENDLY_Dizzywig|r
     .turnin 896 >> Turn in Miner's Fortune

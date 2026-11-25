@@ -3928,7 +3928,7 @@ step
     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     *|cRXP_WARN_Watch for stealthed enemies in the apple orchard|r.
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
-    .mob Bandit Highwaymen::252820
+    .mob Bandit Highwayman::252820
     .use 263329 << Rogue -- Flutterfly Swatter
 step
     #completewith Bandit Highwaymen
@@ -3946,7 +3946,7 @@ step
     -- .goto 2521,45.760,78.419,35,0
     >>Kill |cRXP_ENEMY_Bandit Highwaymen::252820|r. Loot them for the |T133693:0|t[|cRXP_LOOT_Blood-Stained Bandit Masks|r].
     .complete 92685,1 --7/7 Blood-Stained Bandit Mask
-    .mob Bandit Highwaymen::252820
+    .mob Bandit Highwayman::252820
 step << Horde
     #loop
     .goto 2521,45.615,72.361,35,0
