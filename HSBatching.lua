@@ -51,6 +51,27 @@ hooksecurefunc("SetCVar",function(n,v)
 end)
 ]]
 
+
+local spellIDs = {
+    [8690] = true,
+    [556] = true,
+    [1315212] = true,
+    [1303762] = true,
+}
+
+local itemIDs = {
+    [6948] = true,
+    [284163] = true,
+}
+local function IsHSCasting()
+    local isCasting
+    for id in pairs(spellIDs) do
+        if IsCurrentSpell(id) then
+            return true
+        end
+    end
+end
+
 local function StartHSTimer()
     if HSstart == 0 and addon.settings.profile.enableHSbatch then
         local size = addon.settings.profile.batchSize or 6
@@ -72,7 +93,7 @@ HSframe:SetScript("OnEvent", function(self, event, ...)
     if event == "UNIT_SPELLCAST_INTERRUPTED" then
         local unitTarget, _, spellID = ...
         -- Player interrupted Hearthstone cast
-        if unitTarget == "player" and spellID == 8690 then
+        if unitTarget == "player" and spellIDs[spellID] then
             if HSstart > 0 then StopHSTimer() end
         end
     end
@@ -83,22 +104,26 @@ HSframe:RegisterEvent("UNIT_SPELLCAST_INTERRUPTED")
 -- Using HS from bags
 if _G.C_Container and _G.C_Container.UseContainerItem then -- DF+
     hooksecurefunc(C_Container, "UseContainerItem", function(bag, slot)
-        if GetContainerItemID(bag, slot) == 6948 then StartHSTimer() end
+        local id = GetContainerItemID(bag, slot)
+        if id and itemIDs[id] then StartHSTimer() end
     end)
 else
     hooksecurefunc("UseContainerItem", function(bag, slot)
-        if GetContainerItemID(bag, slot) == 6948 then StartHSTimer() end
+        local id = GetContainerItemID(bag, slot)
+        if id and itemIDs[id] then StartHSTimer() end
     end)
 end
 
 -- Using HS from the active item frame
 if C_Item and C_Item.UseItemByName then -- DF+
     hooksecurefunc(C_Item, "UseItemByName", function(itemInfo)
-        if GetItemInfoInstant(itemInfo) == 6948 then StartHSTimer() end
+        local id = GetItemInfoInstant(itemInfo) or 0
+        if itemIDs[id] then StartHSTimer() end
     end)
 else
     hooksecurefunc("UseItemByName", function(itemInfo)
-        if GetItemInfoInstant(itemInfo) == 6948 then StartHSTimer() end
+        local id = GetItemInfoInstant(itemInfo) or 0
+        if itemIDs[id] then StartHSTimer() end
     end)
 end
 
@@ -114,7 +139,7 @@ end)
 
 hooksecurefunc("UseAction", function(...)
     local event, id = GetActionInfo(...)
-    if (event == "item" and id == 6948) or (event == "macro" and (IsCurrentSpell(8690) or IsCurrentSpell(556))) or (event == "spell" and id == 556) then
+    if (event == "item" and itemIDs[id]) or (event == "macro" and IsHSCasting()) or (event == "spell" and spellIDs[id]) then
         StartHSTimer()
     end
 end)
