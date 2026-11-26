@@ -709,7 +709,7 @@ step << Human
 step << !Skyborne
     .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Westfall >> Fly to Westfall << !NightElf !Dwarf/!Hunter
+    .fly Westfall >> Fly to Westfall << !NightElf !(Dwarf Hunter)
     .fp Stormwind >> Get the Stormwind Flight Path << NightElf/Dwarf Hunter
     .target Dungar Longdrink
 step
@@ -3139,7 +3139,7 @@ step
     .home >> Set your Hearthstone to Stormwind City
     .target Innkeeper Allison
     .bindlocation 16509
-step << !NightElf !Dwarf/!Hunter
+step << !NightElf !(Dwarf Hunter)
     #completewith TDB1
     .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
@@ -3160,7 +3160,7 @@ step << !Skyborne
     .goto 1453/0,484.200,-8832.500,-1
     .goto 1436/0,1037.42,-10628.27,-1
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r or |cRXP_FRIENDLY_Thor|r
-    .fly Redridge >> Fly to Redridge Mountains << !NightElf !Dwarf/!Hunter
+    .fly Redridge >> Fly to Redridge Mountains << !NightElf !(Dwarf Hunter)
     .fp Westfall >> Get the Westfall flight path << NightElf/Dwarf Hunter
     .target Dungar Longdrink
     .target Thor

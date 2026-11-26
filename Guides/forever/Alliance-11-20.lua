@@ -5161,7 +5161,7 @@ step << !Skyborne
     #completewith orcs
     .goto 1453/0,484.200,-8832.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
-    .fly Redridge >> Fly to Redridge Mountains << !NightElf !Dwarf/!Hunter
+    .fly Redridge >> Fly to Redridge Mountains << !NightElf !(Dwarf Hunter)
     .fp Stormwind >> Get the Stormwind Flight Path << NightElf/Dwarf Hunter
     .target Dungar Longdrink
     .zoneskip Redridge Mountains
