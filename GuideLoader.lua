@@ -242,10 +242,25 @@ function addon.GetActiveGuidesByGroupNameOrId(groupName, groupId)
     end
 
     local translatedName = L(groupName)
+    local groupNames = {[groupName] = true, [translatedName] = true}
+    -- Imported English and localized Forever groups share one selection family.
+    -- Keep faction and route type separate; other clients keep their old lookup.
+    if addon.game == "FOREVER" and locale == "deDE" then
+        for _, canonical in ipairs({
+            "RestedXP Forever Guide (A)", "RestedXP Forever Guide (H)",
+            "RestedXP Forever Dungeon Guide (A)", "RestedXP Forever Dungeon Guide (H)"
+        }) do
+            local localized = L(canonical)
+            if groupNames[canonical] or groupNames[localized] then
+                groupNames[canonical] = true
+                groupNames[localized] = true
+            end
+        end
+    end
     local unmarkedName
     for displayName in pairs(addon.guideList) do
         unmarkedName = displayName:gsub("^%*", "")
-        if unmarkedName == groupName or unmarkedName == translatedName then
+        if groupNames[unmarkedName] then
             for _, guide in ipairs(addon.GetActiveGuidesInGroup(displayName)) do
                 addGuide(guide)
             end
