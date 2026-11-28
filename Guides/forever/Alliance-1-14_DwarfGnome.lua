@@ -4122,6 +4122,7 @@ step << Dwarf Paladin
     .turnin 1783 >>Turn in The Tome of Divinity
     .accept 1784 >>Accept The Tome of Divinity
     .use 6866
+    .addquestitem 6866,1783--Symbol of Life
     .target Narm Faulk
 step << Dwarf Paladin
     .goto 1426/0,-2004.94,-5863.50,20,0
