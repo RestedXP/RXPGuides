@@ -8440,6 +8440,63 @@ function addon.functions.chromietime(self,text,id)
     end
 end
 
+events.chromieon = {"PLAYER_ENTERING_WORLD", "QUEST_LOG_UPDATE"}
+events.chromieoff = events.chromieon
+
+function addon.functions.chromieon(self, ...)
+    if type(self) == "string" then
+        local element = {}
+
+        local text, skipTo = ...
+        element.text = text
+        element.skipTo = skipTo
+
+        return element
+    end
+
+    if not (C_PlayerInfo and C_PlayerInfo.IsPlayerInChromieTime) then
+        return
+    end
+
+    local element = self.element
+    local step = element.step
+
+    if not step.active then
+        return
+    end
+
+    local inChromieTime = C_PlayerInfo.IsPlayerInChromieTime()
+    if element.reverse then
+        inChromieTime = not inChromieTime
+    end
+
+    if not addon.settings.profile.disableAutoSkip and not inChromieTime and not addon.isHidden then
+        step.completed = true
+
+        addon.updateSteps = true
+        local ref = element.skipTo
+        local guide = addon.currentGuide
+        if ref and guide.labels[ref] then
+            addon.nextStep = guide.labels[ref]
+        end
+    end
+end
+
+function addon.functions.chromieoff(self, ...)
+    if type(self) == "string" then
+        local element = {}
+
+        local text, skipTo = ...
+        element.text = text
+        element.reverse = true
+        element.skipTo = skipTo
+
+        return element
+    end
+
+    return addon.functions.chromieon(self, ...)
+end
+
 
 local function ScrapItems(ids)
     --PLAYER_INTERACTION_MANAGER_FRAME_SHOW 40
