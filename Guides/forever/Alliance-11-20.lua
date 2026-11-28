@@ -6197,13 +6197,13 @@ step
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
     .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
-step
-    #optional
-    .isOnQuest 5321
-    .goto 1439/1,34.78,5001.570
-    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
-    .complete 5321,1 -- Horn of Awakening (1)
-    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
+--step
+--    #optional
+--    .isOnQuest 5321
+--    .goto 1439/1,34.78,5001.570
+--    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
+--    .complete 5321,1 -- Horn of Awakening (1)
+--    .isQuestTurnedIn 731 --Only shows if Prospector was already escorted
 step
     #sticky
     #label prospector
@@ -6332,19 +6332,19 @@ step
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
     .itemcount 13536,<1 --Horn of Awakening
-step
-    .isOnQuest 5321
-    .goto 1439/1,34.78,5001.570
-    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
-    .complete 5321,1 -- Horn of Awakening (1)
-    .itemcount 13536,<1 --Horn of Awakening
+--step
+--    .isOnQuest 5321
+--    .goto 1439/1,34.78,5001.570
+--    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
+--    .complete 5321,1 -- Horn of Awakening (1)
+--    .itemcount 13536,<1 --Horn of Awakening
 step
     #label Kerlonian
     .goto 1439/1,206.400,4402.500
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to his bag |cRXP_WARN_in Darkshore|r|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
     >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
-    .complete 5321,2
+    .complete 5321,1
     .isOnQuest 5321
 step
     #label AshenStart
@@ -7095,11 +7095,11 @@ step
     >>|cRXP_WARN_This is a timed quest, you have to escort him to his bag in 20 minutes|r
     .accept 5321 >> Accept The Sleeper Has Awakened
     .target Kerlonian Evershade
-step
-    .goto 1439/1,34.78,5001.570
-    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
-    .complete 5321,1 -- Horn of Awakening (1)
-    .isOnQuest 5321
+--step
+--    .goto 1439/1,34.78,5001.570
+--    >>Open |cRXP_PICK_Kerlonian's Chest|r. Loot it for the |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r]
+--    .complete 5321,1 -- Horn of Awakening (1)
+--    .isOnQuest 5321
 step
     #completewith volcorEnd
     .goto 1440/1,128.01,3305.31
@@ -7137,7 +7137,7 @@ step
     >>|cRXP_WARN_Escort |cRXP_FRIENDLY_Kerlonian|r to his bag |cRXP_WARN_in Darkshore|r|r
     .use 13536 >> |cRXP_WARN_Use the|r |T134229:0|t[|cRXP_LOOT_Horn of Awakening|r] |cRXP_WARN_whenever |cRXP_FRIENDLY_Kerlonian|r falls asleep next to him|r
     >>|cRXP_WARN_Avoid running on the main road as much as possible. Enemies will only spawn if you're on the road|r
-    .complete 5321,2
+    .complete 5321,1
     .isOnQuest 5321
 step
     #completewith tower
