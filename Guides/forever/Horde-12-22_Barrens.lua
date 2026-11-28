@@ -1050,6 +1050,14 @@ step << Tauren
     .turnin 6362 >>Turn in Ride to Thunder Bluff
     .accept 6363 >>Accept Tal the Wind Rider Master
     .target Ahanu
+    .isOnQuest 6362
+step << Tauren
+    #optional
+    .goto 1456/1,40.72,-1238.97--c:Thunder Bluff,45.6,55.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ahanu|r
+    .accept 6363 >>Accept Tal the Wind Rider Master
+    .target Ahanu
+    .isQuestTurnedIn 6362
 step << Tauren Shaman
     .goto 1456/1,269.92,-980.40
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tigor|r
@@ -1100,6 +1108,7 @@ step << Tauren
     .turnin 6363 >>Turn in Tal the Wind Rider Master
     .accept 6364 >>Accept Return to Jahan
     .target Tal
+    .isQuestTurnedIn 6362
 step << Tauren
     #label FlyXroads2
     #completewith HidesTurnIn
